@@ -102,7 +102,8 @@ https://stackoverflow.com/questions/10126845/handle-screen-rotation-without-losi
 https://medium.com/@ankit.sinhal/handler-in-android-d138c1f4980e<br>
 
 # what is Understanding Android Core: Looper, Handler, and HandlerThread ? <br>
-https://blog.mindorks.com/android-core-looper-handler-and-handlerthread-bd54d69fe91a
+https://blog.mindorks.com/android-core-looper-handler-and-handlerthread-bd54d69fe91a <br>
+https://stackoverflow.com/questions/7597742/what-is-the-purpose-of-looper-and-how-to-use-it <br>
 
 # How to handle screen rotation?
 When you rotate your device, your present activity gets completely destroyed, ie goes through 
