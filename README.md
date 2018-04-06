@@ -101,6 +101,9 @@ https://stackoverflow.com/questions/10126845/handle-screen-rotation-without-losi
 # What is handler and why Handler?<br>
 https://medium.com/@ankit.sinhal/handler-in-android-d138c1f4980e<br>
 
+# what is Understanding Android Core: Looper, Handler, and HandlerThread ? <br>
+https://blog.mindorks.com/android-core-looper-handler-and-handlerthread-bd54d69fe91a
+
 # How to handle screen rotation?
 When you rotate your device, your present activity gets completely destroyed, ie goes through 
 * onSaveInstanceState() 
