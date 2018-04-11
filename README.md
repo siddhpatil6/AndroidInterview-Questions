@@ -69,13 +69,21 @@ JobInfo for more description of the types of jobs that can be run and how to con
     Code: <br>
         ```
         var componentName=ComponentName(this,com.kotlin.siddhant.jobschedulerexample.MJobService::class.java)
+        
         var builder=JobInfo.Builder(JOB_ID,componentName) // we build Job here and assign job id to identify JOB Uniquely
+        
         builder.setPeriodic(5000) // we set Period for job to be executed
+       
         builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY) // to define required network type
+        
         builder.setPersisted(true) //if set true this job will exist after system reboot as well
+        
        // builder.setRequiresBatteryNotLow(true) // schedule job when battery not low
+       
         //builder.setRequiresStorageNotLow(true)  // schedule job when Storage is not low
+        
         builder.setRequiresCharging(true)    // schedule job when charging
+        
         jobInfo=builder.build()
         ```
 
