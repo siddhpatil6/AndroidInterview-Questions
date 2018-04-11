@@ -60,7 +60,13 @@ In order to prevent it, first we need to know the reasons of "Out of Memory" exc
 https://www.youtube.com/watch?v=HY9aaXHx8yA<br>
 https://stackoverflow.com/questions/477572/strange-out-of-memory-issue-while-loading-an-image-to-a-bitmap-object <br>
 
-# what is JobScheduler and JobInfo?
+# what is JobScheduler and JobInfo?<br>
+## Job Scheduler <br>
+This is an API for scheduling various types of jobs against the framework that will be executed in your application's own process.<br>
+<br>
+## Job Info <br>
+JobInfo for more description of the types of jobs that can be run and how to construct them. You will construct these JobInfo objects and pass them to the JobScheduler with schedule(JobInfo). When the criteria declared are met, the system will execute this job on your application's JobService. You identify the service component that implements the logic for your job when you construct the JobInfo using JobInfo.Builder(int, android.content.ComponentName).<br>
+
 
 # What is Volatile?
 https://dzone.com/articles/java-volatile-keyword-0
