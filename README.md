@@ -67,8 +67,7 @@ This is an API for scheduling various types of jobs against the framework that w
 ## Job Info <br>
 JobInfo for more description of the types of jobs that can be run and how to construct them. You will construct these JobInfo objects and pass them to the JobScheduler with schedule(JobInfo). When the criteria declared are met, the system will execute this job on your application's JobService. You identify the service component that implements the logic for your job when you construct the JobInfo using JobInfo.Builder(int, android.content.ComponentName).
     Code: <br>
-    ```
-        JobInfo.Builder(int, android.content.ComponentName).<br>
+        ```
         var componentName=ComponentName(this,com.kotlin.siddhant.jobschedulerexample.MJobService::class.java)
         var builder=JobInfo.Builder(JOB_ID,componentName) // we build Job here and assign job id to identify JOB Uniquely
         builder.setPeriodic(5000) // we set Period for job to be executed
