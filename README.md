@@ -65,8 +65,20 @@ https://stackoverflow.com/questions/477572/strange-out-of-memory-issue-while-loa
 This is an API for scheduling various types of jobs against the framework that will be executed in your application's own process.<br>
 <br>
 ## Job Info <br>
-JobInfo for more description of the types of jobs that can be run and how to construct them. You will construct these JobInfo objects and pass them to the JobScheduler with schedule(JobInfo). When the criteria declared are met, the system will execute this job on your application's JobService. You identify the service component that implements the logic for your job when you construct the JobInfo using JobInfo.Builder(int, android.content.ComponentName).<br>
-
+JobInfo for more description of the types of jobs that can be run and how to construct them. You will construct these JobInfo objects and pass them to the JobScheduler with schedule(JobInfo). When the criteria declared are met, the system will execute this job on your application's JobService. You identify the service component that implements the logic for your job when you construct the JobInfo using JobInfo.Builder(int, android.content.ComponentName).
+    Code: <br>
+    ```
+        JobInfo.Builder(int, android.content.ComponentName).<br>
+        var componentName=ComponentName(this,com.kotlin.siddhant.jobschedulerexample.MJobService::class.java)
+        var builder=JobInfo.Builder(JOB_ID,componentName) // we build Job here and assign job id to identify JOB Uniquely
+        builder.setPeriodic(5000) // we set Period for job to be executed
+        builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY) // to define required network type
+        builder.setPersisted(true) //if set true this job will exist after system reboot as well
+       // builder.setRequiresBatteryNotLow(true) // schedule job when battery not low
+        //builder.setRequiresStorageNotLow(true)  // schedule job when Storage is not low
+        builder.setRequiresCharging(true)    // schedule job when charging
+        jobInfo=builder.build()
+        ```
 
 # What is Volatile?
 https://dzone.com/articles/java-volatile-keyword-0
@@ -136,6 +148,7 @@ package javabeat.samples;
 
 # Service Example<br>
 https://www.simplifiedcoding.net/android-service-example/
+
 # what is ServiceConnection and why to use?
 **ServiceConnection**
 android.content.ServiceConnection is an interface which is used to monitor the state of service. We need to override following methods. <br>
