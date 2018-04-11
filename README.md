@@ -14,7 +14,7 @@ There is <b> Main Thread </b> where we all UI related Task we Perform</br>
 For Example - </br>
     Button Click, Button Rendering, All task related to UI</br>
     
-If the Task is very <b> Resource Intensive Task </b> which requires more than 5 Seconds to execute it not good idea to execute it on UI Thread.It will give ANR.</br>
+If the Task is very <b> Resource Intensive Task </b> which requires more than 5 Seconds to execute, it not good idea to execute it on UI Thread.It will give ANR.</br>
     So We Can use seprate thread to execute such task.</br>
    </br>
 https://www.youtube.com/watch?v=kpFwxJFYnOo</br>
