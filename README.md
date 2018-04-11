@@ -1,21 +1,21 @@
 # AndroidInterview-Questions
 # Explain UI Thread/ Main Thread
-Each App is executed by different process
-for example 
-Proccess 1 Executes App1
-Process 2 Executes App2
-
-Each Process Contains Multiple Threads
-For Example 
-Process 1- Thread1, Thread2, Thread3
-
-There is <b> Main Thread</br> where we all UI related Task we Perform
-For Example -
-    Button Click, Button Rendering, All task related to UI
-If the Task is very <b>Resource Intensive Task<b> which requires more than 5 Seconds to execute it not good idea to execute it on UI Thread.It will give ANR.
-    So We Can use seprate thread to execute such task.
-   
-https://www.youtube.com/watch?v=kpFwxJFYnOo
+Each App is executed by different process </br>
+for example </br>
+Proccess 1 Executes App1</br>
+Process 2 Executes App2</br>
+</br>
+Each Process Contains Multiple Threads</br>
+For Example </br>
+Process 1- Thread1, Thread2, Thread3</br>
+</br>
+There is <b> Main Thread </b> where we all UI related Task we Perform</br>
+For Example </br>
+    Button Click, Button Rendering, All task related to UI</br>
+If the Task is very <b> Resource Intensive Tas </b> which requires more than 5 Seconds to execute it not good idea to execute it on UI Thread.It will give ANR.</br>
+    So We Can use seprate thread to execute such task.</br>
+   </br>
+https://www.youtube.com/watch?v=kpFwxJFYnOo</br>
 # Reason for OutOfMemory
 In order to prevent it, first we need to know the reasons of "Out of Memory" exception:
 * The biggest reason is memory leak i.e, Context leaking or can say Activity Leaking, a Service has the same problems as Activity in this regard.
