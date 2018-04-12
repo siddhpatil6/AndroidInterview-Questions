@@ -1,5 +1,11 @@
 
 # AndroidInterview-Questions
+
+# How to communicate if both fragments on same screen and want to communicate?
+It can be achieve by
+1.Interface
+2.Broadcast Reciever
+
 # How to show notification?
 ```
 NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
