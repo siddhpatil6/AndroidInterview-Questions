@@ -1,5 +1,33 @@
 
 # AndroidInterview-Questions
+### What is Intent Filter?
+Intent filter declares the capabilities of its parent component — what an activity or service can do and what types of broadcasts a receiver can handle.<br>
+```
+<activity
+    android:name=".ActivityTest"
+    android:label="@string/app_name" >
+    <intent-filter>
+      <action android:name="android.intent.action.SEND" />
+
+      <category android:name="android.intent.category.DEFAULT" />
+
+      <data android:mimeType="text/plain" />
+
+    </intent-filter>
+
+</activity>
+```
+
+### What are launching mode of Activity?
+https://android.jlelse.eu/android-activity-launch-mode-e0df1aa72242
+https://inthecheesefactory.com/blog/understand-android-activity-launchmode/en
+
+### What are the four pillers of android?
+Android Components:Four pillars of every Android app
+1. Activity.
+1. Service.
+1. Content providers.
+1. Broadcast Receivers.
 
 ### What is AsyncTask and tell me about its methods
 
