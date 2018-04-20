@@ -1,5 +1,13 @@
 
 # AndroidInterview-Questions
+# What is difference between Apply() and Commit() in android <br>
+<br>
+apply() was added in 2.3, it commits without returning a boolean indicating success or failure.<br>
+commit() returns true if the save works, false otherwise.<br>
+
+# What is difference between viewpager and viewstagepager?
+ <b> FragmentPagerAdapter </b> stores the whole fragment in memory, and could increase a memory overhead if a large amount of fragments are used in ViewPager.
+In contrary its sibling, <b> FragmentStatePagerAdapter </b> only stores the savedInstanceState of fragments, and destroys all the fragments when they lose focus
 
 # How to communicate if both fragments on same screen and want to communicate?
 It can be achieve by
