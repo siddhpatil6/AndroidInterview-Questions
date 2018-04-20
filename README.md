@@ -217,7 +217,27 @@ http://www.vogella.com/tutorials/AndroidTaskScheduling/article.html
 
 # What is Job Dispatcher?
 
+# How we can read data from database?
+```
+public void getData() {
+    public String[] getAppCategorydetail() {
+        String Table_Name="cytaty";
 
+        String selectQuery = "SELECT  * FROM " + Table_Name;
+              SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+                 String[] data = null;
+        if (cursor.moveToFirst()) {
+            do {
+               // get  the  data into array,or class variable
+            } while (cursor.moveToNext());
+        }
+        db.close();
+        return data;
+    }
+
+}
+```
 
 # What is difference between Apply() and Commit() in android <br>
 <br>
