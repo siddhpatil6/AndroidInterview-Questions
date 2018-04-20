@@ -1,7 +1,120 @@
 
 # AndroidInterview-Questions
 
-# What is Job Scheduler?
+### What is Intent Filter?
+Intent filter declares the capabilities of its parent component — what an activity or service can do and what types of broadcasts a receiver can handle.<br>
+```
+<activity
+    android:name=".ActivityTest"
+    android:label="@string/app_name" >
+    <intent-filter>
+      <action android:name="android.intent.action.SEND" />
+
+      <category android:name="android.intent.category.DEFAULT" />
+
+      <data android:mimeType="text/plain" />
+
+    </intent-filter>
+
+</activity>
+```
+# What is Thread?
+https://github.com/siddhpatil6/Java/wiki/Thread-Interview-Questions
+
+# What is Executor?
+Android has an Executor framework using which you can automatically manage a pool of threads with a task queue. Multiple threads will run in parellel executing tasks from the queue (BlockingQueue usually).
+
+https://github.com/siddhpatil6/Kotlin-Executor
+
+# What is Pool Thread?
+# Thread Pools
+A thread pool manages a pool of worker threads (the exact number varies depending upon how it’s implementation).
+
+A task queue holds tasks waiting to be executed by any one of the idle threads in the pool. Tasks are added to the queue by producers, whereas the worker threads act as consumers by consuming the tasks from the queue whenever there’s an idle thread ready to perform a new background execution.
+
+# What is Thread pool Executor?
+The ThreadPoolExecutor executes a given task using one of its threads from the thread pool.
+https://blog.mindorks.com/threadpoolexecutor-in-android-8e9d22330ee3
+
+
+# How to done Image cache Manuelly?
+https://developer.android.com/topic/performance/graphics/cache-bitmap.html
+
+# Intent Flags?
+
+1) FLAG_ACTIVITY_NEW_TASK - If set, this activity will become the start of a new task on this history stack. A task (from the activity that started it to the next task activity) defines an atomic group of activities that the user can move to. Tasks can be moved to the foreground and background; all of the activities inside of a particular task always remain in the same order.
+
+2) FLAG_ACTIVITY_CLEAR_TOP - If set, and the activity being launched is already running in the current task, then instead of launching a new instance of that activity, all of the other activities on top of it will be closed and this Intent will be delivered to the (now on top) old activity as a new Intent.
+
+3) FLAG_ACTIVITY_SINGLE_TOP - If set, the activity will not be launched if it is already running at the top of the history stack.
+
+
+# How to make request Manually Android?
+```
+class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
+
+        private Exception exception;
+
+        protected void onPreExecute() {
+            progressBar.setVisibility(View.VISIBLE);
+            responseView.setText("");
+        }
+
+        protected String doInBackground(Void... urls) {
+            String email = emailText.getText().toString();
+            // Do some validation here
+
+            try {
+                URL url = new URL(API_URL + "email=" + email + "&apiKey=" + API_KEY);
+                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                try {
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                    StringBuilder stringBuilder = new StringBuilder();
+                    String line;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        stringBuilder.append(line).append("\n");
+                    }
+                    bufferedReader.close();
+                    return stringBuilder.toString();
+                }
+                finally{
+                    urlConnection.disconnect();
+                }
+            }
+            catch(Exception e) {
+                Log.e("ERROR", e.getMessage(), e);
+                return null;
+            }
+        }
+
+        protected void onPostExecute(String response) {
+            if(response == null) {
+                response = "THERE WAS AN ERROR";
+            }
+            progressBar.setVisibility(View.GONE);
+            Log.i("INFO", response);
+            responseView.setText(response);
+        }
+    }
+```
+
+# How to share Image between activity?
+```
+String bitmapPath = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap,"title", null);
+    Uri bitmapUri = Uri.parse(bitmapPath);
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("image/png");
+        intent.putExtra(Intent.EXTRA_STREAM, bitmapUri);
+        startActivity(Intent.createChooser(intent, "Share"));
+ ```
+ # How to Store Bitmap image in SQLite?
+ https://stackoverflow.com/questions/11790104/how-to-storebitmap-image-and-retrieve-image-from-sqlite-database-in-android
+ 
+ # What is use of Loop and Handler?
+ https://blog.mindorks.com/android-core-looper-handler-and-handlerthread-bd54d69fe91a
+ 
+ # What is Job Scheduler?
 If you have a repetitive task in your Android app, you need to consider that activities and services can be terminated by the Android system to free up resources. Therefore you can not rely on standard Java schedule like the TimerTasks class.
 
 The Android system currently has two main means to schedule tasks:
@@ -42,23 +155,7 @@ NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, CHANN
                 .bigText("Much longer text that cannot fit one line..."))
         .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 ```
-### What is Intent Filter?
-Intent filter declares the capabilities of its parent component — what an activity or service can do and what types of broadcasts a receiver can handle.<br>
-```
-<activity
-    android:name=".ActivityTest"
-    android:label="@string/app_name" >
-    <intent-filter>
-      <action android:name="android.intent.action.SEND" />
 
-      <category android:name="android.intent.category.DEFAULT" />
-
-      <data android:mimeType="text/plain" />
-
-    </intent-filter>
-
-</activity>
-```
 
 ### What are launching mode of Activity?
 https://android.jlelse.eu/android-activity-launch-mode-e0df1aa72242
