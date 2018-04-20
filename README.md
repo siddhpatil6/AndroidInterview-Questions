@@ -114,7 +114,42 @@ String bitmapPath = MediaStore.Images.Media.insertImage(getContentResolver(), bi
  # What is use of Loop and Handler?
  https://blog.mindorks.com/android-core-looper-handler-and-handlerthread-bd54d69fe91a
  
+ # What is START_STICKY and START_NOT_STICKY Service?
+* Both codes are only relevant when the phone runs out of memory and kills the service before it finishes executing.  START_STICKY tells the OS to recreate the service after it has enough memory and call onStartCommand() again with a null intent. START_NOT_STICKY tells the OS to not bother recreating the service again. There is also a third code START_REDELIVER_INTENT that tells the OS to recreate the service and redeliver the same intent to onStartCommand().
 
+# what is ServiceConnection and why to use?
+**ServiceConnection**
+android.content.ServiceConnection is an interface which is used to monitor the state of service. We need to override following methods. <br>
+onServiceConnected(ComponentName name, IBinder service) : This is called when service is connected to the application. <br>
+onServiceDisconnected(ComponentName name) : This is called when service is disconnected.<br>
+
+# How to handle screen rotation?
+When you rotate your device, your present activity gets completely destroyed, ie goes through 
+* onSaveInstanceState() 
+* onPause() 
+* onStop() 
+* onDestroy() 
+and a new activity is created completely which goes through 
+* onCreate() 
+* onStart()
+* onRestoreInstanceState() <br>
+The Two Methods in the bold, onSaveInstanceState() saves the instance of the present activity which is going to be destroyed. onRestoreInstanceState This method restores the saved state of the previous activity. This way you don't lose your previous state of the app.<br>
+Here is how you use these methods.<br>
+`@Override  `
+    `public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {`
+        `super.onSaveInstanceState(outState, outPersistentState);`
+
+        `outState.putString("theWord", theWord); // Saving the Variable theWord`
+        `outState.putStringArrayList("fiveDefns", fiveDefns); // Saving the ArrayList fiveDefns`
+    `} `
+
+    `@Override`
+    `public void onRestoreInstanceState(Bundle savedInstanceState, PersistableBundle persistentState) {`
+        `super.onRestoreInstanceState(savedInstanceState, persistentState);`
+
+        `theWord = savedInstanceState.getString("theWord"); // Restoring theWord`
+        `fiveDefns = savedInstanceState.getStringArrayList("fiveDefns"); //Restoring fiveDefns`
+    `}`<br>
 # What are these final, finally and finalize keywords?
 
 final is a keyword in the java language. It is used to apply restrictions on class, method and variable. Final class can't be inherited, final method can't be overridden and final variable value can't be changed.
@@ -376,11 +411,6 @@ package javabeat.samples;
 # Service Example<br>
 https://www.simplifiedcoding.net/android-service-example/
 
-# what is ServiceConnection and why to use?
-**ServiceConnection**
-android.content.ServiceConnection is an interface which is used to monitor the state of service. We need to override following methods. <br>
-onServiceConnected(ComponentName name, IBinder service) : This is called when service is connected to the application. <br>
-onServiceDisconnected(ComponentName name) : This is called when service is disconnected.<br>
 
 # What is DDMS and what can it do?
 
@@ -392,43 +422,12 @@ https://stackoverflow.com/questions/4858026/android-alternate-layout-xml-for-lan
 # how to not to loose data when we move from potrait to landscape mode layout?
 https://stackoverflow.com/questions/10126845/handle-screen-rotation-without-losing-data-android
 
-# What is START_STICKY and START_NOT_STICKY Service?
-* Both codes are only relevant when the phone runs out of memory and kills the service before it finishes executing.  START_STICKY tells the OS to recreate the service after it has enough memory and call onStartCommand() again with a null intent. START_NOT_STICKY tells the OS to not bother recreating the service again. There is also a third code START_REDELIVER_INTENT that tells the OS to recreate the service and redeliver the same intent to onStartCommand().
-
 # What is handler and why Handler?<br>
 https://medium.com/@ankit.sinhal/handler-in-android-d138c1f4980e<br>
 
 # what is Understanding Android Core: Looper, Handler, and HandlerThread ? <br>
 https://blog.mindorks.com/android-core-looper-handler-and-handlerthread-bd54d69fe91a <br>
 https://stackoverflow.com/questions/7597742/what-is-the-purpose-of-looper-and-how-to-use-it <br>
-
-# How to handle screen rotation?
-When you rotate your device, your present activity gets completely destroyed, ie goes through 
-* onSaveInstanceState() 
-* onPause() 
-* onStop() 
-* onDestroy() 
-and a new activity is created completely which goes through 
-* onCreate() 
-* onStart()
-* onRestoreInstanceState() <br>
-The Two Methods in the bold, onSaveInstanceState() saves the instance of the present activity which is going to be destroyed. onRestoreInstanceState This method restores the saved state of the previous activity. This way you don't lose your previous state of the app.<br>
-Here is how you use these methods.<br>
-`@Override  `
-    `public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {`
-        `super.onSaveInstanceState(outState, outPersistentState);`
-
-        `outState.putString("theWord", theWord); // Saving the Variable theWord`
-        `outState.putStringArrayList("fiveDefns", fiveDefns); // Saving the ArrayList fiveDefns`
-    `} `
-
-    `@Override`
-    `public void onRestoreInstanceState(Bundle savedInstanceState, PersistableBundle persistentState) {`
-        `super.onRestoreInstanceState(savedInstanceState, persistentState);`
-
-        `theWord = savedInstanceState.getString("theWord"); // Restoring theWord`
-        `fiveDefns = savedInstanceState.getStringArrayList("fiveDefns"); //Restoring fiveDefns`
-    `}`<br>
 
 # What is differene between throw and throws?<br>
 https://www.javatpoint.com/difference-between-throw-and-throws-in-java<br>
