@@ -189,6 +189,8 @@ class FinalizeExample {
 	}
 }
 ```
+# What if two icons created of Main?
+If we have mentioned launcher to two activity it will create two icons which will make different launcher screen.
 
 # What is Serialization and Parcelable differences
 
