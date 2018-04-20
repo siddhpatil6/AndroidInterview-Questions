@@ -114,7 +114,58 @@ String bitmapPath = MediaStore.Images.Media.insertImage(getContentResolver(), bi
  # What is use of Loop and Handler?
  https://blog.mindorks.com/android-core-looper-handler-and-handlerthread-bd54d69fe91a
  
- # What is Job Scheduler?
+
+# What are these final, finally and finalize keywords?
+
+final is a keyword in the java language. It is used to apply restrictions on class, method and variable. Final class can't be inherited, final method can't be overridden and final variable value can't be changed.
+
+```
+class FinalExample {
+	public static void main(String[] args) {  
+		final int x=100;  
+		x=200;//Compile Time Error because x is final
+	}
+}
+finally is a code block and is used to place important code, it will be executed whether exception is handled or not.
+class FinallyExample {  
+	public static void main(String[] args) {  
+		try {  
+			int x=300;  
+		}catch(Exception e) {
+			System.out.println(e);
+		}  
+		finally {
+			System.out.println("finally block is executed");
+		}  
+	}
+}  
+Finalize is a method used to perform clean up processing just before object is garbage collected.
+class FinalizeExample {  
+	public void finalize() {
+		System.out.println("finalize called");
+	}  
+	
+	public static void main(String[] args) {  
+		FinalizeExample f1=new FinalizeExample();  
+		FinalizeExample f2=new FinalizeExample();  
+		f1=null;  
+		f2=null;  
+		System.gc();  
+	}
+}
+```
+
+# What is Serialization and Parcelable differences
+
+Parcelable and Serialization are used for marshaling and unmarshaling Java objects. Differences between the two are often cited around implementation techniques and performance results. From my experience, I have come to identify the following differences in both the approaches:
+
+Parcelable is well documented in the Android SDK; serialization on the other hand is available in Java. It is for this very reason that Android developers prefer Parcelable over the Serialization technique.
+
+In Parcelable, developers write custom code for marshaling and unmarshaling so it creates less garbage objects in comparison to Serialization. The performance of Parcelable over Serialization dramatically improves (around two times faster), because of this custom implementation.
+
+Serialization is a marker interface, which implies the user cannot marshal the data according to their requirements. In Serialization, a marshaling operation is performed on a Java Virtual Machine (JVM) using the Java reflection API. This helps identify the Java objects member and behavior, but also ends up creating a lot of garbage objects. Due to this, the Serialization process is slow in comparison to Parcelable
+
+# What is Job Scheduler?
 If you have a repetitive task in your Android app, you need to consider that activities and services can be terminated by the Android system to free up resources. Therefore you can not rely on standard Java schedule like the TimerTasks class.
 
 The Android system currently has two main means to schedule tasks:
