@@ -5,7 +5,7 @@
 apply() was added in 2.3, it commits without returning a boolean indicating success or failure.<br>
 commit() returns true if the save works, false otherwise.<br>
 
-# What is difference between viewpager and viewstagepager?
+# What is difference between FragmentPagerAdapter and FragmentStatePagerAdapter?
  <b> FragmentPagerAdapter </b> stores the whole fragment in memory, and could increase a memory overhead if a large amount of fragments are used in ViewPager.
 In contrary its sibling, <b> FragmentStatePagerAdapter </b> only stores the savedInstanceState of fragments, and destroys all the fragments when they lose focus
 
