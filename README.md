@@ -1,5 +1,23 @@
 
 # AndroidInterview-Questions
+
+# What is Job Scheduler?
+If you have a repetitive task in your Android app, you need to consider that activities and services can be terminated by the Android system to free up resources. Therefore you can not rely on standard Java schedule like the TimerTasks class.
+
+The Android system currently has two main means to schedule tasks:
+
+* the (outdated) AlarmManager
+* the JobScheduler API.
+
+Modern Android applications should use the JobScheduler API. Apps can schedule jobs while letting the system optimize based on memory, power, and connectivity conditions.
+
+Read this article if you have time : -
+http://www.vogella.com/tutorials/AndroidTaskScheduling/article.html
+
+# What is Job Dispatcher?
+
+
+
 # What is difference between Apply() and Commit() in android <br>
 <br>
 apply() was added in 2.3, it commits without returning a boolean indicating success or failure.<br>
