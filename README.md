@@ -1,7 +1,93 @@
 
 # AndroidInterview-Questions
+# How to handle 
 # How to Integrate Payment Gateway?
 https://www.rishabhsoft.com/blog/payment-gateway-integration-android-ios
+1. Add PayPal Android SDK dependency to your build.gradle file as shown in README.md
+
+2. Create a PayPalConfiguration object
+
+private static PayPalConfiguration config = new PayPalConfiguration()
+```
+        // Start with mock environment.  When ready, switch to sandbox (ENVIRONMENT_SANDBOX)
+        // or live (ENVIRONMENT_PRODUCTION)
+        .environment(PayPalConfiguration.ENVIRONMENT_NO_NETWORK)
+
+        .clientId("<YOUR_CLIENT_ID>");
+```
+3. Start PayPalService when your activity is created and stop it upon destruction:
+```
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    Intent intent = new Intent(this, PayPalService.class);
+
+    intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
+
+    startService(intent);
+}
+
+@Override
+public void onDestroy() {
+    stopService(new Intent(this, PayPalService.class));
+    super.onDestroy();
+}
+```
+4. Create the payment and launch the payment intent, for example, when a button is pressed:
+```
+public void onBuyPressed(View pressed) {
+
+    // PAYMENT_INTENT_SALE will cause the payment to complete immediately.
+    // Change PAYMENT_INTENT_SALE to 
+    //   - PAYMENT_INTENT_AUTHORIZE to only authorize payment and capture funds later.
+    //   - PAYMENT_INTENT_ORDER to create a payment for authorization and capture
+    //     later via calls from your server.
+
+    PayPalPayment payment = new PayPalPayment(new BigDecimal("1.75"), "USD", "sample item",
+            PayPalPayment.PAYMENT_INTENT_SALE);
+
+    Intent intent = new Intent(this, PaymentActivity.class);
+
+    // send the same configuration for restart resiliency
+    intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
+
+    intent.putExtra(PaymentActivity.EXTRA_PAYMENT, payment);
+
+    startActivityForResult(intent, 0);
+}
+```
+Note: To provide a shipping address for the payment, see addAppProvidedShippingAddress(...) in the sample app. To enable retrieval of shipping address from the user's PayPal account, see enableShippingAddressRetrieval(...) in the sample app.
+
+5.Implement onActivityResult():
+```
+@Override
+protected void onActivityResult (int requestCode, int resultCode, Intent data) {
+    if (resultCode == Activity.RESULT_OK) {
+        PaymentConfirmation confirm = data.getParcelableExtra(PaymentActivity.EXTRA_RESULT_CONFIRMATION);
+        if (confirm != null) {
+            try {
+                Log.i("paymentExample", confirm.toJSONObject().toString(4));
+
+                // TODO: send 'confirm' to your server for verification.
+                // see https://developer.paypal.com/webapps/developer/docs/integration/mobile/verify-mobile-payment/
+                // for more details.
+
+            } catch (JSONException e) {
+                Log.e("paymentExample", "an extremely unlikely failure occurred: ", e);
+            }
+        }
+    }
+    else if (resultCode == Activity.RESULT_CANCELED) {
+        Log.i("paymentExample", "The user canceled.");
+    }
+    else if (resultCode == PaymentActivity.RESULT_EXTRAS_INVALID) {
+        Log.i("paymentExample", "An invalid Payment or PayPalConfiguration was submitted. Please see the docs.");
+    }
+}
+```
+6. Send the proof of payment to your servers for verification, as well as any other processing required for your business, such as fulfillment.
 
 # How to Handle Configuration change when dont want to re-create activity?
 Handling the Configuration Change Yourself
