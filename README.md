@@ -1,6 +1,26 @@
 
 # AndroidInterview-Questions
-# How to handle 
+# Type of broadcast reciever?
+ Types of broadcast :Local,Normal,Ordered and Sticky <br>
+ 
+* <b> Normal Broadcast <b> <br>
+:- use sendBroadcast() <br>
+:- asynchronous broadcast <br>
+:- any receiver receives broadcast not any particular order <br>
+* <b> Ordered Broadcast <b>  <br>
+:- use sendOrderedBroadcast() <br>
+:- synchronous broadcast <br>
+:- receiver receives broadcast in priority base <br>
+:- we can also simply abort broadcast in this type <br>
+* <b> Local Broadcast <b>  <br>
+:- use only when broadcast is used only inside application <br>
+* <b> Sticky Broadcast <b>  <br>
+:- normal broadcast intent is not available any more after is was send and processed by the system. <br>
+:- use sendStickyBroadcast(Intent) <br>
+:- the corresponding intent is sticky, meaning the intent you are sending stays around after the broadcast is complete. <br>
+:- because of this others can quickly retrieve that data through the return value of registerReceiver(BroadcastReceiver, IntentFilter). <br>
+:- apart from this same as sendBroadcast(Intent). <br>
+	
 # How to Integrate Payment Gateway?
 https://www.rishabhsoft.com/blog/payment-gateway-integration-android-ios
 1. Add PayPal Android SDK dependency to your build.gradle file as shown in README.md
