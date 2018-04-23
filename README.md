@@ -1,6 +1,15 @@
 
 # AndroidInterview-Questions
 
+# How to share data between two applications?
+To share data betweem two apps we can use content provider, in that we can use content resolver to perform CRUD Operation.
+and we can take value using content values. please read arictle for details. <br>
+http://codetheory.in/android-sharing-application-data-with-content-provider-and-content-resolver/
+
+# How to allow to share data between few apps android?
+To restrict app from sharing data, we can make custom permission for provider to give access to another app.<br>
+https://www.codementor.io/maker-abhi/share-data-between-your-android-apps-only-securely-a0pa8ea0j
+
 # How to find rooted device?
 Rooting detection is a cat and mouse game and it is hard to make rooting detection that will work on all devices for all cases.
 ```
