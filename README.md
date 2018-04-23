@@ -3,18 +3,18 @@
 # Type of broadcast reciever?
  Types of broadcast :Local,Normal,Ordered and Sticky <br>
  
-* <b> Normal Broadcast <b> <br>
+* <b> Normal Broadcast </b> <br>
 :- use sendBroadcast() <br>
 :- asynchronous broadcast <br>
 :- any receiver receives broadcast not any particular order <br>
-* <b> Ordered Broadcast <b>  <br>
+* <b> Ordered Broadcast </b>  <br>
 :- use sendOrderedBroadcast() <br>
 :- synchronous broadcast <br>
 :- receiver receives broadcast in priority base <br>
 :- we can also simply abort broadcast in this type <br>
-* <b> Local Broadcast <b>  <br>
+* <b> Local Broadcast </b>  <br>
 :- use only when broadcast is used only inside application <br>
-* <b> Sticky Broadcast <b>  <br>
+* <b> Sticky Broadcast </b>  <br>
 :- normal broadcast intent is not available any more after is was send and processed by the system. <br>
 :- use sendStickyBroadcast(Intent) <br>
 :- the corresponding intent is sticky, meaning the intent you are sending stays around after the broadcast is complete. <br>
