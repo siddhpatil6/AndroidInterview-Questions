@@ -1,5 +1,54 @@
 
 # AndroidInterview-Questions
+# How to upload image in sever?
+```
+ AsyncTask<Void, Void, HttpEntity> editProfileTask = new AsyncTask<Void, Void, HttpEntity>() {
+
+  @Override
+    protected HttpEntity doInBackground(Void... params) {          
+     HttpClient httpclient = new DefaultHttpClient();
+    HttpPost httppost = new HttpPost("Your url"); // your url
+
+  try {                     
+    MultipartEntity reqEntity = new MultipartEntity();
+    reqEntity.addPart("firstname",new StringBody(firstnameEV.getText().toString(),
+    "text/plain",Charset.forName("UTF-8")));
+               "text/plain",Charset.forName("UTF-8")));
+   if (file != null) {
+       reqEntity.addPart("image",new FileBody(((File) file),"application/zip"));
+      }         
+      httppost.setEntity(reqEntity);
+       HttpResponse resp = httpclient.execute(httppost);          
+     HttpEntity resEntity = resp.getEntity();
+     return resEntity;
+    } catch (ClientProtocolException e) {
+      e.printStackTrace();
+     } catch (IOException e) {
+     e.printStackTrace();
+     }return null;
+     }
+    @Override
+  protected void onPostExecute(HttpEntity resEntity) {
+ if (resEntity != null) {             
+   try {
+     JSONObject responseJsonObject = new JSONObject(EntityUtils.toString(resEntity));
+      String status = responseJsonObject.getString("status");             
+       if (status.equals("success")) {
+            Toast.makeText(activity, "Your Profile is updated", Toast.LENGTH_LONG).show();
+             String data = responseJsonObject.getString("data");              
+             isUpdatedSuccessfully=true;            
+       } else {
+          Toast.makeText(activity, "Profile not updated", Toast.LENGTH_LONG).show();
+     }
+    } catch (Exception e) {
+   e.printStackTrace();
+  }
+    }            
+  }
+   };
+  editProfileTask.execute(null, null, null)
+  ```
+
 # Type of broadcast reciever?
  Types of broadcast :Local,Normal,Ordered and Sticky <br>
  
