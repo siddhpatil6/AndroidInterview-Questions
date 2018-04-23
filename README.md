@@ -1,5 +1,12 @@
 
 # AndroidInterview-Questions
+
+# If the Fragment inside activity & activity screen roatated while making network call, apps may crash, so how to handle that crash?
+Manage the Object Inside a Retained Fragment <br>
+Ever since the introduction of Fragments in Android 3.0, the recommended means of retaining active objects across Activity instances is to wrap and manage them inside of a retained “worker” Fragment. By default, Fragments are destroyed and recreated along with their parent Activitys when a configuration change occurs. Calling Fragment#setRetainInstance(true) allows us to bypass this destroy-and-recreate cycle, signaling the system to retain the current instance of the fragment when the activity is recreated. As we will see, this will prove to be extremely useful with Fragments that hold objects like running Threads, AsyncTasks, Sockets, etc. <br>
+<br>
+The sample code below serves as a basic example of how to retain an AsyncTask across a configuration change using retained Fragments. The code guarantees that progress updates and results are delivered back to the currently displayed Activity instance and ensures that we never accidentally leak an AsyncTask during a configuration change. The design consists of two classes, a MainActivity…<br>
+<br>
 # How to make different layouts for phone and tablet?
 ```
 res/layout/main_activity.xml           # For handsets (smaller than 600dp available width)
