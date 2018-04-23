@@ -1,5 +1,16 @@
 
 # AndroidInterview-Questions
+# How to make different layouts for phone and tablet?
+```
+res/layout/main_activity.xml           # For handsets (smaller than 600dp available width)
+res/layout-sw600dp/main_activity.xml   # For 7” tablets (600dp wide and bigger)
+
+```
+or you can use
+
+```
+res/layout-xlarge/main_activity.xml
+```
 
 # How to share data between two applications?
 To share data betweem two apps we can use content provider, in that we can use content resolver to perform CRUD Operation.
