@@ -9,7 +9,9 @@ res/layout-sw600dp/main_activity.xml   # For 7” tablets (600dp wide and bigger
 or you can use
 
 ```
-res/layout-xlarge/main_activity.xml
+res/layout/main_activity.xml           # For handsets (smaller than 640dp x 480dp)
+res/layout-large/main_activity.xml     # For small tablets (640dp x 480dp and bigger)
+res/layout-xlarge/main_activity.xml    # For large tablets (960dp x 720dp and bigger)
 ```
 
 # How to share data between two applications?
