@@ -25,6 +25,7 @@ Measures a device's rate of rotation in rad/s around each of the three physical 
 Measures the proximity of an object in cm relative to the view screen of a device. This sensor is typically used to determine whether a handset is being held up to a person's ear.
 
 5. TYPE_TEMPERATURE
+
 Measures the temperature of the device in degrees Celsius (°C). This sensor implementation varies across devices and this sensor was replaced with the TYPE_AMBIENT_TEMPERATURE sensor in API Level 14
 
 
