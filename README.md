@@ -1,5 +1,29 @@
 
 # AndroidInterview-Questions
+# why we need UML diagram?
+
+A complex enterprise application with many collaborators will require a solid foundation of planning and clear, concise communication among team members as the project progresses.
+
+Visualizing user interactions, processes, and the structure of the system you're trying to build will help save time down the line and make sure everyone on the team is on the same page.
+
+## Structural UML diagrams
+
+* Class diagram
+* Package diagram
+* Object diagram
+* Component diagram
+* Composite structure diagram
+* Deployment diagram
+
+## Behavioral UML diagrams
+
+* Activity diagram
+* Sequence diagram
+* Use case diagram
+* State diagram
+* Communication diagram
+* Interaction overview diagram
+* Timing diagram
 
 # How to identify signal strength of WIFI and Mobile Data?
 Wifi:
