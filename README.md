@@ -1,5 +1,23 @@
 
 # AndroidInterview-Questions
+
+# How to identify signal strength of WIFI and Mobile Data?
+Wifi:
+
+```
+WifiManager wifiManager = (WifiManager)context.getSystemService(Context.WIFI_SERVICE);
+int linkSpeed = wifiManager.getConnectionInfo().getRssi();
+```
+
+In case of mobile it should work:
+```
+TelephonyManager telephonyManager =        (TelephonyManager)this.getSystemService(Context.TELEPHONY_SERVICE);
+CellInfoGsm cellinfogsm = (CellInfoGsm)telephonyManager.getAllCellInfo().get(0);
+CellSignalStrengthGsm cellSignalStrengthGsm = cellinfogsm.getCellSignalStrength();
+cellSignalStrengthGsm.getDbm();
+```
+Then You should compare this signal levels and if WIFI signal is better keep it turn on, but if mobile is better disconnect wifi
+
 # what feature came in oreo for development?
 ## Background Execution Limits
 
