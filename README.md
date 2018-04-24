@@ -1,5 +1,33 @@
 
 # AndroidInterview-Questions
+
+# Number of Sensors in android?
+categories of sensors.
+
+## Motion Sensors
+## Environmental sensors
+## Position sensors
+
+1. TYPE_ACCELEROMETER
+
+Measures the acceleration force in m/s2 that is applied to a device on all three physical axes (x, y, and z), including the force of gravity.
+
+2. TYPE_AMBIENT_TEMPERATURE
+
+Measures the ambient room temperature in degrees Celsius (°C). See note below.	
+
+3. TYPE_GYROSCOPE
+
+Measures a device's rate of rotation in rad/s around each of the three physical axes (x, y, and z).
+
+4. TYPE_PROXIMITY
+
+Measures the proximity of an object in cm relative to the view screen of a device. This sensor is typically used to determine whether a handset is being held up to a person's ear.
+
+5. TYPE_TEMPERATURE
+Measures the temperature of the device in degrees Celsius (°C). This sensor implementation varies across devices and this sensor was replaced with the TYPE_AMBIENT_TEMPERATURE sensor in API Level 14
+
+
 # why we need UML diagram?
 
 A complex enterprise application with many collaborators will require a solid foundation of planning and clear, concise communication among team members as the project progresses.
