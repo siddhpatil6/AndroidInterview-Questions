@@ -20,6 +20,21 @@ private final static UUID uuid = UUID.fromString("fc5ffc49-00e3-4c8b-9cf1-6b72aa
 BluetoothSocket bluetoothSocket = bluetoothServerSocket.accept();
 bluetoothServerSocket.close();
 ```
+## Setting Up a Connecting Client
+Once you have set up a device as a discoverable server holding an open "BluetoothServerSocket" and listening for connection request, any other Bluetooth device within range can discover and initiate connection request to it as a client. For that to happen, this client device must know the MAC address of that server device and a matching UUID to that particular connection.
+```
+listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        String  itemValue = (String) listview.getItemAtPosition(position);
+        String MAC = itemValue.substring(itemValue.length() - 17);
+        BluetoothDevice bluetoothDevice = bluetoothAdapter.getRemoteDevice(MAC);
+        // Initiate a connection request in a separate thread
+        ConnectingThread t = new ConnectingThread(bluetoothDevice);
+        t.start();
+    }
+});
+```
 https://www.codeproject.com/Articles/814814/Android-Connectivity
 
 # How to maintain stack of request androd ?
