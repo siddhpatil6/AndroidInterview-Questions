@@ -1,5 +1,26 @@
 
 # AndroidInterview-Questions
+# How to maintain connectivity in bluetooh, wifi?
+
+Discovering devices is only the first step to any Bluetooth operations, such as listening for incoming connection, requesting a connection, accepting a connection, and exchanging data. The connection mechanism follows that of the client-server model. In general, to implement a connection between two devices, one of them has to act as the server and the other the client. The server makes itself discoverable and waits for connection request from client. The client on the other hand initiates the connection using the server device's MAC address discovered during a discovery process.
+
+1.Call the "listenUsingRfcommWithServiceRecord()" method of the "BluetoothAdapter" handle to return a secure RFCOMM (Radio Frequency Communication) "BluetoothServerSocket" with Service Record. For example:
+
+```
+BluetoothServerSocket  bluetoothServerSocket = bluetoothAdapter.listenUsingRfcommWithServiceRecord(getString(R.string.app_name), uuid);
+```
+
+The first string parameter is the service name which could be the app name. The second parameter is a Universally Unique Identifier (UUID) which is a standardized 128-bit format for a string ID that is used to uniquely identify the Bluetooth service in the app. The system will automatically write the service name, UUID, and the RFCOMM channel to the Service Discovery Protocol (SDP) database on the device. Remote Bluetooth devices can then use this same UUID to query the SDP server and discover which channel and service to connect to. You can generate a UUID string using some online UUID generator, and then convert the string to a UUID like this:
+
+```
+private final static UUID uuid = UUID.fromString("fc5ffc49-00e3-4c8b-9cf1-6b72aad1001a");
+```
+2. Call the "accept()" method of the "BluetoothServerSocket" to start listening for connection requests. The call will block the current thread until a connection is accepted or an exception has occurred. The "BluetoothServerSocket" will only accept a connection request that has a matching UUID. Once a connection is accepted, "accept()" will return a "BluetoothSocket" to manage the connection. Once the "BluetoothSocket" is acquired, you should close "BluetoothServerSocket" by calling its "close()" method as it is no longer needed. For example:
+```
+BluetoothSocket bluetoothSocket = bluetoothServerSocket.accept();
+bluetoothServerSocket.close();
+```
+https://www.codeproject.com/Articles/814814/Android-Connectivity
 
 # How to maintain stack of request androd ?
 
