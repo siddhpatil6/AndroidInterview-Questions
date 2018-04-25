@@ -1,6 +1,13 @@
 
 # AndroidInterview-Questions
 
+# How to maintain stack of request androd ?
+
+# How to Handle seat booking in app?
+The classic method to do this is to use a transactional database (so there's no clashes) and to do a tentative allocation of the seat to you that expires after some length of time (e.g., 10 minutes for kiosks) that gives you enough time to pay. If the (customer-visible) transaction falls through or times out, the seat allocation can be released back into the pool. (All state changes are processed via the transactional database, and one customer-visible transaction might require many database-level transactions.)
+
+Airlines will use a similar system (though much more complex due to the need to handle multiple flight legs!) for booking seats online. I would imagine that the timeout would be considerably longer; airline tickets are usually booked further ahead than movie tickets, and are more expensive as well.
+
 # Number of Sensors in android?
 categories of sensors.
 
