@@ -1,5 +1,7 @@
 
 # AndroidInterview-Questions
+# What is the hashCode() and equals() used for?
+
 
 # What is the difference between using == and .equals on an object?
 Difference between == and .equals() method in Java
