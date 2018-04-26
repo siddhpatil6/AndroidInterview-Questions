@@ -1,5 +1,40 @@
 
 # AndroidInterview-Questions
+# Difference between wait and sleep
+A wait can be "woken up" by another thread calling notify on the monitor which is being waited on whereas a sleep cannot. Also a wait (and notify) must happen in a block synchronized on the monitor object whereas sleep does not:
+```
+Object mon = ...;
+synchronized (mon) {
+    mon.wait();
+} 
+```
+At this point the currently executing thread w
+aits and releases the monitor. Another thread may do
+```
+synchronized (mon) { mon.notify(); }
+```
+(On the same mon object) and the first thread (assuming it is the only thread waiting on the monitor) will wake up.
+
+You can also call notifyAll if more than one thread is waiting on the monitor - this will wake all of them up. However, only one of the threads will be able to grab the monitor (remember that the wait is in a synchronized block) and carry on - the others will then be blocked until they can acquire the monitor's lock.
+
+Another point is that you call wait on Object itself (i.e. you wait on an object's monitor) whereas you call sleep on Thread.
+
+Yet another point is that you can get spurious wakeups from wait (i.e. the thread which is waiting resumes for no apparent reason). You should always wait whilst spinning on some condition as follows:
+```
+synchronized {
+    while (!condition) { mon.wait(); }
+}
+```
+# How thread communicate with each other?
+Inter-thread communication in Java
+Inter-thread communication or Co-operation is all about allowing synchronized threads to communicate with each other.
+
+Cooperation (Inter-thread communication) is a mechanism in which a thread is paused running in its critical section and another thread is allowed to enter (or lock) in the same critical section to be executed.It is implemented by following methods of Object class:
+
+wait()
+notify()
+notifyAll()
+
 # How to maintain connectivity in bluetooh, wifi?
 
 Discovering devices is only the first step to any Bluetooth operations, such as listening for incoming connection, requesting a connection, accepting a connection, and exchanging data. The connection mechanism follows that of the client-server model. In general, to implement a connection between two devices, one of them has to act as the server and the other the client. The server makes itself discoverable and waits for connection request from client. The client on the other hand initiates the connection using the server device's MAC address discovered during a discovery process.
