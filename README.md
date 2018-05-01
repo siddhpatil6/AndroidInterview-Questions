@@ -1,5 +1,12 @@
 
 # AndroidInterview-Questions
+
+# difference between setContetView and inflate method?
+
+# if we didn't mentioned setContentView in activity?
+
+# broadcast receiver runs on which thread?
+
 # What is the hashCode() and equals() used for?
 
 
