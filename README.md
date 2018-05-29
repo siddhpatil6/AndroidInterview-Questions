@@ -1,6 +1,21 @@
 
 # AndroidInterview-Questions
+# What is AsyncLoader?
+You can have a look at the compatibility library's source code to get more info. What a FragmentActivity does is:
 
+keep a list of LoaderManager's
+make sure they don't get destroyed when you flip your phone (or another configuration change occurs) by saving instances using onRetainNonConfigurationInstance()
+kick the right loader when you call initLoader() in your Activity
+You need to use the LoaderManager to interface with the loaders, and provide the needed callbacks to create your loader(s) and populate your views with the data they return.
+
+Generally it should be easier than managing AsyncTask's yourself. However, AsyncTaskLoader is not exactly well documented, so you should study the example in the docs and/or model your code after CursorLoader.
+
+# How to handle AsyncTask when Activity Destroyed?
+
+AsyncTask is an abstract Android class which helps the Android applications to handle the Main UI thread in efficient way. AsyncTask class allows us to perform long lasting tasks/background operations and show the result on the UI thread without affecting the main thread.
+
+ AsyncTask processes are not automatically killed by the OS. AsyncTask processes run in the background and is responsible for finishing it's own job in any case. You can cancel your AsycnTask by calling cancel(true) method. This will cause subsequent calls to isCancelled() to return true. After invoking this method, onCancelled(Object) method is called instead of onPostExecute() after doInBackground() returns.
+ 
 # difference between setContetView and inflate method?
 
 # if we didn't mentioned setContentView in activity?
