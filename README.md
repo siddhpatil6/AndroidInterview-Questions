@@ -1,5 +1,8 @@
 
 # AndroidInterview-Questions
+# What is App Indexing?
+# What is APK Expansion?
+# How deep linking works? what tags we use?
 # What is AsyncLoader?
 You can have a look at the compatibility library's source code to get more info. What a FragmentActivity does is:
 
