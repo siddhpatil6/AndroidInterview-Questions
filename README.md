@@ -4,6 +4,9 @@
 # What is APK Expansion?
 # How deep linking works? what tags we use?
 # What is AsyncLoader?
+
+# What is Multithreadind & How we can priotorize them?
+
 You can have a look at the compatibility library's source code to get more info. What a FragmentActivity does is:
 
 keep a list of LoaderManager's
