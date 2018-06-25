@@ -1,9 +1,12 @@
 
 # AndroidInterview-Questions
+
 # Why to use Application class in android?
 https://github.com/codepath/android_guides/wiki/Understanding-the-Android-Application-Class
 
 # wht to use multiDex android?
+https://android.jlelse.eu/how-to-configure-multidex-in-an-application-android-f221198707ed
+https://stackoverflow.com/questions/33588459/what-is-android-multidex
 
 # What is App Indexing?
 # What is APK Expansion?
