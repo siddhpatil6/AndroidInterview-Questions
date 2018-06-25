@@ -1,5 +1,10 @@
 
 # AndroidInterview-Questions
+# Why to use Application class in android?
+https://github.com/codepath/android_guides/wiki/Understanding-the-Android-Application-Class
+
+# wht to use multiDex android?
+
 # What is App Indexing?
 # What is APK Expansion?
 # How deep linking works? what tags we use?
