@@ -1,5 +1,9 @@
 
 # AndroidInterview-Questions
+# Explain MVVM?
+
+https://medium.com/upday-devs/android-architecture-patterns-part-3-model-view-viewmodel-e7eeee76b73b
+https://medium.com/@husayn.hakeem/android-by-example-mvvm-data-binding-introduction-part-1-6a7a5f388bf7
 
 # Why to use Application class in android?
 https://github.com/codepath/android_guides/wiki/Understanding-the-Android-Application-Class
