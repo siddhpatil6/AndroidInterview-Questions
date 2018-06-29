@@ -2,7 +2,7 @@
 # AndroidInterview-Questions
 
 # How to do ViewBinding or how we can achive it?
-ButterKnife
+ButterKnife <br>
 https://www.androidhive.info/2017/10/android-working-with-butterknife-viewbinding-library/
 
 # why compile changed to implementation?
