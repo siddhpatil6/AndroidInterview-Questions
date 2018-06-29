@@ -1,5 +1,10 @@
 
 # AndroidInterview-Questions
+
+# How to do ViewBinding or how we can achive it?
+ButterKnife
+https://www.androidhive.info/2017/10/android-working-with-butterknife-viewbinding-library/
+
 # why compile changed to implementation?
 https://stackoverflow.com/questions/44402024/why-android-change-compile-to-implementation-configuration-in-gradle-depende
 https://stackoverflow.com/questions/44493378/whats-the-difference-between-implementation-and-compile-in-gradle
