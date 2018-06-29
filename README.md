@@ -1,5 +1,9 @@
 
 # AndroidInterview-Questions
+# why compile changed to implementation?
+https://stackoverflow.com/questions/44402024/why-android-change-compile-to-implementation-configuration-in-gradle-depende
+https://stackoverflow.com/questions/44493378/whats-the-difference-between-implementation-and-compile-in-gradle
+
 # Explain MVVM?
 
 https://medium.com/upday-devs/android-architecture-patterns-part-3-model-view-viewmodel-e7eeee76b73b
