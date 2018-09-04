@@ -1,8 +1,7 @@
 
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
-
-<script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('buy me a Coffee', '#46b798', 'F1F1J3S3');kofiwidget2.draw();</script> 
+ 
 
 # How to do ViewBinding or how we can achive it?
 ButterKnife <br>
