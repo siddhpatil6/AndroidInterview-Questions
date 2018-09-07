@@ -24,7 +24,23 @@ https://android.jlelse.eu/how-to-configure-multidex-in-an-application-android-f2
 https://stackoverflow.com/questions/33588459/what-is-android-multidex
 
 # What is App Indexing?
+According to Google, “App Indexing lets Google index apps just like websites. Deep links to your Android app appear in Google Search results, letting users get to your native mobile experience quickly, landing exactly on the right content within your app.”
+
+What does this mean in practical terms?
+
+If you perform a Google search on a mobile device, the search results will include not just web pages, but also relevant content that is within an app.<br>
+
+https://firebase.google.com/docs/app-indexing/android/app
+https://developer.android.com/training/app-indexing/
+https://searchengineland.com/app-indexing-matters-future-search-216884
+
+
 # What is APK Expansion?
+
+Google Play currently requires that your APK file be no more than 100MB. For most applications, this is plenty of space for all the application's code and assets. However, some apps need more space for high-fidelity graphics, media files, or other large assets. Previously, if your app exceeded 100MB, you had to host and download the additional resources yourself when the user opens the app. Hosting and serving the extra files can be costly, and the user experience is often less than ideal. To make this process easier for you and more pleasant for users, Google Play allows you to attach two large expansion files that supplement your APK.
+
+Google Play hosts the expansion files for your application and serves them to the device at no cost to you. The expansion files are saved to the device's shared storage location (the SD card or USB-mountable partition; also known as the "external" storage) where your app can access them. On most devices, Google Play downloads the expansion file(s) at the same time it downloads the APK, so your application has everything it needs when the user opens it for the first time. In some cases, however, your application must download the files from Google Play when your application starts.
+
 # How deep linking works? what tags we use?
 # What is AsyncLoader?
 
