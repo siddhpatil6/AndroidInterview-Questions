@@ -25,10 +25,11 @@ https://stackoverflow.com/questions/33588459/what-is-android-multidex
 
 # What is App Indexing?
 Firebase App Indexing gets your app into Google Search. If users have your app installed, they can launch your app and go directly to the content they're searching for. App Indexing reengages your app users by helping them find both public and personal content right on their device, even offering query autocompletions to help them more quickly find what they need. If users don’t yet have your app, relevant queries trigger an install card for your app in Search results.
-https://firebase.google.com/docs/app-indexing/
+https://firebase.google.com/docs/app-indexing/ <br>
 https://searchengineland.com/app-indexing-matters-future-search-216884
 
 # What is APK Expansion?
+
 # How deep linking works? what tags we use?
 # What is AsyncLoader?
 
