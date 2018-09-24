@@ -38,10 +38,10 @@ https://support.google.com/googleplay/android-developer/answer/2481797?hl=en
 
 # How deep linking works? what tags we use?
 Deeplinks are a concept that help users navigate between the web and applications. They are basically URLs which navigate users directly to the specific content in applications.
-  ##What is Android App Links?
+<b> What is Android App Links? </b>
 On the other hand, Android App Links allow an app to designate itself as the default handler of application domain or URL. Unfortunately It works only on on Android 6.0 (API level 23) and higher.<br>
 Tags - <br>
-<action> <category> <data> <br>
+action category data <br>
 P.S - Please check link to clearly understand - https://medium.com/@muratcanbur/intro-to-deep-linking-on-android-1b9fe9e38abd
 
 # What is AsyncLoader? <br>
