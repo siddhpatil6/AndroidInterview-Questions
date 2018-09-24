@@ -29,8 +29,21 @@ https://firebase.google.com/docs/app-indexing/ <br>
 https://searchengineland.com/app-indexing-matters-future-search-216884
 
 # What is APK Expansion?
+Google Play currently requires that your APK file be no more than 100MB. For most applications, this is plenty of space for all the application's code and assets. However, some apps need more space for high-fidelity graphics, media files, or other large assets. Previously, if your app exceeded 100MB, you had to host and download the additional resources yourself when the user opens the app. Hosting and serving the extra files can be costly, and the user experience is often less than ideal. To make this process easier for you and more pleasant for users, Google Play allows you to attach two large expansion files that supplement your APK.
+
+Google Play hosts the expansion files for your application and serves them to the device at no cost to you. The expansion files are saved to the device's shared storage location (the SD card or USB-mountable partition; also known as the "external" storage) where your app can access them. On most devices, Google Play downloads the expansion file(s) at the same time it downloads the APK, so your application has everything it needs when the user opens it for the first time. In some cases, however, your application must download the files from Google Play when your application starts.
+
+https://developer.android.com/google/play/expansion-files <br>
+https://support.google.com/googleplay/android-developer/answer/2481797?hl=en
 
 # How deep linking works? what tags we use?
+Deeplinks are a concept that help users navigate between the web and applications. They are basically URLs which navigate users directly to the specific content in applications.
+  ##What is Android App Links?
+On the other hand, Android App Links allow an app to designate itself as the default handler of application domain or URL. Unfortunately It works only on on Android 6.0 (API level 23) and higher.<br>
+Tags - <br>
+<action> <category> <data> <br>
+P.S - Please check link to clearly understand - https://medium.com/@muratcanbur/intro-to-deep-linking-on-android-1b9fe9e38abd
+
 # What is AsyncLoader?
 
 # What is Multithreadind & How we can priotorize them?
