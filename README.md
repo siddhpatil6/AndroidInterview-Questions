@@ -44,7 +44,8 @@ Tags - <br>
 <action> <category> <data> <br>
 P.S - Please check link to clearly understand - https://medium.com/@muratcanbur/intro-to-deep-linking-on-android-1b9fe9e38abd
 
-# What is AsyncLoader?
+# What is AsyncLoader? <br>
+AsyncTaskLoader is the loader equivalent of AsyncTask. AsyncTaskLoader provides a method, loadInBackground(), that runs on a separate thread. The results of loadInBackground() are automatically delivered to the UI thread, by way of the onLoadFinished() LoaderManager callback <br>
 
 # What is Multithreadind & How we can priotorize them?
 
