@@ -65,13 +65,18 @@ AsyncTask is an abstract Android class which helps the Android applications to h
  AsyncTask processes are not automatically killed by the OS. AsyncTask processes run in the background and is responsible for finishing it's own job in any case. You can cancel your AsycnTask by calling cancel(true) method. This will cause subsequent calls to isCancelled() to return true. After invoking this method, onCancelled(Object) method is called instead of onPostExecute() after doInBackground() returns.
  
 # difference between setContetView and inflate method?
+<br>
+setContentView is an Activity method only. Each Activity is provided with a FrameLayout with id "@+id/content" (i.e. the content view). Whatever view you specify in setContentView will be the view for that Activity. Note that you can also pass an instance of a view to this method, e.g. setContentView(new WebView(this)); The version of the method that you are using will inflate the view for you behind the scenes.
 
+Fragments, on the other hand, have a lifecycle method called onCreateView which returns a view (if it has one). The most common way to do this is to inflate a view in XML and return it in this method. In this case you need to inflate it yourself though. Fragments don't have a setContentView method
+<br>
 # if we didn't mentioned setContentView in activity?
 
 # broadcast receiver runs on which thread?
+UI Thread
 
 # What is the hashCode() and equals() used for?
-
+https://www.journaldev.com/21095/java-equals-hashcode
 
 # What is the difference between using == and .equals on an object?
 Difference between == and .equals() method in Java
