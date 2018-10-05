@@ -748,6 +748,9 @@ http://www.vogella.com/tutorials/AndroidTaskScheduling/article.html
 
 # What is Job Dispatcher?
 
+The Firebase JobDispatcher is a library for scheduling background jobs in your Android app. It provides a JobScheduler-compatible API that works on all recent versions of Android (API level 14+) that have Google Play services installed.
+
+
 # How we can read data from database?
 ```
 public void getData() {
