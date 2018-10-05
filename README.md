@@ -2,7 +2,6 @@
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
  
-
 # How to do ViewBinding or how we can achive it?
 ButterKnife <br>
 https://www.androidhive.info/2017/10/android-working-with-butterknife-viewbinding-library/
@@ -985,13 +984,13 @@ https://stackoverflow.com/questions/4858026/android-alternate-layout-xml-for-lan
 https://stackoverflow.com/questions/10126845/handle-screen-rotation-without-losing-data-android
 
 # What is handler and why Handler?<br>
-A Handler allows communicating back with UI thread from other background thread. This is useful in android as android doesn’t allow other threads to communicate directly with UI thread.
+A Handler allows communicating back with UI thread from other background thread. This is useful in android as android doesn’t allow other threads to communicate directly with UI thread. <br>
 
-* Why
+* Why <br>
 
-If you need to update the UI from another main Thread, you need to synchronize with the main thread. Because of this restrictions and complexity, Android provides additional constructed classes to handle concurrently in comparison with standard Java i.e. Handler or AsyncTask.
+If you need to update the UI from another main Thread, you need to synchronize with the main thread. Because of this restrictions and complexity, Android provides additional constructed classes to handle concurrently in comparison with standard Java i.e. Handler or AsyncTask. <br>
 
-https://cdn-images-1.medium.com/max/1600/1*wlcTBJ4C-T8Av9zdTbZccA.png
+![](https://cdn-images-1.medium.com/max/1600/1*wlcTBJ4C-T8Av9zdTbZccA.png)
 
 https://medium.com/@ankit.sinhal/handler-in-android-d138c1f4980e<br>
 
