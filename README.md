@@ -1326,6 +1326,18 @@ Basically fragments are divided as three stages as shown below.<br>
 * http://techtej.blogspot.in/2011/03/android-thread-constructspart-4.html
 
 **How to avoid memory leak?**<br>
+<b> Holding reference of ui specific object in the background.</b> <br>
+<b> Using static views </b> <br>
+<b> Using static context </b> <br>
+<b> Using Context </b> <br>
+ Be careful while using context, deciding which context is suitable at places is most important. Use application context possible and use activity context only if required.
+<b> Never forget to say goodbye to listeners after being served.</b> <br>
+<b> Using inner class </b> <br>
+<b> Using anonymous class </b> <br>
+<b> Using views in collection </b> <br>
+
+
+
 https://mindorks.com/blog/detecting-and-fixing-memory-leaks-in-android<br>
 
 **What is SQLite and Methods?**<br>
