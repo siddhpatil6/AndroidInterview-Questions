@@ -1319,22 +1319,22 @@ Basically fragments are divided as three stages as shown below.<br>
 * Replace is the first removal of the same id all the fragments, and then add the current fragment.
 * multi-layer is certainly more than a layer of waste, so it is recommended to use replace
 
-**Service vs AsyncTask?**<br>
+### Service vs AsyncTask?
 * http://vardhan-justlikethat.blogspot.in/2013/11/android-comparision-chart-asynctask-vs.html
 
 **Difference Between Service,Thread,IntentService,AsyncTask?** <br>
 * http://techtej.blogspot.in/2011/03/android-thread-constructspart-4.html
 
-**How to avoid memory leak?**<br>
-<b> Holding reference of ui specific object in the background.</b> <br>
-<b> Using static views </b> <br>
-<b> Using static context </b> <br>
-<b> Using Context </b> <br>
+### How to avoid memory leak?**<br>
+*  Holding reference of ui specific object in the background. <br>
+*  Using static views <br>
+* Using static context  <br>
+* Using Context <br>
  Be careful while using context, deciding which context is suitable at places is most important. Use application context possible and use activity context only if required.
-<b> Never forget to say goodbye to listeners after being served.</b> <br>
-<b> Using inner class </b> <br>
-<b> Using anonymous class </b> <br>
-<b> Using views in collection </b> <br>
+*  Never forget to say goodbye to listeners after being served. <br>
+* Using inner class  <br>
+* Using anonymous class  <br>
+*  Using views in collection <br>
 
 
 
@@ -1405,7 +1405,7 @@ Lists the classes and members that were not obfuscated.<br>
 Lists the code that was removed from the APK.<br>
 These files are saved at <module-name>/build/outputs/mapping/release/.<br>
 
-**Why to Use keep in proguard?**
+### Why to Use keep in proguard?
 * To fix errors and force ProGuard to keep certain code, add a -keep line in the ProGuard configuration file. For example:
 
 `-keep public class MyClass`<br>
