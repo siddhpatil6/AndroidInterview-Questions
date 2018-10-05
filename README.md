@@ -799,7 +799,13 @@ NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, CHANN
 ```
 
 
-### What are launching mode of Activity?
+### What are launching mode of Activity? <br>
+There are four launch modes for activity. They are: <br>
+1. standard <br>
+2. singleTop <br>
+3. singleTask <br>
+4. singleInstance <br>
+
 https://android.jlelse.eu/android-activity-launch-mode-e0df1aa72242
 https://inthecheesefactory.com/blog/understand-android-activity-launchmode/en
 
