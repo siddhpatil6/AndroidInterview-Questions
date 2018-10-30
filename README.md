@@ -5,7 +5,7 @@
  # Difference between String,StringBuffer ,StringBuilder?
   ![](https://www.startertutorials.com/corejava/wp-content/uploads/2015/09/Strings-Classes-in-Java.png)
  
- # Acccess modifiers
+ # Access modifiers
  ![](https://www.geeksforgeeks.org/wp-content/uploads/Access-Modifiers-in-Java.png)
  
 # How to do ViewBinding or how we can achive it?
