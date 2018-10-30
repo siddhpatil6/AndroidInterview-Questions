@@ -1,6 +1,9 @@
 
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
+
+# can we create instance of abstract class?
+No, you cannot create an instance of an abstract class because it does not have a complete implementation. The purpose of an abstract class is to function as a base for subclasses. It acts like a template, or an empty or partially empty structure, you should extend it and build on it before you can use it.
  
 # Lateinit versus lazy
 At first, lateinit var and by lazy {...} sound quite similar. However, there are significant differences between the two of them: <br>
@@ -37,9 +40,9 @@ val in kotlin is like final keyword in java
  
 
 ### Other ways to says same :
-Variables defined with varare mutable (Read and Write)
+Variables defined with var are mutable (Read and Write)
 
-Variables defined with valare immutable (Read only)
+Variables defined with val are immutable (Read only)
  
  # Difference between String,StringBuffer ,StringBuilder?
   ![](https://www.startertutorials.com/corejava/wp-content/uploads/2015/09/Strings-Classes-in-Java.png)
