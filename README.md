@@ -2,6 +2,34 @@
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
 
+
+# What is functional interface?
+Functional Interfaces In Java
+A functional interface is an interface that contains only one abstract method. They can have only one functionality to exhibit. From Java 8 onwards, lambda expressions can be used to represent the instance of a functional interface. A functional interface can have any number of default methods. Runnable, ActionListener, Comparable are some of the examples of functional interfaces.
+Before Java 8, we had to create anonymous inner class objects or implement these interfaces.
+
+```
+// Java program to demonstrate functional interface 
+  
+class Test 
+{ 
+    public static void main(String args[]) 
+    { 
+        // create anonymous inner class object 
+        new Thread(new Runnable() 
+        { 
+            @Override
+            public void run() 
+            { 
+                System.out.println("New thread created"); 
+            } 
+        }).start(); 
+    } 
+} 
+```
+
+
+
 # Difference between abstract class and interface?
 
 https://www.javatpoint.com/difference-between-abstract-class-and-interface
