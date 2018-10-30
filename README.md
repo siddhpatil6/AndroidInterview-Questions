@@ -2,6 +2,36 @@
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
  
+ # Differenece between var and val?
+ Var – Variable
+– The object stored in the variable could change (vary) in time. Means you can change or assign new value in variable latter.
+
+```
+var reasignableString = "hello"
+reasignableString = "Hello eyehunt" // OK
+
+var reasignableString = "hello"
+reasignableString = "Hello eyehunt" // OK
+``` 
+
+Val – Value
+– The object stored in val, could not vary in time. Once assigned the val becomes read only, like a constant in Java Programming language (Final variables etc). The properties of the object (as Val) could be changed, but the object itself is read-only.
+
+```
+val constant = "hello"
+constant = "Var vs Val" // Not allowed for `val`
+
+val constant = "hello"
+constant = "Var vs Val" // Not allowed for `val`
+val in kotlin is like final keyword in java
+```
+ 
+
+### Other ways to says same :
+Variables defined with varare mutable (Read and Write)
+
+Variables defined with valare immutable (Read only)
+ 
  # Difference between String,StringBuffer ,StringBuilder?
   ![](https://www.startertutorials.com/corejava/wp-content/uploads/2015/09/Strings-Classes-in-Java.png)
  
