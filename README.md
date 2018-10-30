@@ -2,6 +2,31 @@
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
 
+# How do we return multiple values from a function in Kotlin?
+
+You can't create arbitrary tuples in Kotlin, instead, you can use data classes. One option is using the built in Pair and Triple classes that are generic and can hold two or three values, respectively. You can use these combined with destructuring declarations like this:
+
+```
+fun getPair() = Pair(1, "foo")
+
+val (num, str) = getPair()
+You can also destructure a List or Array, for up to the first 5 elements:
+
+fun getList() = listOf(1, 2, 3, 4, 5)
+
+val (a, b, c, d, e) = getList()
+The most idiomatic way however would be to define your own data class, which allows you to return a meaningful type from your function:
+
+data class Time(val hour: Int, val minute: Int, val second: Int)
+
+fun getTime(): Time {
+    ...
+    return Time(hour, minute, second)
+}
+
+val (hour, minute, second) = getTime()
+```
+
 
 # What is functional interface?
 Functional Interfaces In Java
