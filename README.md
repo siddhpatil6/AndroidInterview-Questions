@@ -1,6 +1,103 @@
 
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
+# What is 
+In particular if you have the following code:
+```
+class Book{
+
+   fun update(title: String, subtitle : String = "No Subtitle", abridged : Boolean = false){
+      
+   }
+}
+```
+In kotlin you can simply make a call like the following:
+
+```
+book.update("Arbian Nights")
+```
+
+Or just specify a particular parameter that you want:
+
+book.update("Arabian Nights", abridged = true)
+Or even change the optional parameter order:
+
+```
+book.update("Arabian Nights", abridged = true, subtitle = "An Oxford Translation")
+```
+
+Going back to the question, since Java doesn’t have support for optional parameters how is this handled? Does Kotlin generate all the different variations making any combination safe? I can see how trying to support this on the Java side could lead to problems with allowing changeable order. For example if the function was defined as this:
+
+```
+class Book{
+
+   fun update(title: String, subtitle : String = "No Subtitle", author : String = “Jim Baca”){
+      
+   }
+}
+```
+
+And we wanted to call this from the Java side. How would the compiler know the difference between:
+
+```
+book.update("Arabian Nights", “No Subtitle”);
+```
+
+And this method call?
+
+```
+book.update("Arabian Nights", “Jim Baca”);
+```
+
+Given the above it’s not surprising that Kotlin doesn’t support optional parameters on the Java side. I was hoping for optional parameters would define the following functions:
+
+
+```
+update(String title)
+update(String title, String subtitle)
+update(String title, String subtitle, String author)
+```
+
+
+Update: Thanks Kirill Rakhman for pointing out that you can use @JvmOverloads annotation before your method definition you get this desired effect.
+
+Of course this would create an odd situation since it doesn’t allow for parameter reordering which. Optional parameters in Kotlin become mandatory in Java and the parameter order is the exact same as it is defined in Kotlin, unless @JvmOverloads annotation is used. E.g. if we had this definition in Kotlin:
+
+
+```
+class Book{
+
+   fun update(title: String, subtitle : String = "No Subtitle", author : String = “Jim Baca”){
+      
+   }
+}
+```
+
+Then the correct way of calling the function would be:
+
+```
+book.update("Arabian Nights", “No Subtitle”, “Jim Baca”);
+```
+
+However if we had this:
+
+```
+class Book{
+   
+   @JvmOverloads fun update(title: String, subtitle : String = "No Subtitle", author : String = “Jim Baca”){
+      
+   }
+}
+```
+
+Then we could call it with any of the following
+
+```
+book.update("Arabian Nights");
+book.update("Arabian Nights", "No Subtitle");
+book.update("Arabian Nights", "No Subtitle", "Jim Baca");
+```
+
 
 # How do we return multiple values from a function in Kotlin?
 
