@@ -2,6 +2,8 @@
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
 
+# Differennce betweeen Data Class and Class?
+
 # What is view binding library or like butterknife in kotlin?
 
 https://antonioleiva.com/kotlin-android-extensions/
