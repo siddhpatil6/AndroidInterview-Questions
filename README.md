@@ -2,6 +2,15 @@
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
  
+# Lateinit versus lazy
+At first, lateinit var and by lazy {...} sound quite similar. However, there are significant differences between the two of them:
+
+The lazy {...} delegate can only be used for val properties; lateinit can only be used for var properties.
+A lateinit var property can't be compiled into a final field, hence you can't achieve immutability.
+A lateinit var property has a backing field to store the value, whereas lazy {...} creates a delegate object that acts as a container for the value once created and provides a getter for the property. If you need the backing field to be present in the class, you will have to use lateinit.
+The lateinit property cannot be used for nullable properties or Java primitive types. This is a restriction imposed ...
+
+ 
  # Differenece between var and val?
  Var – Variable
 – The object stored in the variable could change (vary) in time. Means you can change or assign new value in variable latter.
