@@ -2,6 +2,9 @@
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
  
+ # Acccess modifiers
+ ![](https://www.geeksforgeeks.org/wp-content/uploads/Access-Modifiers-in-Java.png)
+ 
 # How to do ViewBinding or how we can achive it?
 ButterKnife <br>
 https://www.androidhive.info/2017/10/android-working-with-butterknife-viewbinding-library/
