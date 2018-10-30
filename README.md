@@ -2,6 +2,10 @@
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
 
+# Difference between abstract class and interface?
+
+https://www.javatpoint.com/difference-between-abstract-class-and-interface
+
 # can we create instance of abstract class?
 No, you cannot create an instance of an abstract class because it does not have a complete implementation. The purpose of an abstract class is to function as a base for subclasses. It acts like a template, or an empty or partially empty structure, you should extend it and build on it before you can use it.
  
