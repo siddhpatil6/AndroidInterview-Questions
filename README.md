@@ -1,7 +1,12 @@
 
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
-# What is 
+
+# What is view binding library or like butterknife in kotlin?
+
+https://antonioleiva.com/kotlin-android-extensions/
+
+# What is Optional Parameters in Kotlin?
 In particular if you have the following code:
 ```
 class Book{
