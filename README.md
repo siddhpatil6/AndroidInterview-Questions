@@ -1,6 +1,10 @@
 
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
+
+# Difference between run and apply in kotlin ?
+
+
 # How to give button equal space?
 https://stackoverflow.com/questions/37518745/evenly-spacing-views-using-constraintlayout
 
