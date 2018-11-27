@@ -3,8 +3,8 @@
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
 
 # What is MVVM?
-## Android MVVM
-## MVVM stands for Model, View, ViewModel.
+### Android MVVM
+### MVVM stands for Model, View, ViewModel.
 
 ### Model:
 This holds the data of the application. It cannot directly talk to the View. Generally, it’s recommended to expose the data to the ViewModel through Observables.
