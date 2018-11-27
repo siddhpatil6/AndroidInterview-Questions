@@ -14,7 +14,10 @@ It represents the UI of the application devoid of any Application Logic. It obse
 It acts as a link between the Model and the ViewModel. It’s responsible for transforming the data from the Model. It provides data streams to the View. It also uses hooks or callbacks to update the View. It’ll ask for the data from the Model.
 The following flow illustrates the core MVVM Pattern.
 
-android mvvm pattern
+### android mvvm pattern
+
+ ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/android-mvvm-pattern.png)
+ 
 
 ### How does this differ from MVP?
 
