@@ -30,8 +30,8 @@ The View and the ViewModel are in a 1 to many relationship.
 The ViewModel does not know that the View is listening to it.
 
 ## There are two ways to implement MVVM in Android:
- Data Binding
- RXJava
+ 1. Data Binding
+ 2. RXJava
 
 
 # Difference between run and apply in kotlin ?
