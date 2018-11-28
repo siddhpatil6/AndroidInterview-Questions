@@ -1,6 +1,20 @@
 
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
+# Constraint Layout
+Concepts -
+### 1.0 Version
+1. Constraints
+2. Margins
+3. Baselines
+4. Chains
+
+### 2.0 Version
+1. Guidelines
+2. Barriers
+3. Groups
+4. Helpers
+
 
 # What is MVVM?
 ### Android MVVM
