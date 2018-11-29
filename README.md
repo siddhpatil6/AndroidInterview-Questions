@@ -2,6 +2,15 @@
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
 
+# Replacing Loaders with ViewModel
+## Loading data with loaders
+[![](https://developer.android.com/images/topic/libraries/architecture/viewmodel-replace-loader.png)
+
+## Loading data with ViewModel
+
+[![](https://developer.android.com/images/topic/libraries/architecture/viewmodel-replace-loader.png)
+
+
 # Android Architecture Component -
 ## LiveData -
 LiveData is an observable data holder. It is also a lifecycle aware. By lifecycle aware I mean, it can only be observed in the context of a lifecycle, more precisely in the context of an Activity or Fragment lifecycle. By passing the reference of an Activity or Fragment, it can understand whether your UI onScreen, offScreen or Destroyed. After passing the UI object to LiveData, whenever the data in the live data changes. It notifies the lifecycle owner with updates and then the UI redraw itself with updates.
