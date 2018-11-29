@@ -1,7 +1,6 @@
 
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
-# Constraint Layout
 
 # Android Architecture Component -
 ## LiveData -
@@ -27,6 +26,8 @@ If an observer is recreated due to a configuration change, like device rotation,
 ### Sharing resources: 
 You can extend LiveData object using the singleton pattern to wrap system services so that they can be shared in your app.
 
+
+# Constraint Layout
 Concepts -
 ### 1.0 Version
 1. Constraints
