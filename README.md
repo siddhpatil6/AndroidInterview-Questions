@@ -2,6 +2,20 @@
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
 # Constraint Layout
+
+# Android Architecture Component -
+## LiveData -
+LiveData is an observable data holder. It is also a lifecycle aware. By lifecycle aware I mean, it can only be observed in the context of a lifecycle, more precisely in the context of an Activity or Fragment lifecycle. By passing the reference of an Activity or Fragment, it can understand whether your UI onScreen, offScreen or Destroyed. After passing the UI object to LiveData, whenever the data in the live data changes. It notifies the lifecycle owner with updates and then the UI redraw itself with updates.
+
+### Advantages of LiveData:
+No memory leaks: Observers are bound to Lifecycle objects and clean up after themselves when their associated life cycle destroyed.
+No crashes due to stopped activities: It means if an activity is in the back stack, then it doesn’t receive any LiveData stream.
+Always up to date: It receives the latest data upon becoming active again.
+No more manual life-cycling handle: Observers just observe relevant data and don’t stop or resume observation. LiveData manages all of this under the hood.
+Ensures your UI matches the data state: LiveData notifies the observer object whenever lifecycle state changes. Instead of updating the UI every-time when the data changes, your observer can update the UI every time there’s a change.
+Proper configuration changes: If an observer is recreated due to a configuration change, like device rotation, it immediately receives the latest available data.
+Sharing resources: You can extend LiveData object using the singleton pattern to wrap system services so that they can be shared in your app.
+
 Concepts -
 ### 1.0 Version
 1. Constraints
