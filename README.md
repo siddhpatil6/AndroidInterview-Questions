@@ -45,7 +45,8 @@ Concepts -
 4. Chains
 
 ### 2.0 Version
-1. Guidelines
+1. Guidelines <br>
+- https://www.youtube.com/watch?v=GDL7fWejHkI
 2. Barriers
 3. Groups
 4. Helpers
