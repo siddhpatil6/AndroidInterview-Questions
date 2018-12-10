@@ -26,6 +26,9 @@ apply plugin: 'kotlin-android-extensions'
 	```
 	
 # Replacing Loaders with ViewModel
+
+[![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/android-mvvm-pattern.png)
+
 ## Loading data with loaders
 [![](https://developer.android.com/images/topic/libraries/architecture/viewmodel-replace-loader.png)
 
