@@ -2,6 +2,23 @@
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
 
+# How to make class parceable in kotlin?
+ 
+	 ```
+	 android
+	 {
+	    androidExtensions 
+	    {
+		experimental = true
+	    }
+	  }
+	 ```
+ <b>In data class </b>
+	```
+	@Parcelize
+	data class Error(var ErrorCause:String,var MessageToUser:String,var Code: Int?):Parcelable
+	```
+	
 # Replacing Loaders with ViewModel
 ## Loading data with loaders
 [![](https://developer.android.com/images/topic/libraries/architecture/viewmodel-replace-loader.png)
