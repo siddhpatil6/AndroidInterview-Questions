@@ -4,7 +4,7 @@
 
 # How to make class parceable in kotlin?
  
-	 ```
+	
 	 android
 	 {
 	    androidExtensions 
@@ -12,7 +12,7 @@
 		experimental = true
 	    }
 	  }
-	 ```
+	  
  <b>In data class </b>
 	```
 	@Parcelize
