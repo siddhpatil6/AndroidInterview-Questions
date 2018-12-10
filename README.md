@@ -2,6 +2,12 @@
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
 
+# How to enable extension in android which will remove findViewById?
+
+```
+apply plugin: 'kotlin-android-extensions'
+```
+
 # How to make class parceable in kotlin?
  
 	
