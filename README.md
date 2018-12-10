@@ -25,16 +25,16 @@ apply plugin: 'kotlin-android-extensions'
 	data class Error(var ErrorCause:String,var MessageToUser:String,var Code: Int?):Parcelable
 	```
 	
-# Replacing Loaders with ViewModel
+# MVVM
 
-[![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/android-mvvm-pattern.png)
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/android-mvvm-pattern.png)
 
 ## Loading data with loaders
-[![](https://developer.android.com/images/topic/libraries/architecture/viewmodel-replace-loader.png)
+![](https://developer.android.com/images/topic/libraries/architecture/viewmodel-replace-loader.png)
 
 ## Loading data with ViewModel
 
-[![](https://developer.android.com/images/topic/libraries/architecture/viewmodel-replace-loader.png)
+![](https://developer.android.com/images/topic/libraries/architecture/viewmodel-replace-loader.png)
 
 
 # Android Architecture Component -
