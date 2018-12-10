@@ -13,7 +13,7 @@
 	    }
 	  }
 	  
- <b>In data class </b>
+ <b>In data class </b> <br>
 	```
 	@Parcelize
 	data class Error(var ErrorCause:String,var MessageToUser:String,var Code: Int?):Parcelable
