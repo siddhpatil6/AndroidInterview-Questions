@@ -4,6 +4,7 @@
 
 # The difference between Kotlin’s functions: ‘let’, ‘apply’, ‘with’, ‘run’ and ‘also’
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/scope%20function1.png)
+
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/scope%20function2.png)
 # what are rules for Data class?
 
