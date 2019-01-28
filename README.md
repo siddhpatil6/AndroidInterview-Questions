@@ -2,6 +2,15 @@
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
 
+# what are rules for Data class?
+### Rules for Creating Data Classes
+The Kotlin documentation on data classes notes that there are some basic restrictions in order to maintain consistency/behaviour of generated code:
+
+1. The primary constructor needs to have at least one parameter;
+2. All primary constructor parameters need to be marked as val or var;
+3. Data classes cannot be abstract, open, sealed or inner;
+4. Data classes may not extend other classes (but may implement interfaces).
+
 # Difference between Classes and Data classes or Explain Data classes?
 ### Tired of writing (or generating) lengthy, boilerplate code for objects which do nothing but store data?
 <b> Well, Kotlin has the solution for you! </b>
