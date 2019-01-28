@@ -11,6 +11,46 @@
 
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/scope%20function%204.png)
 
+
+# Normal vs. extension function
+If we look at with and T.run, both functions are actually pretty similar. The below does the same thing.
+
+```
+with(webview.settings) {
+    javaScriptEnabled = true
+    databaseEnabled = true
+}
+// similarly
+webview.settings.run {
+    javaScriptEnabled = true
+    databaseEnabled = true
+}
+```
+However, their different is one is a normal function i.e. with, while the other is an extension function i.e. T.run.
+
+So the question is, what is the advantage of each?
+
+Imagine if webview.settings could be null, they will look as below.
+
+```
+// Yack!
+with(webview.settings) {
+      this?.javaScriptEnabled = true
+      this?.databaseEnabled = true
+   }
+}
+```
+---------------------------------------------
+```
+// Nice.
+webview.settings?.run {
+    javaScriptEnabled = true
+    databaseEnabled = true
+}
+```
+<b> In this case, clearly T.run extension function is better, as we could apply check for nullability before using it. </b>
+
+
 # what are rules for Data class?
 
 ### Rules for Creating Data Classes
