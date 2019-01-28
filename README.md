@@ -2,6 +2,113 @@
 # AndroidInterview-Questions
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
 
+# Difference between Classes and Data classes or Explain Data classes?
+<h6> Tired of writing (or generating) lengthy, boilerplate code for objects which do nothing but store data?
+Well, Kotlin has the solution for you! </h6>
+
+Almost every software project we create has a number of classes which exist solely to store data/state but have almost no actual functionality in terms of operations. In more complex apps, this number can be rather high (applications which feature a clean architecture approach often have 2–3 times as many due to a separation of entities between layers).
+
+These generally contain the same concepts every time:
+
+A constructor
+Fields to store data
+Getter and setter functions
+hashCode(), equals() and toString() functions
+
+<b> Example </b> — Storing Video Game Data
+If we wanted to store some data about a video game in Java, we would usually create a class similar to this:
+
+```
+public class VideoGame {
+
+    private String name;
+    private String publisher;
+    private int reviewScore;
+
+    public VideoGame(String name, String publisher, int reviewScore) {
+        this.name = name;
+        this.publisher = publisher;
+        this.reviewScore = reviewScore;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public int getReviewScore() {
+        return reviewScore;
+    }
+
+    public void setReviewScore(int reviewScore) {
+        this.reviewScore = reviewScore;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        VideoGame that = (VideoGame) o;
+
+        if (reviewScore != that.reviewScore)
+            return false;
+        if (name != null ? !name.equals(that.name) :
+                that.name != null) {
+            return false;
+        }
+        return publisher != null ?
+                publisher.equals(that.publisher) :
+                that.publisher == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (publisher != null ?
+                publisher.hashCode() : 0);
+        result = 31 * result + reviewScore;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "VideoGame{" +
+                "name='" + name + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", reviewScore=" + reviewScore +
+                '}';
+    }
+}
+```
+<h6> Data Classes in Kotlin </h6>
+
+Fortunately for us, the above code is no longer necessary in Kotlin due to the useful data class concept provided by the language. A data class is a class in Kotlin created to encapsulate all of the above functionality in a succinct manner.
+
+To recreate the VideoGame class in Kotlin, we can simply write:
+
+```
+data class VideoGame(val name: String, val publisher: String, var reviewScore: Int)
+```
+<b> Much better! </b>
+
+When we specify the data keyword in our class definition, Kotlin automatically generates field accessors, hashCode(), equals(), toString(), as well as the useful copy() and componentN() functions (more on these later).
+
+Any of the functions above which are manually defined by us in the class will not be generated.
+
+
 # How to enable extension in android which will remove findViewById?
 
 ```
