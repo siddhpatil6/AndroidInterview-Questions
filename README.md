@@ -49,7 +49,30 @@ webview.settings?.run {
 }
 ```
 <b> In this case, clearly T.run extension function is better, as we could apply check for nullability before using it. </b>
+# This vs. it argument
+If we look at T.run and T.let, both functions are similar except for one thing, the way they accept the argument. The below shows the same logic for both functions.
 
+stringVariable?.run {
+      println("The length of this String is $length")
+}
+// Similarly.
+stringVariable?.let {
+      println("The length of this String is ${it.length}")
+}
+If you check the T.run function signature, you’ll notice the T.run is just made as extension function calling block: T.(). Hence all within the scope, the T could be referred as this.In programming, this could be omitted most of the time. Therefore in our example above, we could use $length in the println statement, instead of ${this.length}. I call this as sending in this as argument.
+
+# advantages of T.let function as below: -
+
+The T.let does provide a clearer distinguish use the given variable function/member vs. the external class function/member
+In the event that this can’t be omitted e.g. when <b>it</b> is sent as a parameter of a function, it is shorter to write than this and clearer.
+The T.let allow better naming of the converted used variable i.e. you could convert it to some other name.
+
+```
+stringVariable?.let {
+      nonNullString ->
+      println("The non null string is $nonNullString")
+}
+```
 
 # what are rules for Data class?
 
