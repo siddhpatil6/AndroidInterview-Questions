@@ -3,7 +3,7 @@
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
 
 # The difference between Kotlin’s functions: ‘let’, ‘apply’, ‘with’, ‘run’ and ‘also’
-
+[!(https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/scope%20function1.png)
 
 # what are rules for Data class?
 
