@@ -3,8 +3,8 @@
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/F1F1J3S3)
 
 # Difference between Classes and Data classes or Explain Data classes?
-<h6> Tired of writing (or generating) lengthy, boilerplate code for objects which do nothing but store data?
-Well, Kotlin has the solution for you! </h6>
+<h6> <b>Tired of writing (or generating) lengthy, boilerplate code for objects which do nothing but store data?
+	Well, Kotlin has the solution for you! </b> </h6>
 
 Almost every software project we create has a number of classes which exist solely to store data/state but have almost no actual functionality in terms of operations. In more complex apps, this number can be rather high (applications which feature a clean architecture approach often have 2–3 times as many due to a separation of entities between layers).
 
@@ -93,7 +93,7 @@ public class VideoGame {
     }
 }
 ```
-<h6> Data Classes in Kotlin </h6>
+<h6> <b> Data Classes in Kotlin </b> </h6>
 
 Fortunately for us, the above code is no longer necessary in Kotlin due to the useful data class concept provided by the language. A data class is a class in Kotlin created to encapsulate all of the above functionality in a succinct manner.
 
