@@ -9,6 +9,8 @@
 
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/scope%20function%203.png)
 
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/scope%20function%204.png)
+
 # what are rules for Data class?
 
 ### Rules for Creating Data Classes
