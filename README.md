@@ -9,7 +9,7 @@ It have reference of below class because we can change its lower structure witho
 
 
 <h6> Youtube </h6>
-[Android Architecture Components](https://www.youtube.com/watch?v=BofWWZE1wts)
+![Android Architecture Components](https://www.youtube.com/watch?v=BofWWZE1wts)
 
 
 # The difference between Kotlin’s functions: ‘let’, ‘apply’, ‘with’, ‘run’ and ‘also’
