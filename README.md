@@ -4,6 +4,7 @@
 
 # How android architecture works?
 
+[Android Architecture Component](https://www.youtube.com/watch?v=BofWWZE1wts)
 
 It have reference of below class because we can change its lower structure without solving inter dependancies.
 
