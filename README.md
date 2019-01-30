@@ -6,6 +6,7 @@
 
 [Android Architecture Component](https://www.youtube.com/watch?v=BofWWZE1wts)
 
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/AndroidArchitectureComponents.png)
 
 It have reference of below class because we can change its lower structure without solving inter dependancies.
 
