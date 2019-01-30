@@ -9,7 +9,7 @@ It have reference of below class because we can change its lower structure witho
 [![Fibonacci RMI Java EE](https://www.youtube.com/watch?v=BofWWZE1wts]
 
 Youtube -
-![](https://www.youtube.com/watch?v=BofWWZE1wts)
+https://www.youtube.com/watch?v=BofWWZE1wts
 
 # The difference between Kotlin’s functions: ‘let’, ‘apply’, ‘with’, ‘run’ and ‘also’
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/scope%20function1.png)
