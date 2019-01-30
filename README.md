@@ -12,7 +12,7 @@ It have reference of below class because we can change its lower structure witho
 
 # What is Room ?
 - It is Robust SQL Object Mapping Librarary?
-<b> Uses - </b>
+<b> Uses - </b> <br>
 1. Less boilerplate
 2. Compile Time validation
 3. Observation - Using - RxJava and LiveData
