@@ -6,11 +6,8 @@
 
 [Android Architecture Component](https://www.youtube.com/watch?v=BofWWZE1wts)
 
+
 It have reference of below class because we can change its lower structure without solving inter dependancies.
-
-
-<h6> Youtube </h6>
-[Android Architecture Component](https://www.youtube.com/watch?v=BofWWZE1wts)
 
 
 # The difference between Kotlin’s functions: ‘let’, ‘apply’, ‘with’, ‘run’ and ‘also’
