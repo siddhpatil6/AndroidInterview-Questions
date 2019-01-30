@@ -11,7 +11,8 @@
 It have reference of below class because we can change its lower structure without solving inter dependancies.
 
 # What is Room ?
-- It is Robust SQL Object Mapping Librarary?
+- It is Robust SQL Object Mapping Librarary?<br>
+
 <b> Uses - </b> <br>
 1. Less boilerplate
 2. Compile Time validation
