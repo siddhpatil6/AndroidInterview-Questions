@@ -6,7 +6,7 @@
 
 It have reference of below class because we can change its lower structure without solving inter dependancies.
 
-[![Fibonacci RMI Java EE](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/AndroidArchitectureComponents.png]
+[![Fibonacci RMI Java EE](https://www.youtube.com/watch?v=BofWWZE1wts]
 
 Youtube -
 ![](https://www.youtube.com/watch?v=BofWWZE1wts)
