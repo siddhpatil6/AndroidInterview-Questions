@@ -6,7 +6,7 @@
 
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/AndroidArchitectureComponents.png)
 
-It have reference of below class because we can change its lower structure with solving inter dependancies.
+It have reference of below class because we can change its lower structure without solving inter dependancies.
 
 
 # The difference between Kotlin’s functions: ‘let’, ‘apply’, ‘with’, ‘run’ and ‘also’
