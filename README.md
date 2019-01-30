@@ -10,6 +10,12 @@
 
 It have reference of below class because we can change its lower structure without solving inter dependancies.
 
+# What is Room ?
+- It is Robust SQL Object Mapping Librarary?
+<b> Uses - </b>
+1. Less boilerplate
+2. Compile Time validation
+3. Observation - Using - RxJava and LiveData
 
 # The difference between Kotlin’s functions: ‘let’, ‘apply’, ‘with’, ‘run’ and ‘also’
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/scope%20function1.png)
