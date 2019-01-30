@@ -8,6 +8,8 @@
 
 It have reference of below class because we can change its lower structure without solving inter dependancies.
 
+Youtube -
+![](https://www.youtube.com/watch?v=BofWWZE1wts)
 
 # The difference between Kotlin’s functions: ‘let’, ‘apply’, ‘with’, ‘run’ and ‘also’
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/scope%20function1.png)
