@@ -4,7 +4,9 @@
 
 # How android architecture works?
 
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/AndroidArchitectureComponents.png)
 
+It have reference of below class because we can change its lower structure with solving inter dependancies.
 
 
 # The difference between Kotlin’s functions: ‘let’, ‘apply’, ‘with’, ‘run’ and ‘also’
