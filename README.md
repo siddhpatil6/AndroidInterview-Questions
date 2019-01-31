@@ -25,8 +25,6 @@ It have reference of below class because we can change its lower structure witho
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Room-Entity%20Class1.png)
 
 
-
-
 ## LiveData
 
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/LiveData.png)
