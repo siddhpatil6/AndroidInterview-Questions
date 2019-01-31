@@ -24,6 +24,13 @@ It have reference of below class because we can change its lower structure witho
 
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Room-Entity%20Class1.png)
 
+## Repository
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Repository-Def.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Repository-1.png)
+
+
 
 ## LiveData
 
@@ -38,13 +45,6 @@ It have reference of below class because we can change its lower structure witho
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Livedata%20-%20example%202.png)
 
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Livedata%20-%20offscreen.png)
-
-Repository
-
-![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Repository-Def.png)
-
-![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Repository-1.png)
-
 
 
 ## Observer -
