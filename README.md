@@ -10,13 +10,69 @@
 
 It have reference of below class because we can change its lower structure without solving inter dependancies.
 
-# What is Room ?
-- It is Robust SQL Object Mapping Librarary?<br>
+## Room -
 
-<b> Uses - </b> <br>
-1. Less boilerplate
-2. Compile Time validation
-3. Observation - Using - RxJava and LiveData
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Room-Components.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Room-DB%20Connection.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Room-DB.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Room-Entity%20Class.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Room-Entity%20Class1.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Room-Entity.png)
+
+
+## LiveData
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/LiveData.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/LiveData-%20benifits.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Livedata%3Dexample.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Livedata-example1.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Livedata%20-%20example%202.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Livedata%20-%20offscreen.png)
+
+Repository
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Repository-Def.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Repository-1.png)
+
+
+
+## Observer -
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/AAC-%20Observer%20Pattern.png
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/AAC-Observer%20Pattern%201.png
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Observer%20-%20onCHange.png
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/observer%20-%20Example%202.png)
+
+## Viewmodel- 
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/ViewModel.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/ViewModel%20-%20Before%20ViewModel.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/ViewModel-After%20ViewModel.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/ViewModel-LifeCycle.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/ViewModel-Benifits.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/VIewModel-Claas.png)
+
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/LifeCycle%20Library%20Classes.png)
+
 
 # The difference between Kotlin’s functions: ‘let’, ‘apply’, ‘with’, ‘run’ and ‘also’
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/scope%20function1.png)
