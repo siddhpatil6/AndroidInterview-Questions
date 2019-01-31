@@ -51,11 +51,11 @@ Repository
 
 ## Observer -
 
-![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/AAC-%20Observer%20Pattern.png
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/AAC-%20Observer%20Pattern.png)
 
-![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/AAC-Observer%20Pattern%201.png
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/AAC-Observer%20Pattern%201.png)
 
-![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Observer%20-%20onCHange.png
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Observer%20-%20onCHange.png)
 
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/observer%20-%20Example%202.png)
 
