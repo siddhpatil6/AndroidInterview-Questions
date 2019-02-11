@@ -171,16 +171,16 @@ For instance, let’s say we have some data that we add to the DataSource in the
 
 A PageList takes in 4 important parameters:
 
-*  setEnablePlaceholders(boolean enablePlaceholders) — 
+*  setEnablePlaceholders(boolean enablePlaceholders) — <br>
 Enabling placeholders mean there is a placeholder that is visible to the user till the data is fully loaded. So for instance, if we have 20 items that are needed to be loaded and each item contains an image, when we scroll through the screen, we can see placeholders instead of the image since it is not fully loaded. 
 
-*  setInitialLoadSizeHint(int initialLoadSizeHint) — 
+*  setInitialLoadSizeHint(int initialLoadSizeHint) — <br>
 The number of items to load initially.
 
-*  setPageSize(int pageSize) —
+*  setPageSize(int pageSize) — <br>
 The number of items to load in the PagedList.
 
-*  setPrefetchDistance(int prefetchDistance) — 
+*  setPrefetchDistance(int prefetchDistance) — <br>
 The number of preloads that occur. For instance, if we set this to 10, it will fetch the first 10 pages initially when the screen loads.
 
 Below is the ViewModel class implemented for this project:
