@@ -2,7 +2,7 @@
 # AndroidInterview-Questionss
 
 # Paging
-## DataSource —
+## DataSource 
 This is the base class for data loading, used in list paging. DataSource can be implemented using any one of these 3 classes:
 
 ### PageKeyedDataSource: 
@@ -242,7 +242,18 @@ public class FeedViewModel extends ViewModel {
     }
 }
 ```
+## Setup the PagedListAdapter
+PagedListAdapter is an implementation of RecyclerView.Adapter that presents data from a PagedList. It uses DiffUtil as a parameter to calculate data differences and do all the updates for you.
 
+The DiffUtil is defined in the Model Class in our case:
+
+## What is DiffUtil?
+
+DiffUtil is a utility class that can calculate the difference between two lists and output a list of update operations that converts the first list into the second one.
+
+It can be used to calculate updates for a RecyclerView Adapter. See ListAdapter and AsyncListDiffer which can compute diffs using DiffUtil on a background thread.
+
+DiffUtil uses Eugene W. Myers's difference algorithm to calculate the minimal number of updates to convert one list into another. Myers's algorithm does not handle items that are moved so DiffUtil runs a second pass on the result to detect items that were moved.
 
 # How android architecture works?
 
