@@ -11,7 +11,8 @@ We can use this class if we need to load data based on the number of pages in th
 ### ItemKeyedDataSource: 
 The first step is to define the key that will be used to determine the next page of data. For instance, if it is a User class, then the id would typically be the userId value. The size of the list is generally unknown, and fetching the next set of the data usually depends on the last known Id. So if we fetch items 1 to 10 in the first result, then ItemKeyedDataSource will automatically fetch the next set of 11 to 20.
 
-### PositionalDataSource: This class would be useful for sources that provide a fixed size list that can be fetched with arbitrary positions and sizes.
+### PositionalDataSource: 
+This class would be useful for sources that provide a fixed size list that can be fetched with arbitrary positions and sizes.
 
 In this scenario, we would be using a PageKeyedDataSource. The following code shows how we can create PageKeyedDataSource for our FeedDataSource class.
 
@@ -134,7 +135,51 @@ public class FeedDataSource extends PageKeyedDataSource<Long, Article> {
 }
 ```
 
+## Setup the DataSourceFactory
 
+DataSourceFactory is responsible for retrieving the data using the DataSource and PagedList configuration which we will create later in this article in our ViewModel class.
+
+```
+public class FeedDataFactory extends DataSource.Factory {
+
+    private MutableLiveData<FeedDataSource> mutableLiveData;
+    private FeedDataSource feedDataSource;
+
+    public FeedDataFactory() {
+        this.mutableLiveData = new MutableLiveData<FeedDataSource>();
+    }
+
+    @Override
+    public DataSource create() {
+        feedDataSource = new FeedDataSource();
+        mutableLiveData.postValue(feedDataSource);
+        return feedDataSource;
+    }
+  
+    public MutableLiveData<FeedDataSource> getMutableLiveData() {
+        return mutableLiveData;
+    }
+}
+```
+
+## Setup the ViewModel
+The view model will responsible for creating the PagedList along with its configurations and send it to the activity so it can observe the data changes and pass it to the adapter.
+
+So what is a PagedList? PagedList is a wrapper list that holds your data items (in our case the list of articles we need to display) and invokes the DataSource to load the elements. It typically consists of a background executor (which fetches the data) and the foreground executor (which updates the UI with the data).
+
+For instance, let’s say we have some data that we add to the DataSource in the background thread. The DataSource invalidates the PagedList and updates its value. Then on the main thread, the PagedList notifies its observers of the new value. Now the PagedListAdapter knows about the new value.
+
+A PageList takes in 4 important parameters:
+
+a. setEnablePlaceholders(boolean enablePlaceholders) — 
+Enabling placeholders mean there is a placeholder that is visible to the user till the data is fully loaded. So for instance, if we have 20 items that are needed to be loaded and each item contains an image, when we scroll through the screen, we can see placeholders instead of the image since it is not fully loaded. 
+b. setInitialLoadSizeHint(int initialLoadSizeHint) — 
+The number of items to load initially.
+c. setPageSize(int pageSize) — The number of items to load in the PagedList.
+d. setPrefetchDistance(int prefetchDistance) — 
+The number of preloads that occur. For instance, if we set this to 10, it will fetch the first 10 pages initially when the screen loads.
+
+Below is the ViewModel class implemented for this project:
 # How android architecture works?
 
 [Android Architecture Component](https://www.youtube.com/watch?v=BofWWZE1wts)
