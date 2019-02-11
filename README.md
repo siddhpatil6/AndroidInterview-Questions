@@ -171,15 +171,79 @@ For instance, let’s say we have some data that we add to the DataSource in the
 
 A PageList takes in 4 important parameters:
 
-a. setEnablePlaceholders(boolean enablePlaceholders) — 
+*  setEnablePlaceholders(boolean enablePlaceholders) — 
 Enabling placeholders mean there is a placeholder that is visible to the user till the data is fully loaded. So for instance, if we have 20 items that are needed to be loaded and each item contains an image, when we scroll through the screen, we can see placeholders instead of the image since it is not fully loaded. 
-b. setInitialLoadSizeHint(int initialLoadSizeHint) — 
+
+*  setInitialLoadSizeHint(int initialLoadSizeHint) — 
 The number of items to load initially.
-c. setPageSize(int pageSize) — The number of items to load in the PagedList.
-d. setPrefetchDistance(int prefetchDistance) — 
+
+*  setPageSize(int pageSize) —
+The number of items to load in the PagedList.
+
+*  setPrefetchDistance(int prefetchDistance) — 
 The number of preloads that occur. For instance, if we set this to 10, it will fetch the first 10 pages initially when the screen loads.
 
 Below is the ViewModel class implemented for this project:
+
+```
+public class FeedViewModel extends ViewModel {
+
+    private Executor executor;
+    private LiveData<NetworkState> networkState;
+    private LiveData<PagedList<Article>> articleLiveData;
+
+    public FeedViewModel() {
+        init();
+    }
+
+    /* 
+     * Step 1: We are initializing an Executor class
+     * Step 2: We are getting an instance of the DataSourceFactory class
+     * Step 3: We are initializing the network state liveData as well.
+     *         This will update the UI on the network changes that take place
+     *         For instance, when the data is getting fetched, we would need
+     *         to display a loader and when data fetching is completed, we 
+     *         should hide the loader.
+     * Step 4: We need to configure the PagedList.Config. 
+     * Step 5: We are initializing the pageList using the config we created
+     *         in Step 4 and the DatasourceFactory we created from Step 2
+     *         and the executor we initialized from Step 1.
+     */
+    private void init() {
+        executor = Executors.newFixedThreadPool(5);
+
+        FeedDataFactory feedDataFactory = new FeedDataFactory();
+        networkState = Transformations.switchMap(feedDataFactory.getMutableLiveData(),
+                dataSource -> dataSource.getNetworkState());
+
+        PagedList.Config pagedListConfig =
+                (new PagedList.Config.Builder())
+                        .setEnablePlaceholders(false)
+                        .setInitialLoadSizeHint(10)
+                        .setPageSize(20).build();
+
+        articleLiveData = (new LivePagedListBuilder(feedDataFactory, pagedListConfig))
+                .setFetchExecutor(executor)
+                .build();
+    }
+
+    /* 
+     * Getter method for the network state
+     */
+    public LiveData<NetworkState> getNetworkState() {
+        return networkState;
+    }
+
+    /* 
+     * Getter method for the pageList
+     */  
+    public LiveData<PagedList<Article>> getArticleLiveData() {
+        return articleLiveData;
+    }
+}
+```
+
+
 # How android architecture works?
 
 [Android Architecture Component](https://www.youtube.com/watch?v=BofWWZE1wts)
