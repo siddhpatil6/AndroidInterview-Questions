@@ -165,7 +165,8 @@ public class FeedDataFactory extends DataSource.Factory {
 ## Setup the ViewModel
 The view model will responsible for creating the PagedList along with its configurations and send it to the activity so it can observe the data changes and pass it to the adapter.
 
-So what is a PagedList? PagedList is a wrapper list that holds your data items (in our case the list of articles we need to display) and invokes the DataSource to load the elements. It typically consists of a background executor (which fetches the data) and the foreground executor (which updates the UI with the data).
+### So what is a PagedList? 
+PagedList is a wrapper list that holds your data items (in our case the list of articles we need to display) and invokes the DataSource to load the elements. It typically consists of a background executor (which fetches the data) and the foreground executor (which updates the UI with the data).
 
 For instance, let’s say we have some data that we add to the DataSource in the background thread. The DataSource invalidates the PagedList and updates its value. Then on the main thread, the PagedList notifies its observers of the new value. Now the PagedListAdapter knows about the new value.
 
