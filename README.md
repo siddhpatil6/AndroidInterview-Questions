@@ -4,7 +4,7 @@
 # Paging
 
 1. Source - https://proandroiddev.com/8-steps-to-implement-paging-library-in-android-d02500f7fffe
-2. Youtube - https://www.youtube.com/watch?v=BE5bsyGGLf4
+2. Youtube - https://www.youtube.com/watch?v=BE5bsyGGLf4 <br>
            - https://www.youtube.com/watch?v=QVMqCRs0BNA
 
 ## DataSource 
