@@ -14,7 +14,34 @@ To simply put, the work of an executor is to execute tasks . The executor picks 
 
 The below diagram summarizes the work of the Executor framework.
 
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Room-DB%20Connection.png)
+
 After the task is completed, the framework will not terminate the executing thread immediately. The executor keeps a minimum number of threads in the thread pool even if all of them are not executing some task. But it will terminate the extra threads (number of threads which are greater than the minimum number of threads) after the specified duration.
+
+## Using ThreadPoolExecutor
+Executor is the base interface of this framework which has only one method execute(Runnable command). ExecutorService and ScheduledExecutorService are two other interfaces which extends Executor. These two interfaces have a lot of important methods like submit(Runnable task), shutdown(), schedule(Callable<V> callable,long delay, TimeUnit unit) etc which actually make this framework really useful. The most commonly used implementations of these interfaces are ThreadPoolExecutor and ScheduledThreadPoolExecutor. You can find other implementations here.
+
+While creating an instance of ThreadPoolExecutor, we can give various configurations. We specify the minimum and maximum number of threads that should be present in the ThreadPool. We also specify the duration after which the extra threads(current threads — minimum threads) should be terminated. There are various types of queues which can be used for storing the tasks which cannot be executed immediately. Based on the application requirements we specify the type of queue to be used. Below is the code snippet for creating an instance of ThreadPoolExecutor.
+
+```
+public ThreadPoolExecutor(int corePoolSize,
+                          int maximumPoolSize,
+                          long keepAliveTime,
+                          TimeUnit unit,
+                          BlockingQueue<Runnable> workQueue,
+                          RejectedExecutionHandler handler) {
+	
+```
+
+Now lets understand the parameters of ThreadPoolExecutor. For optimal performance of the application, each parameter to the executor needs to be passed very carefully.
+
+*  corePoolSize : The minimum number of threads to keep in the pool.
+*  maximumPoolSize : The maximum number of threads to keep in the pool.
+*  keepAliveTime : If current number of threads are greater than the minimum threads, then wait for this time to terminate the extra threads.
+*  unit: The time unit for the previous argument.
+*  workQueue : The queue used for holding the tasks.
+*  handler : An instance of RejectionExecutionHandler, which handles the task which is rejected by the executor.
+
 
 # Paging
 
