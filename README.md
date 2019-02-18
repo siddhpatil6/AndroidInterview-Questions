@@ -1,5 +1,19 @@
 
 # AndroidInterview-Questionss
+# Executor Framework ?
+## Advantages - 
+1. The most important feature of this framework is the separation of concerns. It lets the developer to create tasks(Runnables, Callables), and let the framework decide when, how and where to execute that task on a Thread which is totally configurable.
+
+2. It relieves the developer from thread management.
+
+3.It provides the developers various types of queues for storing the tasks. It also provides various mechanisms for handling the scenario in which a task is rejected by the queue when it is full.
+
+## How does Executor work?
+To simply put, the work of an executor is to execute tasks . The executor picks up a thread from the threadpool to execute a task. If a thread is not available and new threads cannot be created, then the executor stores these tasks in a queue. A task can also be removed from the queue. If the queue is full, then the queue will start rejecting the tasks.(Rejection of tasks can be handled).
+
+The below diagram summarizes the work of the Executor framework.
+
+After the task is completed, the framework will not terminate the executing thread immediately. The executor keeps a minimum number of threads in the thread pool even if all of them are not executing some task. But it will terminate the extra threads (number of threads which are greater than the minimum number of threads) after the specified duration.
 
 # Paging
 
