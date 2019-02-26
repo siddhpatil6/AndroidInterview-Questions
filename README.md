@@ -55,6 +55,8 @@ public class Example{
 
 So the first call and the subsequent calls, name will return “Siddhant Patil”
 
+Source : https://blog.mindorks.com/learn-kotlin-lateinit-vs-lazy
+
 ## How to choose when to use which one?
 
 lazy can only be used for val properties, whereas lateinit can only be applied to vars because it can’t be compiled to a final field, thus no immutability can be guaranteed.
