@@ -47,10 +47,13 @@ lazy() is a function that takes a lambda and returns an instance of lazy which c
 
 Example
 
+```
 public class Example{
-  val name: String by lazy { “Amit Shekhar” }
+  val name: String by lazy { “Siddhant Patil” }
 }
-So the first call and the subsequent calls, name will return “Amit Shekhar”
+```
+
+So the first call and the subsequent calls, name will return “Siddhant Patil”
 
 ## How to choose when to use which one?
 
