@@ -4,9 +4,10 @@
 # Benifits of Kotlin over Core Java?
 1. Null Pointer Exception Handling
 2. data class which elemenates boilerplate code
-3. Extension Functions
+3. Extension Functions - with(object),.let,.run,.apply,.also
 4. scope functions
 5. Supports Full Java Interoperability
+6. Optional Parameters in Kotlin
 
 # Kotlin Property Initialization
 If you do not want to initialize a property in the constructor, then these are two important ways of property initialisation in Kotlin.
