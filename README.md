@@ -1,6 +1,63 @@
 
 # Android Interview-Questions
 
+# Benifits of Kotlin over Core Java?
+1. Null Pointer Exception Handling
+2. data class which elemenates boilerplate code
+3. Extension Functions
+4. scope functions
+5. Supports Full Java Interoperability
+
+# Kotlin Property Initialization
+If you do not want to initialize a property in the constructor, then these are two important ways of property initialisation in Kotlin.
+
+1.lateinit
+2.lazy
+
+## lateinit
+
+lateinit is late initialization.
+
+Normally, properties declared as having a non-null type must be initialized in the constructor. However, fairly often this is not convenient. For example, properties can be initialized through dependency injection, or in the setup method of a unit test. In this case, you cannot supply a non-null initializer in the constructor, but you still want to avoid null checks when referencing the property inside the body of a class.
+
+To handle this case, you can mark the property with the lateinit modifier.
+
+Example
+
+```
+public class Test {
+
+  lateinit var mock: Mock
+
+  @SetUp fun setup() {
+     mock = Mock()
+  }
+
+  @Test fun test() {
+     mock.do()
+  }
+}
+```
+The modifier can only be used on var properties declared inside the body of a class (not in the primary constructor), and only when the property does not have a custom getter or setter. The type of the property must be non-null, and it must not be a primitive type.
+
+## lazy
+lazy is lazy initialization.
+
+lazy() is a function that takes a lambda and returns an instance of lazy which can serve as a delegate for implementing a lazy property: the first call to get() executes the lambda passed to lazy() and remembers the result, subsequent calls to get() simply return the remembered result.
+
+Example
+
+public class Example{
+  val name: String by lazy { “Amit Shekhar” }
+}
+So the first call and the subsequent calls, name will return “Amit Shekhar”
+
+## How to choose when to use which one?
+
+lazy can only be used for val properties, whereas lateinit can only be applied to vars because it can’t be compiled to a final field, thus no immutability can be guaranteed.
+lateinit var can be initialized from anywhere the object is seen from. If you want your property to be initialized from outside in a way probably unknown beforehand, use lateinit.
+
+
 # Executor Framework ?
 ## Advantages - 
 1. The most important feature of this framework is the separation of concerns. It lets the developer to create tasks(Runnables, Callables), and let the framework decide when, how and where to execute that task on a Thread which is totally configurable.
