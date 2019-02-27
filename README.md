@@ -1038,6 +1038,18 @@ Fragments, on the other hand, have a lifecycle method called onCreateView which 
 # broadcast receiver runs on which thread?
 UI Thread
 
+# Definition between SupportFragmentManager and ChildFragmentManager?
+
+# getChildFragmentManager() is:
+
+Return a private FragmentManager for placing and managing Fragments
+inside of this Fragment.
+
+# getFragmentManager()(or in this case getSupportFragmentManager()) is:
+
+Return the FragmentManager for interacting with fragments associated
+with this fragment’s activity.
+
 # What is the hashCode() and equals() used for?
 https://www.journaldev.com/21095/java-equals-hashcode
 
