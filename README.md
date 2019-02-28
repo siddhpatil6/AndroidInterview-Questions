@@ -9,6 +9,76 @@
 5. Supports Full Java Interoperability
 6. Optional Parameters in Kotlin
 
+# What is coroutine?
+## Definition 
+
+Coroutines are a new way of writing asynchronous, non-blocking code (and much more)
+
+### But the first question arises in our mind is that how the Coroutines are different from the threads?
+
+Coroutine are light-weight threads. A light weight thread means it doesn’t map on native thread, so it doesn’t require context switching on processor, so they are faster.
+
+### What does it mean when I say “it doesn’t map on native thread”?
+
+Coroutines are available in many languages.
+
+Basically, there are two types of Coroutines:
+
+Stackless
+Stackful
+
+Coroutines and the threads both are multitasking. But the difference is that threads are managed by the OS and coroutines by the users.
+
+## These are the functions to start the coroutine:
+
+launch{}
+async{}
+
+The difference is that the launch{} does not return anything and the async{} returns an instance of Deferred<T>, which has an await()function that returns the result of the coroutine like we have future in Java. and we do future.get() in Java to the get the result.
+
+```
+// Serial execution 
+private fun doWorksInSeries() {
+  launch(CommonPool) {
+     val one = doWorkFor1Seconds()
+     val two = doWorkFor2Seconds()
+     println("Kotlin One : " + one)
+     println("Kotlin Two : " + two)
+  }
+}
+```
+
+Output
+
+```
+// The output is
+// Kotlin One : doWorkFor1Seconds
+// Kotlin Two : doWorkFor2Seconds
+```
+
+```
+// Parallel execution
+private fun doWorksInParallel() {
+  val one = async(CommonPool) {
+      doWorkFor1Seconds()
+  }
+  val two = async(CommonPool) {
+      doWorkFor2Seconds()
+  }
+  launch(CommonPool) {
+      val combined = one.await() + "_" + two.await()
+      println("Kotlin Combined : " + combined)
+  }
+}
+```
+
+Output
+
+```
+// The output is
+// Kotlin Combined : doWorkFor1Seconds_doWorkFor2Seconds
+```
+
 # Kotlin Property Initialization
 If you do not want to initialize a property in the constructor, then these are two important ways of property initialisation in Kotlin.
 
