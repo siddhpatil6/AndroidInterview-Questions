@@ -28,15 +28,17 @@ Stackless <br>
 Stackful <br>
 
 Coroutines and the threads both are multitasking. But the difference is that threads are managed by the OS and coroutines by the users.<br>
-<br>
+
+
 ## These are the functions to start the coroutine:<br>
 <br>
 launch{} <br>
-async{} <br>
+async{} 
 <br>
 The difference is that the launch{} does not return anything and the async{} returns an instance of Deferred<T>, which has an await()function that returns the result of the coroutine like we have future in Java. and we do future.get() in Java to the get the result.
 	
-<br>
+	
+	
 ```
 // Serial execution 
 private fun doWorksInSeries() {
@@ -48,9 +50,8 @@ private fun doWorksInSeries() {
   }
 }
 ```
-<br>
+
 Output
-<br>
 ```
 // The output is
 // Kotlin One : doWorkFor1Seconds
