@@ -31,9 +31,11 @@ Coroutines and the threads both are multitasking. But the difference is that thr
 
 
 ## These are the functions to start the coroutine:<br>
+
 <br>
 launch{} <br>
 async{} 
+
 <br>
 The difference is that the launch{} does not return anything and the async{} returns an instance of Deferred<T>, which has an await()function that returns the result of the coroutine like we have future in Java. and we do future.get() in Java to the get the result.
 	
