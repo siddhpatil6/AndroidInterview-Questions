@@ -22,7 +22,7 @@ Coroutine are light-weight threads. A light weight thread means it doesn’t map
 
 Coroutines are available in many languages.
 
-Basically, there are two types of Coroutines:
+# there are two types of Coroutines:
 <br>
 Stackless <br>
 Stackful <br>
@@ -34,11 +34,11 @@ Coroutines and the threads both are multitasking. But the difference is that thr
 
 <br>
 launch{} <br>
-async{} 
+async{} <br>
 
 <br>
-The difference is that the launch{} does not return anything and the async{} returns an instance of Deferred<T>, which has an await()function that returns the result of the coroutine like we have future in Java. and we do future.get() in Java to the get the result.
-	
+The difference is that the launch{} does not return anything and the async{} returns an instance of Deferred<T>, which has an await()function that returns the result of the coroutine like we have future in Java. and we do future.get() in Java to the get the result.<br>
+<br>	
 	
 	
 ```
