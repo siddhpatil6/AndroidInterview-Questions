@@ -149,10 +149,6 @@ lateinit var can be initialized from anywhere the object is seen from. If you wa
 ## How does Executor work?
 To simply put, the work of an executor is to execute tasks . The executor picks up a thread from the threadpool to execute a task. If a thread is not available and new threads cannot be created, then the executor stores these tasks in a queue. A task can also be removed from the queue. If the queue is full, then the queue will start rejecting the tasks.(Rejection of tasks can be handled).
 
-The below diagram summarizes the work of the Executor framework.
-
-![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/Android%20Architecture%20components/Room-DB%20Connection.png)
-
 After the task is completed, the framework will not terminate the executing thread immediately. The executor keeps a minimum number of threads in the thread pool even if all of them are not executing some task. But it will terminate the extra threads (number of threads which are greater than the minimum number of threads) after the specified duration.
 
 ## Using ThreadPoolExecutor
