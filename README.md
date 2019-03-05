@@ -86,7 +86,7 @@ Output
 # Kotlin Property Initialization
 If you do not want to initialize a property in the constructor, then these are two important ways of property initialisation in Kotlin.
 
-1.lateinit
+1.lateinit <br>
 2.lazy
 
 ## lateinit
