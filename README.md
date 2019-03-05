@@ -9,6 +9,19 @@
 5. Supports Full Java Interoperability
 6. Optional Parameters in Kotlin
 
+# what is use of android:usesCleartextTraffic="true"
+	
+So what this exactly mean?
+
+Cleartext is any transmitted or stored information that is not encrypted or meant to be encrypted.
+When an app communicates with servers using a cleartext network traffic, such as HTTP, it could raise a risk of eavesdropping and tampering of content. Third parties can inject unauthorized data or leak information about the users. That is why developers are encouraged to a secure traffic only, such as HTTPS.
+
+* But just in case using cleartext is inevitable, developers can fix the error by
+
+1. Editing useCleartextTraffic attribute in manifest file, or <br>
+2. Adding Network Security Config
+
+
 # What is coroutine?
 ## Definition 
 
