@@ -44,6 +44,8 @@ it use of validation, you can check all form's editext and  shows error at end o
 
 5. map - <br>
 
+6. filter - <br>
+
 # Benifits of RxJava
 1. Error handeling - onError (in Observer)
 2. LifeCycle Changes
