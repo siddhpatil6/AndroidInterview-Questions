@@ -3,23 +3,23 @@
 
 # RxJava 
 ## Anatomy - 
-1. Obserbable
-2. Observer
-3. Scheduler
-4. Operator
+1. Obserbable </br>
+2. Observer </br>
+3. Scheduler </br>
+4. Operator </br>
 
 ## Explaination
-1. Observable -
+<b> 1. Observable - </b>  </br>
 * Observable are data stream. they are responsible for emmiting data.
 
-2. Observer -
+<b> 2. Observer - </b>  </br>
 * Observer consumes data emmitted by observable.
 
-3. Scheduler -
+<b> 3. Scheduler - </b> </br>
 * It manages Thread
 * It tells Observable and Observer on which thread they should run.
 
-4. Operator - 
+<b> 4. Operator - </b>  </br>
 * Operator are all horse power behind observable.
 * provides elegent and declarative solution to complex async task.
 
@@ -31,20 +31,20 @@
 5. Composite Subscription
 
 # Sub Points - (Operator)
-1. Retry and RetryWhen - <br>
+<b> 1. Retry and RetryWhen </b>- <br>
 RxJava has operator called retry, you can also specify when to retry.it means you can retry after particular time.
-2. timer -<br>
+<b> 2. timer -</b> <br>
 It elemenets timer,you can specify time interval and delay 
 onCompleted Called when ex. take(20) after 20 intervals. 
-3. debounce - <br>
+<b> 3. debounce -</b> <br>
 (It is use to call api on textChangeListner after particular time text has been type so it reduces multiple calls for each later)
-4. combinelatest  - <br>
+<b> 4. combinelatest  -</b> <br>
 it use of validation, you can check all form's editext and  shows error at end of form's edittext, once it is called at end than it starts calling every edittext in form.
 <br>
 
-5. map - <br>
+<b> 5. map - </b> <br>
 
-6. filter - <br>
+<b> 6. filter - </b> <br>
 
 # Benifits of RxJava
 1. Error handeling - onError (in Observer)
