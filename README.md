@@ -1,5 +1,12 @@
 
 # Android Interview-Questions
+
+# RxJava 
+## Anatomy - 
+1. Obserbable
+2. Observer
+3. Scheduler
+
 # Why we use onAttach or why we use it before onCreate? <br>
 
 In order to not break the design consistency amongst different UI components in android,the onCreate() method will have similar functionality across all of them.<br>
