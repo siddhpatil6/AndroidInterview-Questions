@@ -6,6 +6,22 @@
 1. Obserbable
 2. Observer
 3. Scheduler
+4. Operator
+
+## Explaination
+1. Observable -
+* Observable are data stream. they are responsible for emmiting data.
+
+2. Observer -
+* Observer consumes data emmitted by observable.
+
+3. Scheduler -
+* It manages Thread
+* It tells Observable and Observer on which thread they should run.
+
+4. Operator - 
+* Operator are all horse power behind observable.
+* provides elegent and declarative solution to complex async task.
 
 # Key Points
 1. Obserbable
@@ -13,6 +29,26 @@
 3. Scheduler
 4. Subscription
 5. Composite Subscription
+
+# Sub Points - (Operator)
+1. Retry and RetryWhen - <br>
+RxJava has operator called retry, you can also specify when to retry.it means you can retry after particular time.
+2. timer -<br>
+It elemenets timer,you can specify time interval and delay 
+onCompleted Called when ex. take(20) after 20 intervals. 
+3. debounce - <br>
+(It is use to call api on textChangeListner after particular time text has been type so it reduces multiple calls for each later)
+4. combinelatest  - <br>
+it use of validation, you can check all form's editext and  shows error at end of form's edittext, once it is called at end than it starts calling every edittext in form.
+<br>
+
+# Benifits of RxJava
+1. Error handeling - onError (in Observer)
+2. LifeCycle Changes
+3. Caching (Rotation)
+4. Composing multiple calls
+
+
 
 # Why we use onAttach or why we use it before onCreate? <br>
 
