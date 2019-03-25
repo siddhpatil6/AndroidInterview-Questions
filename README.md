@@ -1,5 +1,59 @@
 
 # Android Interview-Questions
+# Why we use onAttach or why we use it before onCreate? <br>
+
+In order to not break the design consistency amongst different UI components in android,the onCreate() method will have similar functionality across all of them.<br>
+
+When linking Containers to Contents like Window to Activity and Activity to Fragment a preliminary check needs to be done to determine the state of container. And that explains the use and position of  onAttach() in the fragment lifecycle. <br>
+
+Too short;Need longer:<br>
+
+The answer is in the archetype code itself,<br>
+
+```
+@Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mListener = (OnFragmentInteractionListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+```    
+Another example would be in Jake Wharton's ActionBarSherlock library.<br>
+
+Why would you want to use a method like onCreate() which is has the same purpose in an activity ,service.<br>
+
+The onCreate() is meant to handle issues with respect to that particular context creation.It does not make sense if onCreate() is used to check the state of its container.<br>
+
+The second reason that I can come determine is that a fragment is designed to be activity independent.The onAttach() provides an interface to determine the state/type/(other detail that matters to the fragment) of the containing activity with reference to the fragment before you initialize a fragment.<br>
+
+EDIT:<br>
+
+An activity exists independently and therefore has a self sustaining lifecycle.<br>
+
+for a fragment :<br>
+
+The independent lifecycle components(same as any other components):<br>
+
+```
+onCreate()
+onStart()
+onResume()
+onPause()
+onStop()
+onDestroy()
+```
+The interaction based components:
+```
+onAttach()
+onCreateView()
+onActivityCreated()
+onDestroyView()
+onDetach()
+```
 
 # Benifits of Kotlin over Core Java?
 1. Null Pointer Exception Handling
