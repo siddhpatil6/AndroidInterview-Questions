@@ -31,14 +31,19 @@
 5. Composite Subscription
 
 # Sub Points - (Operator)
-<b> 1. Retry and RetryWhen </b>- <br>
+<b> 1. Retry and RetryWhen </b>
+<br>
 RxJava has operator called retry, you can also specify when to retry.it means you can retry after particular time.
-<b> 2. timer -</b> <br>
+<br>
+<b> 2. timer - </b> 
+<br>
 It elemenets timer,you can specify time interval and delay 
-onCompleted Called when ex. take(20) after 20 intervals. 
-<b> 3. debounce -</b> <br>
-(It is use to call api on textChangeListner after particular time text has been type so it reduces multiple calls for each later)
-<b> 4. combinelatest  -</b> <br>
+onCompleted Called when ex. take(20) after 20 intervals. <br>
+<b> 3. debounce - </b>
+<br>
+(It is use to call api on textChangeListner after particular time text has been type so it reduces multiple calls for each later)<br>
+<b> 4. combinelatest - </b> 
+<br>
 it use of validation, you can check all form's editext and  shows error at end of form's edittext, once it is called at end than it starts calling every edittext in form.
 <br>
 
