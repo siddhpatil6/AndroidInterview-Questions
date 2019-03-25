@@ -7,6 +7,13 @@
 2. Observer
 3. Scheduler
 
+# Key Points
+1. Obserbable
+2. Observer
+3. Scheduler
+4. Subscription
+5. Composite Subscription
+
 # Why we use onAttach or why we use it before onCreate? <br>
 
 In order to not break the design consistency amongst different UI components in android,the onCreate() method will have similar functionality across all of them.<br>
