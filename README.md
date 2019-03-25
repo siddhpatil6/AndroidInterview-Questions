@@ -42,6 +42,8 @@ onCompleted Called when ex. take(20) after 20 intervals.
 it use of validation, you can check all form's editext and  shows error at end of form's edittext, once it is called at end than it starts calling every edittext in form.
 <br>
 
+5. map - <br>
+
 # Benifits of RxJava
 1. Error handeling - onError (in Observer)
 2. LifeCycle Changes
