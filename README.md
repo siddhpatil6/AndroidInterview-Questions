@@ -57,11 +57,13 @@ Now, let’s see how they are different and when to use which one.
 ### Observable <> Observer
 This is the simplest Observable which can emit more than one value.
 
-Example use-case: Let’s say you are downloading a file and you have to push the current status of download percentage. Here, you will have to emit more than one value.Creating a simple Observable <br>
+Example use-case: Let’s say you are downloading a file and you have to push the current status of download percentage. Here, you will have to emit more than one value.
+
+<b> * Creating a simple Observable <b> <br>
 
 ![](https://mindorks.files.wordpress.com/2018/01/031d8-1uffrxmh9t70gzwjmxvam2w.png)
 
-<b>* Observer for the Observable: </b><br>
+<b> * Observer for the Observable: </b><br>
 ![](https://mindorks.files.wordpress.com/2018/01/a7ee5-1bettfsjf7clbz_agit0bpg.png)
 
 
