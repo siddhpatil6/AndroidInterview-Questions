@@ -25,12 +25,12 @@
 
 # Understanding Types Of Observables In RxJava
 
-Observable — Operator — Observer
+Observable — Operator — Observer <br>
 An Observable is like speaker which emit value. It does some work and emits some values.
 
-An Operator is like translator which translate/modify a data from one form to another form.
+An Operator is like translator which translate/modify a data from one form to another form. <br>
 
-An Observer gets those values.
+An Observer gets those values. <br>
 
 
 ## Types of Observables in RxJava
