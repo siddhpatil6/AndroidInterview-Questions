@@ -58,6 +58,29 @@ it use of validation, you can check all form's editext and  shows error at end o
 4. Composing multiple calls
 
 
+# How to find app is in foreground or background ?
+To detect when our app is coming to the foreground or when it comes to background, leveraging the ProcessLifecycleOwner class and its events are easy to achieve:
+
+## Creating the LifeCycleObserver class
+It provides lifecycle for the whole application process. It can be used to react to our app coming to the foreground or going to the background with very little code:
+
+```
+public class AppLifecycleObserver implements LifecycleObserver {
+
+    public static final String TAG = AppLifecycleObserver.class.getName();
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_START)
+    public void onEnterForeground() {
+        //run the code we need
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+    public void onEnterBackground() {
+        //run the code we need
+    }
+
+}
+```
 
 # Why we use onAttach or why we use it before onCreate? <br>
 
