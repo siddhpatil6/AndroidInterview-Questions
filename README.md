@@ -38,20 +38,20 @@ This post is all about the different types of Observables available in RxJava.
 
 <b> The following are the different types of Observables in RxJava: </b> <br>
 
-1.Observable
-2.Flowable
-3.Single
-4.Maybe
-5.Completable
+1.Observable <br>
+2.Flowable <br>
+3.Single <br>
+4.Maybe <br>
+5.Completable <br>
 
 As there are different types of Observables, there are different types of Observers also.
 
 <b> So, the following are the different types of Observers in RxJava: </b> <br>
 
-1.Observer
-2.SingleObserver
-3.MaybeObserver
-4.CompletableObserver
+1.Observer <br>
+2.SingleObserver <br>
+3.MaybeObserver <br>
+4.CompletableObserver <br>
 Now, let’s see how they are different and when to use which one.
 
 ### Observable <> Observer
