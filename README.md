@@ -59,7 +59,7 @@ This is the simplest Observable which can emit more than one value.
 
 Example use-case: Let’s say you are downloading a file and you have to push the current status of download percentage. Here, you will have to emit more than one value.
 
-<b> * Creating a simple Observable <b> <br>
+<b> * Creating a simple Observable </b> <br>
 
 ![](https://mindorks.files.wordpress.com/2018/01/031d8-1uffrxmh9t70gzwjmxvam2w.png)
 
@@ -69,13 +69,9 @@ Example use-case: Let’s say you are downloading a file and you have to push th
 
 ### Flowable <> Observer
 Flowable comes to picture when there is a case that the Observable is emitting huge numbers of values which can’t be consumed by the Observer.
-
 In this case, the Observable needs to skip some values on the basis of some strategy else it will throw an exception.
-
 The Flowable Observable handles the exception with a strategy.
-
 The strategy is called BackPressureStrategy and the exception is called MissingBackPressureException.
-
 Creating a Flowable Observable
 
 Similar to normal Observable, you can create Flowable using Flowable.create().
@@ -85,22 +81,26 @@ Observer for Flowable Observable
 The Observer for Flowable is exactly same as normal Observer.
 
 ### Single <> SingleObserver
-Single is used when the Observable has to emit only one value like a response from a network call.
+Single is used when the Observable has to emit only one value like a response from a network call. <br>
 
-<b>* Creating a Single Observable </b>
+<b>* Creating a Single Observable </b> <br>
+
 ![](https://mindorks.files.wordpress.com/2018/01/bb779-1a8-hwx-h2dwfqwvpgbut3a.png)
 
-<b>* SingleObserver for Single Observable </b>
+<b>* SingleObserver for Single Observable </b> <br>
+
 ![](https://mindorks.files.wordpress.com/2018/01/3aeb5-1povqxr7sjtynrrnit6bb1g.png)
 
 
 ### Maybe <> MaybeObserver
 Maybe is used when the Observable has to emit a value or no value.
 
-<b>* Creating a Maybe Observable</b>
+<b>* Creating a Maybe Observable</b> <br>
+
 ![](https://mindorks.files.wordpress.com/2018/01/4b44f-1vmtjanpwknobpaktn0uevg.png)
 
-<b>* MaybeObserver for Maybe Observable</b>
+<b>* MaybeObserver for Maybe Observable</b> <br>
+
 ![](https://mindorks.files.wordpress.com/2018/01/6d62d-1j5n9shaswfggg07-kvj3qw.png)
 
 ### Completable <> CompletableObserver
