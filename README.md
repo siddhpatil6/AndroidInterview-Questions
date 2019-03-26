@@ -149,6 +149,59 @@ it use of validation, you can check all form's editext and  shows error at end o
 3. Caching (Rotation)
 4. Composing multiple calls
 
+# Difference between Map and FlatMap?
+## Map
+
+Map transforms the items emitted by an Observable by applying a function to each item.
+
+![](https://cdn-images-1.medium.com/max/800/0*zCPddBbzJJB1MWop.)
+
+## FlatMap
+
+FlatMap transforms the items emitted by an Observable into Observables.
+
+![](https://cdn-images-1.medium.com/max/800/0*Xl5mG559HaaPeRXy.)
+
+
+So, the main difference between Map and FlatMap that FlatMap mapper returns an observable itself, so it is used to map over asynchronous operations.
+
+<b> Very important: FlatMap is used to map over asynchronous operations. </b>
+
+```
+getUserObservable()
+    .map(new Function<ApiUser, User>() {
+        @Override
+        public User apply(ApiUser apiUser) throws Exception {
+          // here we get the ApiUser from the server
+            User user = new User(apiUser);
+            // then by converting it into the user, we are returning
+            return user;
+        }
+    })
+    .subscribeOn(Schedulers.io())
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(getObserver()
+```
+
+Here, the observable gives us ApiUser object which we are converting into User object by using the map operator.
+
+
+
+```
+getUserObservable()
+    .flatMap(new Function<ApiUser, ObservableSource<UserDetail>>() { 
+        @Override
+        public ObservableSource<UserDetail> apply(ApiUser apiUser) throws Exception {
+            return getUserDetailObservable(apiUser);
+        }
+    })
+    .subscribeOn(Schedulers.io())
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(getObserver());
+```
+
+Here, we are getting the ApiUser and then we are making a network call to get the UserDetail for that apiUser by using the getUserDetailObservable(apiUser). The flatMap mapper returns an observable itself. The getUserDetailObservable is an asynchronous operation.
+
 
 # How to find app is in foreground or background ?
 To detect when our app is coming to the foreground or when it comes to background, leveraging the ProcessLifecycleOwner class and its events are easy to achieve:
