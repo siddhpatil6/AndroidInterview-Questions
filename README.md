@@ -23,6 +23,95 @@
 * Operator are all horse power behind observable.
 * provides elegent and declarative solution to complex async task.
 
+# Understanding Types Of Observables In RxJava
+
+Observable — Operator — Observer
+An Observable is like speaker which emit value. It does some work and emits some values.
+
+An Operator is like translator which translate/modify a data from one form to another form.
+
+An Observer gets those values.
+
+
+## Types of Observables in RxJava
+This post is all about the different types of Observables available in RxJava.
+
+<b> The following are the different types of Observables in RxJava: </b> <br>
+
+1.Observable
+2.Flowable
+3.Single
+4.Maybe
+5.Completable
+
+As there are different types of Observables, there are different types of Observers also.
+
+<b> So, the following are the different types of Observers in RxJava: </b> <br>
+
+1.Observer
+2.SingleObserver
+3.MaybeObserver
+4.CompletableObserver
+Now, let’s see how they are different and when to use which one.
+
+### Observable <> Observer
+This is the simplest Observable which can emit more than one value.
+
+Example use-case: Let’s say you are downloading a file and you have to push the current status of download percentage. Here, you will have to emit more than one value.Creating a simple Observable
+![](https://mindorks.files.wordpress.com/2018/01/031d8-1uffrxmh9t70gzwjmxvam2w.png)
+
+Observer for the Observable: <br>
+![](https://mindorks.files.wordpress.com/2018/01/a7ee5-1bettfsjf7clbz_agit0bpg.png)
+
+
+### Flowable <> Observer
+Flowable comes to picture when there is a case that the Observable is emitting huge numbers of values which can’t be consumed by the Observer.
+
+In this case, the Observable needs to skip some values on the basis of some strategy else it will throw an exception.
+
+The Flowable Observable handles the exception with a strategy.
+
+The strategy is called BackPressureStrategy and the exception is called MissingBackPressureException.
+
+Creating a Flowable Observable
+
+Similar to normal Observable, you can create Flowable using Flowable.create().
+
+Observer for Flowable Observable
+
+The Observer for Flowable is exactly same as normal Observer.
+
+### Single <> SingleObserver
+Single is used when the Observable has to emit only one value like a response from a network call.
+
+* Creating a Single Observable
+![](https://mindorks.files.wordpress.com/2018/01/bb779-1a8-hwx-h2dwfqwvpgbut3a.png)
+
+* SingleObserver for Single Observable
+![](https://mindorks.files.wordpress.com/2018/01/3aeb5-1povqxr7sjtynrrnit6bb1g.png)
+
+
+### Maybe <> MaybeObserver
+Maybe is used when the Observable has to emit a value or no value.
+
+* Creating a Maybe Observable
+![](https://mindorks.files.wordpress.com/2018/01/4b44f-1vmtjanpwknobpaktn0uevg.png)
+
+* MaybeObserver for Maybe Observable
+![](https://mindorks.files.wordpress.com/2018/01/6d62d-1j5n9shaswfggg07-kvj3qw.png)
+
+### Completable <> CompletableObserver
+Completable is used when the Observable has to do some task without emitting a value.
+
+* Creating a Completable Observable
+![](https://mindorks.files.wordpress.com/2018/01/9c972-1aqkhg-zp3kk-9vt8ougrnw.png)
+
+
+* CompletableObserver for Completable Observable
+![](https://mindorks.files.wordpress.com/2018/01/e95aa-1wtdkb1wv9vzoe6ilncfz3q.png)
+
+
+
 ## Key Points
 1. Obserbable
 2. Observer
