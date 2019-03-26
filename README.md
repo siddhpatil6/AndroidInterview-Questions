@@ -166,7 +166,9 @@ FlatMap transforms the items emitted by an Observable into Observables.
 So, the main difference between Map and FlatMap that FlatMap mapper returns an observable itself, so it is used to map over asynchronous operations.
 
 <b> Very important: FlatMap is used to map over asynchronous operations. </b>
-
+<br>
+<br>
+<br>
 ```
 getUserObservable()
     .map(new Function<ApiUser, User>() {
@@ -184,9 +186,9 @@ getUserObservable()
 ```
 
 Here, the observable gives us ApiUser object which we are converting into User object by using the map operator.
-
-
-
+<br>
+<br>
+<br>
 ```
 getUserObservable()
     .flatMap(new Function<ApiUser, ObservableSource<UserDetail>>() { 
