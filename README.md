@@ -23,14 +23,14 @@
 * Operator are all horse power behind observable.
 * provides elegent and declarative solution to complex async task.
 
-# Key Points
+## Key Points
 1. Obserbable
 2. Observer
 3. Scheduler
 4. Subscription
 5. Composite Subscription
 
-# Sub Points - (Operator)
+## Sub Points - (Operator)
 <b> 1. Retry and RetryWhen </b>
 <br>
 RxJava has operator called retry, you can also specify when to retry.it means you can retry after particular time.
@@ -51,7 +51,7 @@ it use of validation, you can check all form's editext and  shows error at end o
 
 <b> 6. filter - </b> <br>
 
-# Benifits of RxJava
+## Benifits of RxJava
 1. Error handeling - onError (in Observer)
 2. LifeCycle Changes
 3. Caching (Rotation)
@@ -81,6 +81,25 @@ public class AppLifecycleObserver implements LifecycleObserver {
 
 }
 ```
+## Integrating the Observer within the App
+Now, when need to register the LifeCycleObserver class within the app. To achieve this is mandatory to have an Application class in the app (if not, we need to create it) and then in its onCreate() method call the observer class and then registered, as follows:
+
+```
+public class MyApp extends MultiDexApplication {
+
+    private static final String TAG = MyApp.class.getName();
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        AppLifecycleObserver appLifecycleObserver = new AppLifecycleObserver();
+        ProcessLifecycleOwner.get().getLifecycle().addObserver(appLifecycleObserver);
+    }
+}
+```
+The above tells the application: every time you come background as there is a class observing this, the app is entering to ON_STOP lifecycle process, then please run the onEnterBackground() method. The same will apply to onEnterForeground() method when the app comes to the foreground, because the app is entering ON_START.
+
 
 # Why we use onAttach or why we use it before onCreate? <br>
 
