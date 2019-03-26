@@ -57,10 +57,11 @@ Now, let’s see how they are different and when to use which one.
 ### Observable <> Observer
 This is the simplest Observable which can emit more than one value.
 
-Example use-case: Let’s say you are downloading a file and you have to push the current status of download percentage. Here, you will have to emit more than one value.Creating a simple Observable
+Example use-case: Let’s say you are downloading a file and you have to push the current status of download percentage. Here, you will have to emit more than one value.Creating a simple Observable <br>
+
 ![](https://mindorks.files.wordpress.com/2018/01/031d8-1uffrxmh9t70gzwjmxvam2w.png)
 
-Observer for the Observable: <br>
+<b>* Observer for the Observable: </b><br>
 ![](https://mindorks.files.wordpress.com/2018/01/a7ee5-1bettfsjf7clbz_agit0bpg.png)
 
 
@@ -84,30 +85,30 @@ The Observer for Flowable is exactly same as normal Observer.
 ### Single <> SingleObserver
 Single is used when the Observable has to emit only one value like a response from a network call.
 
-* Creating a Single Observable
+<b>* Creating a Single Observable </b>
 ![](https://mindorks.files.wordpress.com/2018/01/bb779-1a8-hwx-h2dwfqwvpgbut3a.png)
 
-* SingleObserver for Single Observable
+<b>* SingleObserver for Single Observable </b>
 ![](https://mindorks.files.wordpress.com/2018/01/3aeb5-1povqxr7sjtynrrnit6bb1g.png)
 
 
 ### Maybe <> MaybeObserver
 Maybe is used when the Observable has to emit a value or no value.
 
-* Creating a Maybe Observable
+<b>* Creating a Maybe Observable</b>
 ![](https://mindorks.files.wordpress.com/2018/01/4b44f-1vmtjanpwknobpaktn0uevg.png)
 
-* MaybeObserver for Maybe Observable
+<b>* MaybeObserver for Maybe Observable</b>
 ![](https://mindorks.files.wordpress.com/2018/01/6d62d-1j5n9shaswfggg07-kvj3qw.png)
 
 ### Completable <> CompletableObserver
 Completable is used when the Observable has to do some task without emitting a value.
 
-* Creating a Completable Observable
+<b>* Creating a Completable Observable</b>
 ![](https://mindorks.files.wordpress.com/2018/01/9c972-1aqkhg-zp3kk-9vt8ougrnw.png)
 
 
-* CompletableObserver for Completable Observable
+<b>* CompletableObserver for Completable Observable</b>
 ![](https://mindorks.files.wordpress.com/2018/01/e95aa-1wtdkb1wv9vzoe6ilncfz3q.png)
 
 
