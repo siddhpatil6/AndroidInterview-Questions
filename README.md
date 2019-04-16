@@ -1,7 +1,8 @@
 
 # Android Interview-Questions
 
-# Difference between obsevable and obse
+# Difference between obsevables single,Maybe and completable?
+
 #### Single
 Single is an Observable which only emits one item or throws an error. Single emits only one value and applying some of the operator makes no sense. Like we don’t want to take value and collect it to a list.
 
