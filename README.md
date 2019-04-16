@@ -5,12 +5,14 @@
 #### Single
 Single is an Observable which only emits one item or throws an error. Single emits only one value and applying some of the operator makes no sense. Like we don’t want to take value and collect it to a list.
 
+```
 interface SingleObserver<T> {
     void onSubscribe(Disposable d);
     void onSuccess(T value);
     void onError(Throwable error);
 }
-	
+```
+
 ### Maybe -
 Maybe is similar to Single only difference being that it allows for no emissions as well.
 
@@ -49,7 +51,7 @@ As we run the above code snippet
 Item received: from singleSource single item
 Done from EmptySource would be printed.
 
-## Completable -
+### Completable -
 
 Completable is only concerned with execution completion whether the task has reach to completion or some error has occurred.
 
