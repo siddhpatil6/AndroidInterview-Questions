@@ -2,6 +2,51 @@
 # Android Interview-Questions
 
 # RxJava 
+
+## What is Operator?
+Operators: It translates the input into the required format of the output.
+
+## Difference between Map and FlatMap?
+### Map - 
+Map transforms the items emitted by an Observable by applying a function to each item.
+
+Example
+```
+getUserObservable()
+    .map(new Function<ApiUser, User>() {
+        @Override
+        public User apply(ApiUser apiUser) throws Exception {
+          // here we get the ApiUser from the server
+            User user = new User(apiUser);
+            // then by converting it into the user, we are returning
+            return user;
+        }
+    })
+    .subscribeOn(Schedulers.io())
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(getObserver());
+```
+### FlatMap -
+FlatMap transforms the items emitted by an Observable into Observables.
+
+* Examples -
+```
+getUserObservable()
+    .flatMap(new Function<ApiUser, ObservableSource<UserDetail>>() { 
+        @Override
+        public ObservableSource<UserDetail> apply(ApiUser apiUser) throws Exception {
+            return getUserDetailObservable(apiUser);
+        }
+    })
+    .subscribeOn(Schedulers.io())
+    .observeOn(AndroidSchedulers.mainThread())
+    .subscribe(getObserver());
+```
+
+Here, we are getting the ApiUser and then we are making a network call to get the UserDetail for that apiUser by using the getUserDetailObservable(apiUser). The flatMap mapper returns an observable itself. The getUserDetailObservable is an asynchronous operation.
+
+This is how we should use the Map and the FlatMap operators in RxJava.
+
 ## Anatomy - 
 1. Obserbable </br>
 2. Observer </br>
