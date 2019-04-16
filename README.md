@@ -1,7 +1,118 @@
 
 # Android Interview-Questions
 
+# Difference between obsevable and obse
+#### Single
+Single is an Observable which only emits one item or throws an error. Single emits only one value and applying some of the operator makes no sense. Like we don’t want to take value and collect it to a list.
+
+interface SingleObserver<T> {
+    void onSubscribe(Disposable d);
+    void onSuccess(T value);
+    void onError(Throwable error);
+}
+	
+### Maybe -
+Maybe is similar to Single only difference being that it allows for no emissions as well.
+
+```
+interface MaybeObserver<T> {
+    void onSubscribe(Disposable d);
+    void onSuccess(T value);
+    void onError(Throwable error);
+    void onComplete();
+}
+```
+We will see example how to implement this
+
+```
+//Some Emission
+Maybe<String> singleSource = Maybe.just("single item");
+
+singleSource.subscribe(
+        s -> System.out.println("Item received: from singleSource " +  s),
+        Throwable::printStackTrace,
+        () -> System.out.println("Done from SingleSource")
+);
+```
+
+```
+//no emission
+Maybe<Integer> emptySource = Maybe.empty();
+emptySource.subscribe(
+        s -> System.out.println("Item received: from emptySource" + s),
+        Throwable::printStackTrace,
+        () -> System.out.println("Done from EmptySource")
+);
+```
+As we run the above code snippet
+
+Item received: from singleSource single item
+Done from EmptySource would be printed.
+
+## Completable -
+
+Completable is only concerned with execution completion whether the task has reach to completion or some error has occurred.
+
+```
+interface CompletableObserver<T> {
+    void onSubscribe(Disposable d);
+    void onComplete();    
+    void onError(Throwable error);
+}
+```
+As Completable only concern is completeness it does not have onNext() and onSucess() method.
+
+Example: There are certain scenario where only concern in completion or error. Suppose we update any User model in the app and want to just notify the server about it. We don’t care about the response because app already has the latest object.
+
+```
+public interface APIClient {
+
+    @PUT("user")
+    Completable updateUser(@Body User);
+}
+```
+* Call the ApiClient updateUser
+
+```
+apiClient.updateUser(user)
+        .subscribe(() -> {
+    // handle the completion server has update the user object
+},error -> {
+    //handle error 
+})
+```
+
+	
 # RxJava 
+
+## RxJava Schedulers
+Threading in RxJava is done with help of Schedulers. Scheduler can be thought of as a thread pool managing 1 or more threads. Whenever a Scheduler needs to execute a task, it will take a thread from its pool and run the task in that thread.
+
+Let’s summarize available Scheduler types and their common uses:
+
+### Schedulers.io() 
+
+is backed by an unbounded thread pool. It is used for non CPU-intensive I/O type work including interaction with the file system, performing network calls, database interactions, etc. This thread pool is intended to be used for asynchronously performing blocking IO.
+
+### Schedulers.computation() 
+
+is backed by a bounded thread pool with size up to the number of available processors. It is used for computational or CPU-intensive work such as resizing images, processing large data sets, etc. Be careful: when you allocate more computation threads than available cores, performance will degrade due to context switching and thread creation overhead as threads vie for processors’ time.
+
+### Schedulers.newThread()
+
+creates a new thread for each unit of work scheduled. This scheduler is expensive as new thread is spawned every time and no reuse happens.
+
+### Schedulers.from(Executor executor)
+
+creates and returns a custom scheduler backed by the specified executor. To limit the number of simultaneous threads in the thread pool, use Scheduler.from(Executors.newFixedThreadPool(n)). This guarantees that if a task is scheduled when all threads are occupied, it will be queued. The threads in the pool will exist until it is explicitly shutdown.
+
+### Main thread or AndroidSchedulers.mainThread() 
+
+is provided by the RxAndroid extension library to RxJava. Main thread (also known as UI thread) is where user interaction happens. Care should be taken not to overload this thread to prevent janky non-responsive UI or, worse, Application Not Responding” (ANR) dialog.
+Schedulers.single() is new in RxJava 2. This scheduler is backed by a single thread executing tasks sequentially in the order requested.
+### Schedulers.trampoline() 
+
+executes tasks in a FIFO (First In, First Out) manner by one of the participating worker threads. It’s often used when implementing recursion to avoid growing the call stack.
 
 ## What is Operator?
 Operators: It translates the input into the required format of the output.
