@@ -10,7 +10,7 @@ Operators: It translates the input into the required format of the output.
 ### Map - 
 Map transforms the items emitted by an Observable by applying a function to each item.
 
-Example
+* Example -
 ```
 getUserObservable()
     .map(new Function<ApiUser, User>() {
