@@ -1,7 +1,12 @@
 
 # Android Interview-Questions
 
-# Difference between obsevables single,Maybe and completable?
+
+# Dagger 2
+
+
+# RxJava 
+## Difference between obsevables single,Maybe and completable?
 
 #### Single
 Single is an Observable which only emits one item or throws an error. Single emits only one value and applying some of the operator makes no sense. Like we don’t want to take value and collect it to a list.
@@ -86,7 +91,7 @@ apiClient.updateUser(user)
 ```
 
 	
-# RxJava 
+
 
 ## RxJava Schedulers
 Threading in RxJava is done with help of Schedulers. Scheduler can be thought of as a thread pool managing 1 or more threads. Whenever a Scheduler needs to execute a task, it will take a thread from its pool and run the task in that thread.
