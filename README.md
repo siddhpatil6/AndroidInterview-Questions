@@ -5,7 +5,118 @@
 # Dagger 2
 
 
-# RxJava 
+# RxJava Subjects?
+
+## This article is all about the Subject available in RxJava.
+
+* Publish Subject
+* Replay Subject
+* Behavior Subject
+* Async Subject
+
+As we already have the sample project based on RxJava2 to learn RxJava (many developers have learned from this sample project), So I have included the Subject examples in the same project. Fork, clone, build, run and learn RxJava. Check it out here.
+
+So, Let’s learn about the Subject.
+
+## What is Subject?
+
+A Subject is a sort of bridge or proxy that is available in some implementations of ReactiveX that acts both as an observer and as an Observable. Because it is an observer, it can subscribe to one or more Observables, and because it is an Observable, it can pass through the items it observes by re-emitting them, and it can also emit new items.
+
+I believe : learning by examples is the best way to learn
+
+### Observable: 
+Assume that a professor is an observable. The professor teaches about some topic.
+
+### Observer:
+Assume that a student is an observer. The student observes the topic being taught by the professor.
+
+## Publish Subject:
+It emits all the subsequent items of the source Observable at the time of subscription.
+
+* Note : Here, if a student entered late into the classroom, he just wants to listen from that point of time when he entered the classroom. So, Publish will be the best for this use-case.
+
+See the below example:
+```
+PublishSubject<Integer> source = PublishSubject.create();
+
+// It will get 1, 2, 3, 4 and onComplete
+source.subscribe(getFirstObserver()); 
+
+source.onNext(1);
+source.onNext(2);
+source.onNext(3);
+
+// It will get 4 and onComplete for second observer also.
+source.subscribe(getSecondObserver());
+
+source.onNext(4);
+source.onComplete();
+```
+Check the complete example here.
+
+## Replay Subject
+
+It emits all the items of the source Observable, regardless of when the subscriber subscribes.
+
+* Note : Here, if a student entered late into the classroom, he wants to listen from the beginning. So, here we will use Replay to achieve this.
+
+See the below example:
+```
+ReplaySubject<Integer> source = ReplaySubject.create();
+// It will get 1, 2, 3, 4
+source.subscribe(getFirstObserver());
+source.onNext(1);
+source.onNext(2);
+source.onNext(3);
+source.onNext(4);
+source.onComplete();
+// It will also get 1, 2, 3, 4 as we have used replay Subject
+source.subscribe(getSecondObserver());
+```
+Check the complete example here.
+
+## Behavior Subject
+
+It emits the most recently emitted item and all the subsequent items of the source Observable when an observer subscribes to it.
+
+* Note : Here, if a student entered late into the classroom, he wants to listen the most recent things(not from the beginning) being taught by the professor so that he gets the idea of the context. So, here we will use Behavior.
+
+See the below example:
+```
+BehaviorSubject<Integer> source = BehaviorSubject.create();
+// It will get 1, 2, 3, 4 and onComplete
+source.subscribe(getFirstObserver());
+source.onNext(1);
+source.onNext(2);
+source.onNext(3);
+// It will get 3(last emitted)and 4(subsequent item) and onComplete
+source.subscribe(getSecondObserver());
+source.onNext(4);
+source.onComplete();
+Check the complete example here.
+```
+
+### Async Subject
+
+It only emits the last value of the source Observable(and only the last value) only after that source Observable completes.
+
+* Note : Here, if a student entered at any point of time into the classroom, and he wants to listen only about the last thing(and only the last thing) being taught, after class is over. So, here we will use Async.
+
+See the below example:
+
+```
+AsyncSubject<Integer> source = AsyncSubject.create();
+// It will get only 4 and onComplete
+source.subscribe(getFirstObserver());
+source.onNext(1);
+source.onNext(2);
+source.onNext(3);
+// It will also get only get 4 and onComplete
+source.subscribe(getSecondObserver());
+source.onNext(4);
+source.onComplete();
+```
+
 ## Difference between obsevables single,Maybe and completable?
 
 #### Single
