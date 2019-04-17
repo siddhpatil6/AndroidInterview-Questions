@@ -14,15 +14,10 @@
 * Behavior Subject
 * Async Subject
 
-As we already have the sample project based on RxJava2 to learn RxJava (many developers have learned from this sample project), So I have included the Subject examples in the same project. Fork, clone, build, run and learn RxJava. Check it out here.
-
-So, Let’s learn about the Subject.
-
 ## What is Subject?
 
 A Subject is a sort of bridge or proxy that is available in some implementations of ReactiveX that acts both as an observer and as an Observable. Because it is an observer, it can subscribe to one or more Observables, and because it is an Observable, it can pass through the items it observes by re-emitting them, and it can also emit new items.
 
-I believe : learning by examples is the best way to learn
 
 ### Observable: 
 Assume that a professor is an observable. The professor teaches about some topic.
@@ -52,7 +47,6 @@ source.subscribe(getSecondObserver());
 source.onNext(4);
 source.onComplete();
 ```
-Check the complete example here.
 
 ## Replay Subject
 
@@ -73,7 +67,6 @@ source.onComplete();
 // It will also get 1, 2, 3, 4 as we have used replay Subject
 source.subscribe(getSecondObserver());
 ```
-Check the complete example here.
 
 ## Behavior Subject
 
@@ -93,7 +86,6 @@ source.onNext(3);
 source.subscribe(getSecondObserver());
 source.onNext(4);
 source.onComplete();
-Check the complete example here.
 ```
 
 ### Async Subject
