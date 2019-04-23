@@ -1,7 +1,7 @@
 
 # Android Interview-Questions
 
-# Retrofit Quesytions?
+# Retrofit Questions?
 # Dagger 2
 
 
