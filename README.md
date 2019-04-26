@@ -8,7 +8,7 @@ The Data Binding Library is a support library that allows you to bind UI compone
 
 ## How to achieve it? 
 
-1. Step 1 - build.gradle <br>
+<b> 1. Step 1 </b>- build.gradle <br>
 
 ```
 android {
@@ -19,7 +19,7 @@ android {
 }
 ```
 
-2. Step 2 - activity_eligibilit.xml <br>
+<b> 2. Step 2 - </b> activity_eligibilit.xml <br>
 
 ```
  <data>
@@ -30,7 +30,7 @@ android {
     </data>
 ```
 
-3. Step 4 - 
+<b> 3. Step 3 - </b>
 
 Note : binding name should be of layout name <br>
 Example: content_eligibility - > ContentEligibilityBinding <br>
@@ -45,7 +45,7 @@ Example: content_eligibility - > ContentEligibilityBinding <br>
 }
 ```
 
-4. Stetp 4 - 
+<b> 4. Stetp 4 - </b>
 
 Note - To Set a Data you should execute method <br>
 
@@ -55,7 +55,7 @@ Note - To Set a Data you should execute method <br>
  	binding.executePendingBindings()
 ```
 
-5. Step 5 - 
+<b>5. Step 5 - </b>
 
 Note - To set data to TextView <br>
 
