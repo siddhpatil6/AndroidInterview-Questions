@@ -1,5 +1,78 @@
 
 # Android Interview-Questions
+# Data Binding?
+```
+The Data Binding Library is a support library that allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
+```
+
+
+## How to achieve it? 
+
+1. Step 1 - build.gradle <br>
+
+```
+android {
+    ...
+    dataBinding {
+        enabled = true
+    }
+}
+```
+
+2. Step 2 - activity_eligibilit.xml <br>
+
+```
+ <data>
+
+        <variable
+            name="eligibility"
+            type="com.greenlightplanet.kazi.task.model.request.EligibilityModel" />
+    </data>
+```
+
+3. Step 4 - 
+
+Note : binding name should be of layout name <br>
+Example: content_eligibility - > ContentEligibilityBinding <br>
+
+```
+   private lateinit var binding: ContentEligibilityBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_eligibility)
+        binding= DataBindingUtil.setContentView(this, R.layout.content_eligibility)
+}
+```
+
+4. Stetp 4 - 
+
+Note - To Set a Data you should execute method <br>
+
+
+```
+  	binding.eligibility=eligibilityModel
+ 	binding.executePendingBindings()
+```
+
+5. Step 5 - 
+
+Note - To set data to TextView <br>
+
+```
+    <TextView
+                android:id="@+id/tvCustomerName"
+                style="@style/LabelStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@{eligibility.ownerName}"
+
+                />
+```
+
+## How to use data binding ?
 
 # Retrofit Questions?
 # Dagger 2
