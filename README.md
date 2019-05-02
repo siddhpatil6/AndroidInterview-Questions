@@ -72,6 +72,28 @@ Note - To set data to TextView <br>
                 />
 ```
 
+## How to use visibility in data binding?
+* In data tag in xml file
+```
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="eligibility"
+            type="com.greenlightplanet.kazi.task.model.request.EligibilityModel" />
+    </data>
+```
+* in view 
+```
+<LinearLayout
+    android:id="@+id/linearLayout17"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    
+    android:visibility="@{eligibility.accountNumber!=null ? View.VISIBLE: View.GONE}"
+ >
+```
+
 ## How to use data binding ?
 
 # Retrofit Questions?
