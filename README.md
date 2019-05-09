@@ -1,5 +1,30 @@
 
 # Android Interview-Questions
+# What are Sealed Classes? - Kotlin
+From the documentation: Sealed classes are used for representing restricted class hierarchies, when a value can have one of the types from a limited set, but cannot have any other type. They are, in a sense, an extension of enum classes: the set of values for an enum type is also restricted, but each enum constant exists only as a single instance, whereas a subclass of a sealed class can have multiple instances which can contain state.
+How to declare sealed class?
+Just put the sealed modifier before the name of the class.
+
+```
+sealed class Car {
+
+    data class Maruti(val speed: Int) : Car()
+    data class Bugatti(val speed: Int, val boost: Int) : Car()
+    object NotACar : Car()
+
+}
+```
+The key benefit of using sealed classes comes into play when you use them in a when expression. If it’s possible to verify that the statement covers all cases, you don’t need to add an else clause to the statement.
+
+```
+fun speed(car: Car): Int = when (car) {
+    is Car.Maruti -> car.speed
+    is Car.Bugatti -> car.speed + car.boost
+    Car.NotACar -> INVALID_SPEED
+    // else clause is not required as we've covered all the cases
+}
+```
+So , whenever you get the situation like this, consider using sealed class.
 # Data Binding?
 ```
 The Data Binding Library is a support library that allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
