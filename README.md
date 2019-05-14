@@ -122,7 +122,6 @@ Note - To set data to TextView <br>
  >
 ```
 
-## How to use data binding ?
 
 # Retrofit Questions?
 # Dagger 2
