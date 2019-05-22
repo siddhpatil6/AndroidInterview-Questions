@@ -1,5 +1,29 @@
 
 # Android Interview-Questions
+
+# Difference between ==, === and Equally?
+
+## Structural Equality (‘==’)
+== operator is used to compare the data of two variables.
+Please don’t misunderstand this equality operator with the Java == operator as both are different. == operator in Kotlin only compares the data or variables, whereas in Java or other languages == is generally used to compare the references. The negated counterpart of == in Kotlin is != which is used to compare if both the values are not equal to each other.
+
+## Referential equality (‘===’)
+=== operator is used to compare the reference of two variable or object. It will only be true if both the objects or variables pointing to the same object. The negated counterpart of === in Kotlin is !== which is used to compare if both the values are not equal to each other. For values which are represented as primitive types at runtime (for example, Int), the === equality check is equivalent to the == check.
+
+## .equals method
+equals(other: Any?) method is implemented in Any class and can be overridden in any extending class. .equals method also compares the content of the variables or objects just like == operator but it behaves differently in case of Float and Double comparison.
+
+The difference between == and .equals is in case of Float and Double comparison, .equals disagrees with the IEEE 754 Standard for Floating-Point Arithmetic.
+
+And what does disagree with IEEE 754 Standard for Floating-Point Arithmetic mean?
+
+It means,
+
+NaN is considered equal to itself
+NaN is considered greater than any other element including POSITIVE_INFINITY
+-0.0 is considered less than 0.0
+
+
 # What are Sealed Classes? - Kotlin
 Sealed classes are used for representing restricted class hierarchies, when a value can have one of the types from a limited set, but cannot have any other type. They are, in a sense, an extension of enum classes: the set of values for an enum type is also restricted, but each enum constant exists only as a single instance, whereas a subclass of a sealed class can have multiple instances which can contain state.
 
