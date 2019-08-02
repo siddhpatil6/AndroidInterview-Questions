@@ -92,7 +92,6 @@ Example: content_eligibility - > ContentEligibilityBinding <br>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_eligibility)
         binding= DataBindingUtil.setContentView(this, R.layout.content_eligibility)
 }
 ```
