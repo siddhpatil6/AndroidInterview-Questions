@@ -1,6 +1,9 @@
 
 # Android Interview-Questions
 
+# What is MutableLiveData? Or Difference between LiveData and MutableLiveData?
+MutableLiveData is a subclass of LiveData which is used for some of it’s properties (setValue/postValue) and using these properties we can easily notify the ui when onChange() is called. Only using LiveData object we can’t do this. So, we have to convert the target object to MutableLiveData/MediatorLiveData for notifying on each time of changing data.
+
 #  Unit Testing -
 * androidTest - (Instrumentation)- Mockito,JUnit,(UI) - Expresso <br>
 * test (Unit)- Mockito, JUnit
