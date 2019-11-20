@@ -1,5 +1,22 @@
 
 # Android Interview-Questions
+# Why to choose MVVP over MVP ?
+
+<h4> * Tight Coupling </h4> <br> - 
+For each Activity/Fragment (View) we require a Presenter.
+This is a hard bound rule. Presenter holds the reference to the Activity and Activity Holds the reference to presenter. 1:1 relationship and thats where the biggest issue lies.
+
+As the complexity of view increases, so does the maintenance and handling of this relationship.
+
+This eventually lead to same issue we faced earlier as in for quick changes in design, we actually need to modify the whole relationship.
+Picking a statement from our end goal “Build things in a distributed manner”, In order to achieve it and to avoid this tight relationship ViewModels were introduced.
+
+ViewModels are simples classes that interacts with the logic/model layer and just exposes states/data and actually has no idea by whom or how that data will be consumed. Only View(Activity) holds the reference to ViewModel and not vice versa, this solves our tight coupling issue. A single view can hold reference to multiple ViewModels.
+
+Even for complex views we can actually have different ViewModels within same hierarchy.
+<h4>* Testability </h4> <br> -
+Since Presenters are hard bound to Views, writing unit test becomes slightly difficult as there is a dependency of a View.
+ViewModels are even more Unit Test friendly as they just expose the state and hence can be independently tested without requiring the need for testing how data will be consumed, In short there is no dependency of the View.
 
 # Difference between MVP and MVVM?
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/MVCvsMVPvsMVVM.png)
