@@ -1,6 +1,9 @@
 
 # Android Interview-Questions
 
+# Difference between Comparable and Comparater?
+
+
 # What is TextClasifier?
 
 # What is Workmanager? 
