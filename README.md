@@ -1,6 +1,8 @@
 
 # Android Interview-Questions
 
+# Difference between MVP and MVVM?
+
 # Difference between Comparable and Comparater?
 
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/ComparableVsComparatoer.png)
