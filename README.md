@@ -3,6 +3,7 @@
 
 # Difference between Comparable and Comparater?
 
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/ComparableVsComparatoer.png)
 
 # What is TextClasifier?
 
