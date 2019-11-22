@@ -1,5 +1,9 @@
 
 # Android Interview-Questions
+# What is WorkManager and Explain?
+
+# What is difference between String and RawString in kotlin?
+
 # Why to choose MVVP over MVP ?
 
 <h4> * Tight Coupling </h4> <br> - 
