@@ -85,9 +85,9 @@ coroutines are a great solution to two problems: <br>
 It’s important to note that you can’t just call a suspend function from anywhere. The suspend and resume mechanism requires that you switch from normal functions to a coroutine.
 * There are two ways to start coroutines, and they have different uses:
 
-1.<b> launch </b> builder will start a new coroutine that is “fire and forget” — that means it won’t return the result to the caller.
+1.<b>launch </b> builder will start a new coroutine that is “fire and forget” — that means it won’t return the result to the caller.
 
-2. <b> async </b> builder will start a new coroutine, and it allows you to return a result with a suspend function called await.
+2.<b>async </b> builder will start a new coroutine, and it allows you to return a result with a suspend function called await.
 In almost all cases, the right answer for how to start a coroutine from a regular function is to use launch. Since the regular function has no way to call await (remember, it can’t call suspend functions directly) it doesn’t make much sense to use async as your main entry to coroutines. We’ll talk later about when it makes sense to use async.
 
 ## There are two ways to start coroutines, and they have different uses:
