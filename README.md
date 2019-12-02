@@ -1,5 +1,69 @@
 
 # Android Interview-Questions
+# What is Coroutine and What problem it solve?
+Here, Co means cooperation and Routines means functions.
+It means that when functions cooperate with each other, we call it as Coroutines.
+
+Let's understand this with an example. I have written the below code in a different way just for the sake of understanding. Suppose we have two functions as functionA and functionB.
+
+<b> functionA as below: </b>
+
+```
+fun functionA(case: Int) {
+    when (case) {
+        1 -> {
+            taskA1()
+            functionB(1)
+        }
+        2 -> {
+            taskA2()
+            functionB(2)
+        }
+        3 -> {
+            taskA3()
+            functionB(3)
+        }
+        4 -> {
+            taskA4()
+            functionB(4)
+        }
+    }
+}
+```
+<b> And functionB as below: </b>
+```
+fun functionB(case: Int) {
+    when (case) {
+        1 -> {
+            taskB1()
+            functionA(2)
+        }
+        2 -> {
+            taskB2()
+            functionA(3)
+        }
+        3 -> {
+            taskB3()
+            functionA(4)
+        }
+        4 -> {
+            taskB4()
+        }
+    }
+}
+```
+Then, we can call the functionA as below:
+
+functionA(1)
+Here, functionA will do the taskA1 and give the control to the functionB to execute the taskB1.
+
+Then, functionB will do the taskB1 and give the control back to the functionA to execute the taskA2 and so on.
+
+The important thing is that functionA and functionB are cooperating with each other.
+
+With Kotlin Coroutines, the above cooperation can be done very easily which is without the use of when or switch case which I have used in the above example for the sake of understanding.
+
+Now that, we have understood what are coroutines when it comes to cooperation between the functions. There are endless possibilities which open up because of the cooperative nature of functions.
 # What is WorkManager and Explain?
 
 # What is difference between String and RawString in kotlin?
