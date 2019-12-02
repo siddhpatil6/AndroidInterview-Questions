@@ -79,6 +79,19 @@ coroutines are a great solution to two problems: <br>
 <b>Long running tasks</b> are tasks that take too long to block the main thread.<br>
 <b>Main-safety</b> allows you to ensure that any suspend function can be called from the main thread.<br>
 
+<b>A CoroutineScope keeps track of all your coroutines, and it can cancel all of the coroutines started in it.</b>
+
+# Starting new coroutines
+It’s important to note that you can’t just call a suspend function from anywhere. The suspend and resume mechanism requires that you switch from normal functions to a coroutine.
+* There are two ways to start coroutines, and they have different uses:
+launch builder will start a new coroutine that is “fire and forget” — that means it won’t return the result to the caller.
+
+async builder will start a new coroutine, and it allows you to return a result with a suspend function called await.
+In almost all cases, the right answer for how to start a coroutine from a regular function is to use launch. Since the regular function has no way to call await (remember, it can’t call suspend functions directly) it doesn’t make much sense to use async as your main entry to coroutines. We’ll talk later about when it makes sense to use async.
+
+## There are two ways to start coroutines, and they have different uses:
+<b> launch </b> builder will start a new coroutine that is “fire and forget” — that means it won’t return the result to the caller.
+<b> async </b> builder will start a new coroutine, and it allows you to return a result with a suspend function called await.
 
 # What is WorkManager and Explain?
 
