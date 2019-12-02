@@ -73,11 +73,11 @@ The important thing is that functionA and functionB are cooperating with each ot
 With Kotlin Coroutines, the above cooperation can be done very easily which is without the use of when or switch case which I have used in the above example for the sake of understanding.
 
 Now that, we have understood what are coroutines when it comes to cooperation between the functions. There are endless possibilities which open up because of the cooperative nature of functions.
-
-# What Problem Coroutine solve?
-coroutines are a great solution to two problems:
-<b>Long running tasks</b> are tasks that take too long to block the main thread.
-<b>Main-safety</b> allows you to ensure that any suspend function can be called from the main thread.
+<br>
+# What Problem Coroutine solve?<br>
+coroutines are a great solution to two problems: <br>
+<b>Long running tasks</b> are tasks that take too long to block the main thread.<br>
+<b>Main-safety</b> allows you to ensure that any suspend function can be called from the main thread.<br>
 
 
 # What is WorkManager and Explain?
