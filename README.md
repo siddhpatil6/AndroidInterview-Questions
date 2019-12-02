@@ -124,10 +124,13 @@ But when we need the result back, we need to use the async.
 
 We have two functions which return User like below:
 
+```
 fun fetchFirstUser(): User {
     // make network call
     // return user
 }
+```
+
 ```
 fun fetchSeconeUser(): User {
     // make network call
