@@ -1,8 +1,17 @@
 
 # Android Interview-Questions
-# What is Coroutine and What problem it solve?
+# What is Coroutine?
 Here, Co means cooperation and Routines means functions.
 It means that when functions cooperate with each other, we call it as Coroutines.
+
+Coroutines and the threads both are multitasking. But the difference is that threads are managed by the OS and coroutines by the users as it can execute a few lines of function by taking advantage of the cooperation.
+
+Coroutines do not replace threads, it’s more like a framework to manage it.
+
+Coroutines are available in many languages. Basically, there are two types of Coroutines:
+
+1. Stackless
+2. Stackful
 
 Let's understand this with an example. I have written the below code in a different way just for the sake of understanding. Suppose we have two functions as functionA and functionB.
 
@@ -64,6 +73,13 @@ The important thing is that functionA and functionB are cooperating with each ot
 With Kotlin Coroutines, the above cooperation can be done very easily which is without the use of when or switch case which I have used in the above example for the sake of understanding.
 
 Now that, we have understood what are coroutines when it comes to cooperation between the functions. There are endless possibilities which open up because of the cooperative nature of functions.
+
+# What Problem Coroutine solve?
+coroutines are a great solution to two problems:
+<b>Long running tasks</b> are tasks that take too long to block the main thread.
+<b>Main-safety</b> allows you to ensure that any suspend function can be called from the main thread.
+
+
 # What is WorkManager and Explain?
 
 # What is difference between String and RawString in kotlin?
