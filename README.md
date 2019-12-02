@@ -95,6 +95,82 @@ In almost all cases, the right answer for how to start a coroutine from a regula
 
 <b> async </b> builder will start a new coroutine, and it allows you to return a result with a suspend function called await.
 
+
+# Launch vs Async in Kotlin Coroutines?
+The difference is that the launch{} does not return anything and the async{}returns an instance of Deferred<T>, which has an await()function that returns the result of the coroutine like we have future in Java in which we do future.get() to the get the result.
+
+Let's take an example to learn launch and async.
+
+We have a function fetchUserAndSaveInDatabase like below:
+
+```
+fun fetchUserAndSaveInDatabase() {
+    // fetch user from network
+    // save user in database
+    // and do not return anything
+}
+```
+
+Now, we can use the launch like below:
+
+```
+GlobalScope.launch(Dispatchers.IO) {
+    fetchUserAndSaveInDatabase() // do on IO thread
+}
+```
+As the fetchUserAndSaveInDatabase do not return anything, we can use the launch.
+
+But when we need the result back, we need to use the async.
+
+We have two functions which return User like below:
+
+fun fetchFirstUser(): User {
+    // make network call
+    // return user
+}
+```
+fun fetchSeconeUser(): User {
+    // make network call
+    // return user
+}
+```
+
+No need to make the above functions as suspend as we are not calling any other suspend function from them.
+
+Now, we can use the async like below:
+```
+GlobalScope.launch(Dispatchers.Main) {
+    val userOne = async(Dispatchers.IO) { fetchFirstUser() }
+    val userTwo = async(Dispatchers.IO) { fetchSeconeUser() }
+    showUsers(userOne.await(), userTwo.await()) // back on UI thread
+}
+```
+Here, it makes both the network call in parallel, await for the results and then call the showUsers function.
+
+So, now that, we have understood the difference between the launch function and the async function.
+
+There is something called withContext.
+
+```
+suspend fun fetchUser(): User {
+    return GlobalScope.async(Dispatchers.IO) {
+        // make network call
+        // return user
+    }.await()
+}
+```
+withContext is nothing but an another way writing the async where we do not have to write await().
+
+```
+suspend fun fetchUser(): User {
+    return withContext(Dispatchers.IO) {
+        // make network call
+        // return user
+    }
+}
+```
+
+
 # What is WorkManager and Explain?
 
 # What is difference between String and RawString in kotlin?
