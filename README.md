@@ -1,5 +1,28 @@
 
 # Android Interview-Questions
+
+# What is KTX?
+Android KTX   
+Part of Android Jetpack.
+Android KTX is a set of Kotlin extensions that are included with Android Jetpack and other Android libraries. KTX extensions provide concise, idiomatic Kotlin to Jetpack, Android platform, and other APIs. To do so, these extensions leverage several Kotlin language features, including the following:
+
+1.Extension functions
+2.Extension properties
+3.Lambdas
+4.Named parameters
+5.Parameter default values
+6.Coroutines
+
+As an example, when working with SharedPreferences, you must create an editor before you can make modifications to the preferences data. You must also apply or commit those changes when you are finished editing, as shown in the following * *  example:
+
+```
+sharedPreferences
+        .edit()  // create an Editor
+        .putBoolean("key", value)
+        .apply() // write to disk asynchronously
+```
+Kotlin lambdas are a perfect fit for this use case. They allow you to take a more concise approach by passing a block of code to execute after the editor is created, letting the code execute, and then letting the SharedPreferences API apply the changes atomically.
+
 # What is Coroutine?
 Here, Co means cooperation and Routines means functions.
 It means that when functions cooperate with each other, we call it as Coroutines.
