@@ -333,6 +333,79 @@ WorkManager.getInstance(myContext)
 Here, work1,work2, and work3 will execute parallelly and then when all of them are executed then only work4 will execute and work5 sequentially.
 
 # What is difference between String and RawString in kotlin?
+## Raw Strings – Multiline String
+
+Raw strings are strings placed inside triple quotes. We don’t have to escape characters in triple-quoted strings. These strings can be used in multi lines without the need to concatenate each line.
+
+```
+var rawString = """Hi How you're Doing
+        I'm doing fine.
+        I owe you $5.50"""
+print(rawString)
+```
+
+```
+//Prints the following in the console
+Hi How you're Doing
+        I'm doing fine.
+        I owe you $5.50
+```
+Note: Since escape characters are not parsed, adding a \n or \t won’t have any effect.
+
+```
+ var rawString = """Hi How you're Doing
+        I'm doing fine\n.
+        I owe you $5.50"""
+    print(rawString)
+```
+
+
+```
+//prints the following
+Hi How you're Doing
+        I'm doing fine\n.
+        I owe you $5.50
+```
+
+
+Raw strings are handy when you need to specify a file/directory path in a string.
+We can indent raw strings or remove the whitespacing in multi-lines using the function trimMargin().
+
+```
+var rawString = """Hi How you're Doing
+        |I'm doing fine.
+        |I owe you $5.50""".trimMargin("|")
+    print(rawString)
+```
+
+```
+//Prints the following to the console.
+
+Hi How you're Doing
+I'm doing fine.
+I owe you $5.50
+```
+
+Note: We can’t pass a blank string as the trim margin. The trimMargin() function trims the string till the marginPrefix specified.
+
+String templates and Raw Strings can be combined together as shown below.
+
+```
+var str = "Kotlin"
+var rawString = """Hi How you're Doing $str
+        |I'm doing fine.
+        |I owe you $5.50""".trimMargin("|")
+print(rawString)
+```
+
+
+```
+//The following gets printed on the console
+
+Hi How you're Doing Kotlin
+I'm doing fine.
+I owe you $5.50
+```
 
 # Why to choose MVVP over MVP ?
 
