@@ -199,6 +199,78 @@ suspend fun fetchUser(): User {
 
 # What is WorkManager and Explain?
 
+Work Manager is a library part of Android Jetpack which makes it easy to schedule deferrable, asynchronous tasks that are expected to run even if the app exits or device restarts i.e. even your app restarts due to any issue Work Manager makes sure the scheduled task executes again. Isn't that great?
+
+In this blog, we will talk about how to integrate the work manager in your project and much more advanced feature and customization which makes your life easy in scheduling tasks.
+
+To Integrate work manager in your project,
+
+```
+dependencies {
+  def work_version = "2.2.0"
+    implementation "androidx.work:work-runtime:$work_version"
+  }
+```
+
+Now, as a next step, we will create a Worker class. Worker class is responsible to perform work synchronously on a background thread provided by the work manager.
+
+```
+class YourWorkerClass(appContext: Context, workerParams: WorkerParameters): Worker(appContext, workerParams) {
+
+    override fun doWork(): Result {
+        // Your work here.
+
+        // Your task result
+        return Result.success()
+    }
+}
+```
+In this above class,
+
+* doWork() method is responsible to execute your task on the background thread. Whatever task you want to perform has to be written here.
+* Result returns the status of the work done in doWork() method. If it returns Result.success() it means the task was successful if the status is Result.failure(), the task was not-successful and lastly, if it returns Result.retry() it means the task will execute again after some time.
+
+
+We need to create a WorkRequest which defines how and when work should be run. It has two types,
+
+* OneTimeWorkRequest - Runs the task only once
+* PeriodicWorkTimeRequest - Runs the task after certain time interval.
+
+
+* constraints -
+
+```
+val myConstraints = Constraints.Builder()
+    .setRequiresDeviceIdle(true) //checks whether device should be idle for the WorkRequest to run
+    .setRequiresCharging(true) //checks whether device should be charging for the WorkRequest to run
+    .setRequiredNetworkType(NetworkType.CONNECTED) //checks whether device should have Network Connection
+    .setRequiresBatteryNotLow(true) // checks whether device battery should have a specific level to run the work request
+    .setRequiresStorageNotLow(true) // checks whether device storage should have a specific level to run the work request
+    .build()
+```
+
+
+* One Time Request -
+
+```
+val yourWorkRequest = OneTimeWorkRequestBuilder<YourWorkerClass>()
+    .setConstraints(myConstraints)
+    .build()
+```
+
+Here, we set the above-defined constraints to the previously defined workRequest. Now, this work request will only run if all the constraints are satisfied.
+
+We can also set Periodic Task which will run after certain time interval. To run a workRequest which runs periodically we use,
+
+* Periodic Request 
+
+```
+val yourPeriodicWorkRequest =
+PeriodicWorkRequestBuilder<YourPeriodicWorkerClass>(1, TimeUnit.HOURS)
+    .setConstraints(myConstraints)
+    .build()
+```
+	
 # What is difference between String and RawString in kotlin?
 
 # Why to choose MVVP over MVP ?
