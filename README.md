@@ -296,8 +296,8 @@ WorkManager.getInstance(context).getWorkInfoByIdLiveData(yourWorkRequest.id)
 ## Chaining of Tasks
 We can chain multiple tasks in two ways.
 
-Chaining in Series
-Parallel Chaining
+* Chaining in Series <br>
+* Parallel Chaining <br>
 
 ### Chaining in Series
 
