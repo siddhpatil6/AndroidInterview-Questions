@@ -270,7 +270,68 @@ PeriodicWorkRequestBuilder<YourPeriodicWorkerClass>(1, TimeUnit.HOURS)
     .setConstraints(myConstraints)
     .build()
 ```
+
+* <b> Minimum time interval to run a periodic task is 15mins </b>
+
+
+If you do not want the task to be run immediately, you can specify your work to start after a minimum initial delay using,
+```
+val yourWorkRequest = OneTimeWorkRequestBuilder<YourWorkerClass>()
+        .setInitialDelay(10, TimeUnit.MINUTES)
+        .build()
+```
+This will run after an initial delay of 10minutes.
 	
+Check Status of your WorkManager
+If we want to do some task when WorkManager executes the task successfully like showing a Toast or something else we need to check the status of the task. To check the status we use,
+
+```
+WorkManager.getInstance(context).getWorkInfoByIdLiveData(yourWorkRequest.id)
+        .observe(lifecycleOwner, Observer { workInfo ->
+            if (workInfo != null && workInfo.state == WorkInfo.State.SUCCEEDED) {
+                //Toast
+            }
+        })
+```
+## Chaining of Tasks
+We can chain multiple tasks in two ways.
+
+Chaining in Series
+Parallel Chaining
+
+### Chaining in Series
+
+Let's say we have two workRequest,
+
+```
+val yourWorkRequestOne = ...
+val yourWorkRequestTwo = ...
+```
+and we need to chain them in series. To do this we will use
+
+```
+WorkManager.getInstance(context).beginWith(yourWorkRequestOne)
+.then(yourWorkRequestTwo)
+.enqueue()
+```
+
+Here, first, the execution will start with the yourWorkRequestOne WorkRequest and then it will execute the second one. This is called series chaining of the tasks.
+
+
+### Parallel Chaining
+
+In this, we can chain the task in parallel using the following
+
+```
+WorkManager.getInstance(myContext)
+    .beginWith(listOf(work1, work2, work3))
+    .then(work4)
+    .then(work5)
+    .enqueue()
+```
+
+Here, work1,work2, and work3 will execute parallelly and then when all of them are executed then only work4 will execute and work5 sequentially.
+
 # What is difference between String and RawString in kotlin?
 
 # Why to choose MVVP over MVP ?
