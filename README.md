@@ -1,5 +1,57 @@
 
 # Android Interview-Questions
+# What is Espressso?
+
+Espresso is an open source testing framework launched by Google in Oct 2013 which provides an API that allows creating UI tests to simulate user interactions in an Android application (in version 2.2). onward .
+
+
+Here in this case
+We start with annotations at the start to indicate testing file having LargeTest suite.
+
+```
+@RunWith(AndroidJUnit4.class)
+@LargeTest
+```
+Add below line which indicates to which file or activity the testing file belongs and we annotate with @Rule annotation.
+
+```
+@Rule
+public ActivityTestRule<MainActivity> mainActivityActivityTestRule = new ActivityTestRule<>(MainActivity.class);
+```
+## These annotations are as follows
+
+### @BeforeClass — 
+Run once before any of the test methods in the class, as the name suggests it will run only once in entire class . Used basically for creating database connection , connection pool requests etc
+
+
+### @AfterClass — 
+Run once after all the tests in the class have been run, as the name suggests it will run only once in entire class . Used basically for closing database connection , clean up purpose etc
+
+
+### @Before — 
+Run before @Test, this method runs before each function having @Test Annotation which means it can run multiple times depending on functions having @Test annotations.
+
+
+### @After — 
+Run after @Test,this method runs after each function having @Test Annotation which means it can run multiple times depending on functions having @Test annotations.
+
+
+### @Test — 
+This is the test method to run .
+
+## The main components of Espresso include the following:
+### Espresso — 
+Entry point to interactions with views (via onView() and onData()). Also exposes APIs that are not necessarily tied to any view, such as pressBack().
+
+### ViewMatchers — 
+A collection of objects that implement the Matcher<? super View> interface. You can pass one or more of these to the onView() method to locate a view within the current view hierarchy.
+
+### ViewActions — 
+A collection of ViewAction objects that can be passed to the ViewInteraction.perform() method, such as click().
+
+### ViewAssertions — 
+A collection of ViewAssertion objects that can be passed the ViewInteraction.check() method. Most of the time, you will use the matches assertion, which uses a View matcher to assert the state of the currently selected view.
+
 
 # What is KTX?
 Android KTX   
