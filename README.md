@@ -52,6 +52,40 @@ A collection of ViewAction objects that can be passed to the ViewInteraction.per
 ### ViewAssertions — 
 A collection of ViewAssertion objects that can be passed the ViewInteraction.check() method. Most of the time, you will use the matches assertion, which uses a View matcher to assert the state of the currently selected view.
 
+```
+// Code snippet for Valid Test Login
+@Test
+public void validLogin() {
+    
+    // Enter View User Id with Espresso word and close soft keyboard 
+    onView(withId(R.id.edtUserId))
+            .perform(typeText(mStringToBetyped), closeSoftKeyboard());
+
+    // Enter View User Id with Espresso word and close soft keyboard
+    onView(withId(R.id.edtPass))
+            .perform(typeText(mValidPass), closeSoftKeyboard());
+    
+    // Click on Login Button
+    onView(withId(R.id.loginBtn)).perform(click());
+
+
+    /* Once Clicked on Login we have set condition if Login text Content matches Password Content then The Login is a success */
+    
+    // Fetch Content of Password Edit Text using Matcher 
+    String textFromPasswordFld = getText(withId(R.id.edtPass));
+    
+    //Check User Id Content with Content Retreived from Password Edit Text Field
+    onView(withId(R.id.edtUserId)).check(matches(isEditTextValueEqualTo(R.id.edtUserId, textFromPasswordFld)));
+
+    try {
+        Thread.sleep(10000);
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+}
+```
+
+
 
 # What is KTX?
 Android KTX   
