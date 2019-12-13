@@ -86,6 +86,26 @@ Run once before any of the test methods in the class, as the name suggests it wi
 Run once after all the tests in the class have been run, as the name suggests it will run only once in entire class . Used basically for closing database connection , clean up purpose etc
 
 
+* Example - <br>
+
+```
+@RunWith(JUnit4.class)
+public class BeforeClassAndAfterClassAnnotationsUnitTest {
+ 
+    // ...
+     
+    @BeforeClass
+    public static void setup() {
+        LOG.info("startup - creating DB connection");
+    }
+ 
+    @AfterClass
+    public static void tearDown() {
+        LOG.info("closing DB connection");
+    }
+}
+```
+
 ### @Before — 
 Run before @Test, this method runs before each function having @Test Annotation which means it can run multiple times depending on functions having @Test annotations.
 
@@ -93,9 +113,51 @@ Run before @Test, this method runs before each function having @Test Annotation 
 ### @After — 
 Run after @Test,this method runs after each function having @Test Annotation which means it can run multiple times depending on functions having @Test annotations.
 
+* <b> Example </b> - <br>
+```
+@RunWith(JUnit4.class)
+public class BeforeAndAfterAnnotationsUnitTest {
+ 
+    // ...
+ 
+    private List<String> list;
+ 
+    @Before
+    public void init() {
+        LOG.info("startup");
+        list = new ArrayList<>(Arrays.asList("test1", "test2"));
+    }
+ 
+    @After
+    public void finalize() {
+        LOG.info("finalize");
+        list.clear();
+    }
+}
+```
 
 ### @Test — 
 This is the test method to run .
+
+* Example -  <br>
+
+```
+@Test
+public void whenCheckingListSize_thenSizeEqualsToInit() {
+    LOG.info("executing test");
+    assertEquals(2, list.size());
+ 
+    list.add("another test");
+}
+ 
+@Test
+public void whenCheckingListSizeAgain_thenSizeEqualsToInit() {
+    LOG.info("executing another test");
+    assertEquals(2, list.size());
+ 
+    list.add("yet another test");
+}
+```
 
 ## The main components of Espresso include the following:
 ### Espresso — 
