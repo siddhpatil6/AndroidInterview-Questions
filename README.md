@@ -2,12 +2,15 @@
 # Android Interview-Questions
 # What is Unit Testing and Explain?
 
-You can evaluate your app's logic using local unit tests when you need to run tests more quickly and don't need the fidelity and confidence associated with running tests on a real device. With this approach, you normally fulfill your dependency relationships using either Robolectric or a mocking framework, such as Mockito. Usually, the types of dependencies associated with your tests determine which tool you use:
+You can evaluate your app's logic using local unit tests when you need to run tests more quickly and don't need the fidelity and confidence associated with running tests on a real device. 
+With this approach, you normally fulfill your dependency relationships using either Robolectric or a mocking framework, such as Mockito. Usually, the types of dependencies associated with your tests determine which tool you use:
+
 ## Robolectric-
 If you have dependencies on the Android framework, particularly those that create complex interactions with the framework, it's better to include framework dependencies using Robolectric.
 
 ## Mockito -
-If your tests have minimal dependencies on the Android framework, or if the tests depend only on your own objects, it's fine to include mock dependencies using a mocking framework like Mockito.
+If your tests have minimal dependencies on the Android framework, or if the tests depend only on your own objects,
+it's fine to include mock dependencies using a mocking framework like Mockito.
 
 # Why testing?
 Testing forces you to think in a different way and implicitly makes your code cleaner in the process.
@@ -38,6 +41,10 @@ Used for testing within your app, selecting items, making sure something is visi
 ### UIAutomator – 
 Used for testing interaction between different apps.
 
+
+## Mockito
+Mockito is a JAVA library that is used for Unit Testing the Java applications. 
+It is used to mock the interfaces so that dummy objects can be created and used to provide the dependencies for the class being tested.
 
 ## JUnit Annotations -
 
