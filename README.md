@@ -38,6 +38,9 @@ Used for testing within your app, selecting items, making sure something is visi
 ### UIAutomator – 
 Used for testing interaction between different apps.
 
+
+## JUnit Annotations -
+
 ### @Test: 
 @Test is an annotation provided by JUnit Framework for marking a method as a test case. As you can see here, each method is a test case testing the input field for a possible input. This instructs the compiler to consider the method as a test case in the test suit.
 
