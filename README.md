@@ -1,5 +1,53 @@
 
 # Android Interview-Questions
+# What is Unit Testing and Explain?
+
+You can evaluate your app's logic using local unit tests when you need to run tests more quickly and don't need the fidelity and confidence associated with running tests on a real device. With this approach, you normally fulfill your dependency relationships using either Robolectric or a mocking framework, such as Mockito. Usually, the types of dependencies associated with your tests determine which tool you use:
+## Robolectric-
+If you have dependencies on the Android framework, particularly those that create complex interactions with the framework, it's better to include framework dependencies using Robolectric.
+
+## Mockito -
+If your tests have minimal dependencies on the Android framework, or if the tests depend only on your own objects, it's fine to include mock dependencies using a mocking framework like Mockito.
+
+# Why testing?
+Testing forces you to think in a different way and implicitly makes your code cleaner in the process.
+You feel more confident about your code if it has tests.
+Shiny green status bars and cool reports detailing how much of your code is covered are both consequences of writing tests.
+Regression testing is made a lot easier, as automated tests would pick up the bugs first.
+
+# Why unit test?
+A unit test generally exercises the functionality of the smallest possible unit of code (which could be a method, class, or component) in a repeatable way.
+
+Tools that are used to do this testing:
+
+### JUnit – 
+normal test assertions.
+
+### Mockito – 
+mocking out other classes that are not under test.
+
+### PowerMock – 
+mocking out static classes such as Android Environment class etc.
+
+## Instrumented tests
+A UI Test or Instrumentation Test mocks typical user interactions with your app. Clicking on buttons, typing in text are some of the things UI Tests can complete.
+
+### Espresso – 
+Used for testing within your app, selecting items, making sure something is visible.
+
+### UIAutomator – 
+Used for testing interaction between different apps.
+
+### @Test: 
+@Test is an annotation provided by JUnit Framework for marking a method as a test case. As you can see here, each method is a test case testing the input field for a possible input. This instructs the compiler to consider the method as a test case in the test suit.
+
+### assertTrue():
+assertTrue is a method provided by Junit Framework to assert (force) the value inside it’s parentheses as TRUE. If the value inside the parentheses evaluates to be false, the test case fails.
+
+### assertFalse(): 
+Same as the assertTrue method except that it asserts the argument inside the parentheses to be false instead of true. If the passed parameter is true, the test case fails.
+
+
 # What is Espressso?
 
 Espresso is an open source testing framework launched by Google in Oct 2013 which provides an API that allows creating UI tests to simulate user interactions in an Android application (in version 2.2). onward .
