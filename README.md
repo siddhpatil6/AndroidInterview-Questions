@@ -1,5 +1,8 @@
 
 # Android Interview-Questions
+
+# how viewmodel holds data of view? 
+
 # How FCM Works?
 
 # What is Unit Testing and Explain?
