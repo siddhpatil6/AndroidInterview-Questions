@@ -1,6 +1,15 @@
 
 # Android Interview-Questions
 
+# Launching Modes in Brief?
+# Hasmap internal Working?
+# Hashset vs Set?
+# Hashset vs Hashtable?
+# List vs ArrayList?
+# Why Dependancy Injection?
+
+
+
 # how viewmodel holds data of view? 
 
 # How FCM Works?
