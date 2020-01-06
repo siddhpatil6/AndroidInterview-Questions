@@ -1,6 +1,17 @@
 
 # Android Interview-Questions
 
+# How do I remove repeated elements from ArrayList?
+If you don't want duplicates in a Collection, you should consider why you're using a Collection that allows duplicates. The easiest way to remove repeated elements is to add the contents to a Set (which will not allow duplicates) and then add the Set back to the ArrayList:
+
+```
+Set<String> set = new HashSet<>(yourList);
+yourList.clear();
+yourList.addAll(set);
+```
+Of course, this destroys the ordering of the elements in the ArrayList.
+	
+
 # How to print array without using loop?
 ```
 import java.io.*; 
