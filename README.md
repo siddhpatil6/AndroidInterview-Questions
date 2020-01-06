@@ -2,6 +2,22 @@
 # Android Interview-Questions
 
 # How to print array without using loop?
+```
+import java.io.*; 
+import java.util.*; 
+  
+public class HelloWorld 
+{ 
+    public static void main(String[] args) 
+    {
+        // Get the array 
+        int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }; 
+        // Print the array 
+        System.out.println("Array: "+ Arrays.toString(arr)); 
+    } 
+} 
+```
+
 # Launching Modes in Brief?
 # Hasmap internal Working?
 # Hashset vs Set?
