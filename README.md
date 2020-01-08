@@ -1,6 +1,7 @@
 
 # Android Interview-Questions
-
+# What is Elvis Operator in kotlin?
+# What is flatmap and how to use it in kotlin?
 # How do I remove repeated elements from ArrayList?
 If you don't want duplicates in a Collection, you should consider why you're using a Collection that allows duplicates. The easiest way to remove repeated elements is to add the contents to a Set (which will not allow duplicates) and then add the Set back to the ArrayList:
 
