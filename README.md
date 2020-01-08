@@ -1,5 +1,7 @@
 
 # Android Interview-Questions
+
+# what is const in kotlin?
 # What is Elvis Operator in kotlin?
 # What is flatmap and how to use it in kotlin?
 # How do I remove repeated elements from ArrayList?
