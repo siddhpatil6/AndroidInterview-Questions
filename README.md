@@ -4,6 +4,159 @@
 # What is Classloader and What are the types?
 
 # How to communicate from Service Class to Activity Class?
+You can create bound services which acts as a server in client-server interface. There are three ways to create a bound service:
+If application and service are running in same process which is mostly the case then create your own interface by extending Binder class and return an instance of it in onBind().
+The following code snippet is taken from here. This implementation of Binder defines a function to return the instance of currently running service. This instance then can be used to call public functions of the service.
+```
+public class LocalService extends Service {
+    
+    ...
+    // This is the object that receives interactions from clients.
+    private final IBinder mBinder = new LocalBinder();
+    public class LocalBinder extends Binder {
+        LocalService getService() {
+            return LocalService.this;
+        }
+    }
+
+    @Override
+    public void onCreate() {
+        ...
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId
+    {
+        ...
+    }
+
+    @Override
+    public void onDestroy() {
+        ...
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return mBinder;
+    }
+
+```
+Now put the following code in activity to bind to the service and get the instance of the service.
+private LocalService mBoundService;
+```
+private ServiceConnection mConnection = new ServiceConnection() {
+    public void onServiceConnected(ComponentName className, IBinder service) {
+        // This is called when the connection with the service has
+        // been established, giving us the service object we can use
+        // to interact with the service.  Because we have bound to a
+        // explicit service that we know is running in our own
+        // process, we can cast its IBinder to a concrete class and
+        // directly access it.
+        mBoundService = ((LocalService.LocalBinder)service).getService();
+
+        // Tell the user about this for our demo.
+        Toast.makeText(Binding.this,
+                       R.string.local_service_connected,
+                       Toast.LENGTH_SHORT).show();
+    }
+
+    public void onServiceDisconnected(ComponentName className) {
+        // This is called when the connection with the service has
+        // been unexpectedly disconnected -- that is, its process
+        // crashed. Because it is running in our same process, we
+        // should never see this happen.
+        mBoundService = null;
+        Toast.makeText(Binding.this,
+                       R.string.local_service_disconnected,
+                       Toast.LENGTH_SHORT).show();
+    }
+};
+
+void doBindService() {
+    // Establish a connection with the service.  We use an explicit
+    // class name because we want a specific service implementation
+    // that we know will be running in our own process (and thus
+    // won't be supporting component replacement by other
+    // applications).
+    bindService(new Intent(Binding.this, LocalService.class),
+                mConnection,
+                Context.BIND_AUTO_CREATE);
+    mIsBound = true;
+}
+
+void doUnbindService() {
+    if (mIsBound) {
+        // Detach our existing connection.
+        unbindService(mConnection);
+        mIsBound = false;
+    }
+}
+
+@Override
+protected void onDestroy() {
+    super.onDestroy();
+    doUnbindService();
+}
+```
+If service is running in separate process then you can create an AIDL interface. Most applications should not use this as it may require a lot of multi-threading capabilities and may make code more complex.
+If you need an interface to communicate across processes you can create a Messenger. It handles communication on single thread. See Using Messenger. Client can also define a messenger and pass it to service using which service can send data back to client. Here is a sample demo.
+Following is the code snippet taken from here.
+
+``` 
+public class MessengerService extends Service {
+  
+   /** Command to the service to display a message */
+    static final int MSG_SAY_HELLO = 1;
+
+    /**
+     * Handler of incoming messages from clients.
+     */
+    class IncomingHandler extends Handler {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case MSG_SAY_HELLO:
+                    Toast.makeText(getApplicationContext(),
+                                   "hello!",
+                                   Toast.LENGTH_SHORT).show();
+                    break;
+                default:
+                    super.handleMessage(msg);
+            }
+        }
+    }
+
+    /**
+     * Target we publish for clients to send messages to
+     * IncomingHandler.
+     */
+    final Messenger mMessenger = new Messenger(
+                                     new IncomingHandler()
+                                 );
+
+    /**
+     * When binding to the service, we return an interface to our
+     * messenger for sending messages to the service.
+     */
+    @Override
+    public IBinder onBind(Intent intent) {
+        Toast.makeText(getApplicationContext(),
+                       "binding",
+                       Toast.LENGTH_SHORT).show();
+        return mMessenger.getBinder();
+    }
+}
+```
+### You can use Broadcast Receivers
+
+If you want to send broadcasts to your application components only then use LocalBroadcastManager.
+If you want to send broadcasts across applications then use BroadcastReceiver.
+
+### You can use Bus architecture
+You can use EventBus from greenrobot or otto from square.
+You can use Result Receiver
+It can be used to send data across processes. Here is SO Question for implementation.
+I have used only these so far. If there are some other better suggestions please comment.
 
 # How to Stop class extending another class?
 ### The Official Way
