@@ -1,5 +1,24 @@
 
 # Android Interview-Questions
+# Difference between “@id/” and “@+id/” in Android
+
+```
+you refer to Android resources , which are already defined in Android system, with @android:id/.. while to access resources that you have defined/created in your project, you use @id/..
+
+More Info
+
+As per your clarifications in the chat, you said you have a problem like this :
+
+If we use android:id="@id/layout_item_id" it doesn't work. Instead @+id/ works so what's the difference here? And that was my original question.
+
+Well, it depends on the context, when you're using the XML attribute of android:id, then you're specifying a new id, and are instructing the parser (or call it the builder) to create a new entry in R.java, thus you have to include a + sign.
+
+While in the other case, like android:layout_below="@id/myTextView" , you're referring to an id that has already been created, so parser links this to the already created id in R.java.
+
+More Info Again
+
+As you said in your chat, note that android:layout_below="@id/myTextView" won't recognize an element with id myTextViewif it is written after the element you're using it in.
+```
 
 # what is const in kotlin?
 # What is Elvis Operator in kotlin?
