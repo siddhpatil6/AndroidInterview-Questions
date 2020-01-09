@@ -3,7 +3,7 @@
 
 # What is Classloader and What are the types?
 
-# How to communicate from Service Class to Activity Class?
+# Different Ways of Communicating between Activity and Service?
 You can create bound services which acts as a server in client-server interface. There are three ways to create a bound service:
 If application and service are running in same process which is mostly the case then create your own interface by extending Binder class and return an instance of it in onBind().
 The following code snippet is taken from here. This implementation of Binder defines a function to return the instance of currently running service. This instance then can be used to call public functions of the service.
