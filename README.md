@@ -1,5 +1,8 @@
 
 # Android Interview-Questions
+
+# How to Stop class extending another class?
+
 # Difference between “@id/” and “@+id/” in Android
 
 you refer to Android resources , which are already defined in Android system, with @android:id/.. while to access resources that you have defined/created in your project, you use @id/..
