@@ -4,9 +4,10 @@
 # What is Classloader and What are the types?
 
 # Different Ways of Communicating between Activity and Service?
-You can create bound services which acts as a server in client-server interface. There are three ways to create a bound service:
-If application and service are running in same process which is mostly the case then create your own interface by extending Binder class and return an instance of it in onBind().
-The following code snippet is taken from here. This implementation of Binder defines a function to return the instance of currently running service. This instance then can be used to call public functions of the service.
+You can create bound services which acts as a server in client-server interface. 
+There are three ways to create a bound service: <br>
+If application and service are running in same process which is mostly the case then create your own interface by extending Binder class and return an instance of it in onBind().<br>
+The following code snippet is taken from here. This implementation of Binder defines a function to return the instance of currently running service. This instance then can be used to call public functions of the service.<br>
 ```
 public class LocalService extends Service {
     
@@ -41,8 +42,10 @@ public class LocalService extends Service {
     }
 
 ```
+
 Now put the following code in activity to bind to the service and get the instance of the service.
 private LocalService mBoundService;
+
 ```
 private ServiceConnection mConnection = new ServiceConnection() {
     public void onServiceConnected(ComponentName className, IBinder service) {
@@ -98,8 +101,11 @@ protected void onDestroy() {
     doUnbindService();
 }
 ```
+
 If service is running in separate process then you can create an AIDL interface. Most applications should not use this as it may require a lot of multi-threading capabilities and may make code more complex.
 If you need an interface to communicate across processes you can create a Messenger. It handles communication on single thread. See Using Messenger. Client can also define a messenger and pass it to service using which service can send data back to client. Here is a sample demo.
+
+
 Following is the code snippet taken from here.
 
 ``` 
@@ -147,6 +153,8 @@ public class MessengerService extends Service {
     }
 }
 ```
+
+
 ### You can use Broadcast Receivers
 
 If you want to send broadcasts to your application components only then use LocalBroadcastManager.
