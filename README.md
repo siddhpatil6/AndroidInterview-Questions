@@ -1,6 +1,10 @@
 
 # Android Interview-Questions
 
+# What is Classloader and What are the types?
+
+# How to communicate from Service Class to Activity Class?
+
 # How to Stop class extending another class?
 ### The Official Way
 Officially, the Java language provides the keyword 'final' that is supposed to fulfill this task. Consider the following code sample:
