@@ -2,7 +2,6 @@
 # Android Interview-Questions
 # Difference between “@id/” and “@+id/” in Android
 
-```
 you refer to Android resources , which are already defined in Android system, with @android:id/.. while to access resources that you have defined/created in your project, you use @id/..
 
 More Info
@@ -18,11 +17,12 @@ While in the other case, like android:layout_below="@id/myTextView" , you're ref
 More Info Again
 
 As you said in your chat, note that android:layout_below="@id/myTextView" won't recognize an element with id myTextViewif it is written after the element you're using it in.
-```
 
 # what is const in kotlin?
 # What is Elvis Operator in kotlin?
 # What is flatmap and how to use it in kotlin?
+
+
 # How do I remove repeated elements from ArrayList?
 If you don't want duplicates in a Collection, you should consider why you're using a Collection that allows duplicates. The easiest way to remove repeated elements is to add the contents to a Set (which will not allow duplicates) and then add the Set back to the ArrayList:
 
