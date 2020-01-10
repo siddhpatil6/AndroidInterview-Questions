@@ -1,5 +1,8 @@
 
 # Android Interview-Questions
+# how to send images in multipart?
+# What is ORM?
+
 # Kotlin Idioms?
 ### Extension Functions
 ### Sealed Classes
