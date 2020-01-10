@@ -1,6 +1,23 @@
 
 # Android Interview-Questions
-
+# Kotlin Idioms?
+### Extension Functions
+### Sealed Classes
+### Infix Functions
+### Class Delegation
+### Local functions
+### Object and Singleton
+### Sequences
+### Lambdas and SAM constructors
+### Lambdas with Receiver and DSL
+### Elvis operator
+### Property Delegates and Lazy
+### Higher-order functions and Function Types
+### Inline functions
+### Lambdas and Control Flows
+### Reified Parameters
+### Noinline and Crossinline
+### Variance
 # What is Classloader and What are the types?
 
 # Different Ways of Communicating between Activity and Service?
