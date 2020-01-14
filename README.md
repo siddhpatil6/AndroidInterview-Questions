@@ -294,7 +294,7 @@ First we need to undestand Typing
 
 To understand these keywords, we have to understand two of the major categories of type systems a language can follow – manifest typing and inferred typing.
 
-2.1. Manifest Typing
+### 2.1. Manifest Typing
 All languages offer a range of primitive data types to store and manipulate data within a program. Programming languages following the manifest typing discipline must have their data types explicitly defined within the program.
 
 Java, up until version 10, strictly follows this discipline. For example, if we want to store a number within a program, we must define a data type such as int:
@@ -303,12 +303,12 @@ Java, up until version 10, strictly follows this discipline. For example, if we 
 int myVariable = 3;
 ```
 
-2.2. Inferred Typing
+### 2.2. Inferred Typing
 Unlike Java, Kotlin follows the inferred typing discipline. Languages supporting type inference automatically detect data types within the program at compile-time.
 
 This detection means that we, as developers, don't need to worry about the data types we're using.
 
-3. var
+### 3. var
 Firstly, we'll start with var, Kotlin's keyword representing mutable, non-final variables. Once initialized, we're free to mutate the data held by the variable.
 
 Let's take a look at how this works:
@@ -328,7 +328,7 @@ Variables declared as one data type and then initialized with a value of the wro
 var myVariable: Int = b //ERROR!
 ```
 
-4. val
+### 4. val
 Kotlin's val keyword works much in the same as the var keyword, but with one key difference – the variable is read-only. The use of val is much like declaring a new variable in Java with the final keyword.
 
 For example, in Kotlin, we'd write:
@@ -351,7 +351,7 @@ class Address(val street: String) {
 }
 ```
 
-5. const
+### 5. const
 
 Like val, variables defined with the const keyword are immutable. The difference here is that const is used for variables that are known at compile-time.
 
@@ -369,7 +369,7 @@ And the analogous code written in Java would be:
 final static String WEBSITE_NAME = "Baeldung";
 ```
 
-6. Conclusion
+### 6. Conclusion
 In this article, we've taken a quick look at the difference between manifest and inferred typing.
 
 Then, we looked at the difference between Kotlin's var, val, and const keywords.
@@ -2798,30 +2798,7 @@ A lateinit var property has a backing field to store the value, whereas lazy {..
 The lateinit property cannot be used for nullable properties or Java primitive types. This is a restriction imposed ...
 <br>
  
- # Differenece between var and val?
- Var – Variable
-– The object stored in the variable could change (vary) in time. Means you can change or assign new value in variable latter.
 
-```
-var reasignableString = "hello"
-reasignableString = "Hello eyehunt" // OK
-
-var reasignableString = "hello"
-reasignableString = "Hello eyehunt" // OK
-``` 
-
-Val – Value
-– The object stored in val, could not vary in time. Once assigned the val becomes read only, like a constant in Java Programming language (Final variables etc). The properties of the object (as Val) could be changed, but the object itself is read-only.
-
-```
-val constant = "hello"
-constant = "Var vs Val" // Not allowed for `val`
-
-val constant = "hello"
-constant = "Var vs Val" // Not allowed for `val`
-val in kotlin is like final keyword in java
-```
- 
 
 ### Other ways to says same :
 Variables defined with var are mutable (Read and Write)
