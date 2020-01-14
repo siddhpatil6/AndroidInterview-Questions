@@ -333,6 +333,7 @@ public class HelloWorld
 # how viewmodel holds data of view? 
 
 # How FCM Works?
+![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/MVCvsMVPvsMVVM.png)
 
 # What is Unit Testing and Explain?
 
