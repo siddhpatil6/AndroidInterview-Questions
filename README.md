@@ -21,6 +21,17 @@
 ### Reified Parameters
 ### Noinline and Crossinline
 ### Variance
+
+# What is MultiDex?
+
+Android application (APK) files contain executable bytecode files in the form of Dalvik Executable (DEX) files, which contain the compiled code used to run your app. 
+The Dalvik Executable specification limits the total number of methods that can be referenced within a single DEX file to 65,536, including Android framework methods, library methods, and methods in your own code. Getting past this limit requires that you configure your app build process to generate more than one DEX file, known as a multidex configuration.
+
+So, the feature is: it allows your complex app to compile. The scenarios for using it are when your app fails to compile due to hitting the 64K DEX method reference limit. This appears as a build error, such as:
+```
+Conversion to Dalvik format failed: Unable to execute dex: method ID not in [0, 0xffff]: 65536
+```
+
 # What is Classloader and What are the types?
 ## Definition :
 The Java ClassLoader is a part of the Java Runtime Environment that dynamically loads Java classes into the Java Virtual Machine. The Java run time system does not need to know about files and file systems because of classloaders.
