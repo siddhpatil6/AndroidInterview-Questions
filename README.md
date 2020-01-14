@@ -288,6 +288,93 @@ More Info Again
 As you said in your chat, note that android:layout_below="@id/myTextView" won't recognize an element with id myTextViewif it is written after the element you're using it in.
 
 # what is const in kotlin?
+First we need to undestand Typing
+
+## Understanding Typing
+
+To understand these keywords, we have to understand two of the major categories of type systems a language can follow – manifest typing and inferred typing.
+
+2.1. Manifest Typing
+All languages offer a range of primitive data types to store and manipulate data within a program. Programming languages following the manifest typing discipline must have their data types explicitly defined within the program.
+
+Java, up until version 10, strictly follows this discipline. For example, if we want to store a number within a program, we must define a data type such as int:
+
+```
+int myVariable = 3;
+```
+
+2.2. Inferred Typing
+Unlike Java, Kotlin follows the inferred typing discipline. Languages supporting type inference automatically detect data types within the program at compile-time.
+
+This detection means that we, as developers, don't need to worry about the data types we're using.
+
+3. var
+Firstly, we'll start with var, Kotlin's keyword representing mutable, non-final variables. Once initialized, we're free to mutate the data held by the variable.
+
+Let's take a look at how this works:
+
+```
+var myVariable = 1
+```
+Behind the scenes, myVariable initializes with the Int data type.
+
+Although Kotlin uses type inference, we also have the option to specify the data type when we initialize the variable:
+```
+var myVariable: Int = 1
+```
+Variables declared as one data type and then initialized with a value of the wrong type will result in an error:
+
+```
+var myVariable: Int = b //ERROR!
+```
+
+4. val
+Kotlin's val keyword works much in the same as the var keyword, but with one key difference – the variable is read-only. The use of val is much like declaring a new variable in Java with the final keyword.
+
+For example, in Kotlin, we'd write:
+
+```
+val name: String = "Baeldung"
+```
+
+Whereas in Java, we'd write:
+
+```
+final String name = "Baeldung";
+```
+
+Much like final variables in Java, val variables must be assigned at declaration, or in a Class constructor:
+
+```
+class Address(val street: String) {
+    val name: String = "Baeldung"
+}
+```
+
+5. const
+
+Like val, variables defined with the const keyword are immutable. The difference here is that const is used for variables that are known at compile-time.
+
+Declaring a variable const is much like using the static keyword in Java.
+
+Let's see how to declare a const variable in Kotlin:
+
+```
+const val WEBSITE_NAME = "Baeldung"
+```
+
+And the analogous code written in Java would be:
+
+```
+final static String WEBSITE_NAME = "Baeldung";
+```
+
+6. Conclusion
+In this article, we've taken a quick look at the difference between manifest and inferred typing.
+
+Then, we looked at the difference between Kotlin's var, val, and const keywords.
+
+
 # What is Elvis Operator in kotlin?
 # What is flatmap and how to use it in kotlin?
 
