@@ -1,6 +1,7 @@
 
 # Android Interview-Questions
-# How WebSockets enable real-time tracking in modern taxi management systems?
+# How WebSockets enable real-time tracking in modern taxi management systems? :
+
 WebSockets are a way to communicate between a client and a server. The communication is bi-directional that is data can flow in both directions: from the client to the server and from the server to the client. Since WebSockets are always open, they allow for real-time data flow in an application, which makes way for real-time information flow back and forth.
 
 ![](https://www.yelowsoft.com//wp-content/uploads/2018/05/websocket-main.jpg)
@@ -11,7 +12,7 @@ WebSockets are an advanced technology that makes it possible to open an interact
 
 A socket is a “port” through which data goes in and out of. A socket is a “port” through which data goes in and out of. Protocols interpret the data going to and from the socket and the machines/ applications that are communicating with each other. A major protocol is HTTP.
 
-### The very limitation of HTTP
+### The very limitation of HTTP :
 
 Every time you request to download html, video or an image, a port is opened, data is transferred, and the port closes.
 The consecutive closing and opening form overhead, and for a few applications, particularly those that need swift replies, real-time communications, or display chunks of data, this doesn’t work.
@@ -20,10 +21,12 @@ Another constraint with HTTP is the “pull” paradigm. The browser pulls the i
 
 The WebSockets were made a standard in 2011. This lets public to employ the WebSocket protocol, which is flexible for exchanging data between servers and the browser, as well as Peer-to-Peer (P2P), or direct communication between browsers. Unlike HTTP, the socket that is connected to the server stays “open” for communication. That means data can be “pushed” to the browser in near real-time whenever required.
 
-### WebSockets in taxi booking systems
+### WebSockets in taxi booking systems :
+
 Modern logistics solutions are software-based and are generally hosted on the client’s server and almost all of them include real-time tracking of their fleet vehicles.
 
-### websocket layer
+### Websocket layer :
+
 ![](https://www.yelowsoft.com//wp-content/uploads/2018/05/websocket-layer.jpg)
 If we look at the above example, these different clients are different people around the world in their browser or app. They either enter a URL in their web browser or download the app to access their part of taxi booking system. Of all the person trying to access the system, John requests a taxi with the app. He enters the destination, and clicks ‘Ride Now’. That request is going to instantly be updated in all the nearby drivers to John connected to the server. This is WebSockets in action.
 
