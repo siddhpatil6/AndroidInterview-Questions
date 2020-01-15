@@ -1,5 +1,52 @@
 
 # Android Interview-Questions
+# How WebSockets enable real-time tracking in modern taxi management systems?
+WebSockets are a way to communicate between a client and a server. The communication is bi-directional that is data can flow in both directions: from the client to the server and from the server to the client. Since WebSockets are always open, they allow for real-time data flow in an application, which makes way for real-time information flow back and forth.
+
+https://www.yelowsoft.com//wp-content/uploads/2018/05/websocket-main.jpg
+
+WebSockets are an advanced technology that makes it possible to open an interactive communication session between the user’s browser and a server. WebSockets lets you send messages to a server and trigger event-driven responses. They are not required to poll the server all the time for replies.
+
+### What are sockets?
+
+A socket is a “port” through which data goes in and out of. A socket is a “port” through which data goes in and out of. Protocols interpret the data going to and from the socket and the machines/ applications that are communicating with each other. A major protocol is HTTP.
+
+### The very limitation of HTTP
+
+Every time you request to download html, video or an image, a port is opened, data is transferred, and the port closes.
+The consecutive closing and opening form overhead, and for a few applications, particularly those that need swift replies, real-time communications, or display chunks of data, this doesn’t work.
+
+Another constraint with HTTP is the “pull” paradigm. The browser pulls the info from servers. The server doesn’t push data to the browser when it wants to. This means that browsers must poll the server for fresh info by echoing requests every so many seconds or minutes to learn if there is something new. The need to add Sockets to browsers was mounting.
+
+The WebSockets were made a standard in 2011. This lets public to employ the WebSocket protocol, which is flexible for exchanging data between servers and the browser, as well as Peer-to-Peer (P2P), or direct communication between browsers. Unlike HTTP, the socket that is connected to the server stays “open” for communication. That means data can be “pushed” to the browser in near real-time whenever required.
+
+### WebSockets in taxi booking systems
+Modern logistics solutions are software-based and are generally hosted on the client’s server and almost all of them include real-time tracking of their fleet vehicles.
+
+### websocket layer
+
+If we look at the above example, these different clients are different people around the world in their browser or app. They either enter a URL in their web browser or download the app to access their part of taxi booking system. Of all the person trying to access the system, John requests a taxi with the app. He enters the destination, and clicks ‘Ride Now’. That request is going to instantly be updated in all the nearby drivers to John connected to the server. This is WebSockets in action.
+
+When John requested the taxi from the app and a driver accepted his request, he is opening up WebSocket between him and the driver. We have all of these different clients, browsers, and ecosystems with their own WebSocket connection to the server. Data can flow back and forth between it in real time because these are always open. When John requests a ride, he is actually sending that message down this WebSocket to the server.
+
+The server receives it and sends it down all these other WebSockets, which are connecting these clients to each individual client. They can see that updating message in their app. The message is going to send the WebSocket to the server. Then the server sends it to each WebSocket and to all the remaining clients. That is why they see this message instantaneously.
+
+### A real-time data transfer
+The data transfer occurs in real time. We’re not using any kind of AJAX request from each of these different clients to request any new data from the server. It’s all happening without the client having to make any additional requests at all.
+
+There’s tons of different uses for WebSockets that go beyond chat rooms and real-time tracking system. They include making multiply multiplayer browser games, collaborative code editing software, some kind of live text for sports on news websites, online drawing canvases, real time to-do apps, etc. There are tons of different uses for WebSockets.
+
+We use WebSockets to send data to a server. the server then sends it down to this client and shows it in real time. There is no need to make any kind of requests from this client to the server at all. It’s just open and listening through this WebSocket and receiving data.
+
+### WebSockets in real-time vehicle tracking
+A WebSocket opens up between the drivers and passenger as soon as the driver accepts the passenger request to ride. WebSockets facilitates the entire riding experience till the driver completes a ride. The entire tracking system is event triggered. For example, when a driver accepts a ride, the taxi software counts it as the event and notifies the passengers by updating his current app screen with driver’s name and other details. The same goes when a driver arrives or is waiting for you. A different set of events triggers owing to change of the driver’s position with that of the passenger. WebSockets are the primary reason Uber is so precise with its notifications and mapping services.
+
+### Why not Push-notification?
+You would be like why there is a need of WebSockets when the same can be achieved with push notification services too. The problem is push notifications are unreliable. If the either of the communicating client is offline, push notification services won’t know the difference and will still attempt to deliver the notification and, ultimately, fail.
+
+WebSockets, on the other hand, will suspend notifications to its client whenever they are offline. They will wait for the client to come online before reattempting. The server will know of the condition the whole time and won’t settle unless it learns the notifications has been successfully delivered to the client.
+
+
 # how to send images in multipart?
 # What is ORM?
 
