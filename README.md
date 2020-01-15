@@ -3,7 +3,7 @@
 # How WebSockets enable real-time tracking in modern taxi management systems?
 WebSockets are a way to communicate between a client and a server. The communication is bi-directional that is data can flow in both directions: from the client to the server and from the server to the client. Since WebSockets are always open, they allow for real-time data flow in an application, which makes way for real-time information flow back and forth.
 
-https://www.yelowsoft.com//wp-content/uploads/2018/05/websocket-main.jpg
+![](https://www.yelowsoft.com//wp-content/uploads/2018/05/websocket-main.jpg)
 
 WebSockets are an advanced technology that makes it possible to open an interactive communication session between the user’s browser and a server. WebSockets lets you send messages to a server and trigger event-driven responses. They are not required to poll the server all the time for replies.
 
