@@ -2,11 +2,11 @@
 # Android Interview-Questions
 # How WebSockets enable real-time tracking in modern taxi management systems? :
 
-WebSockets are a way to communicate between a client and a server. 
+WebSockets are a way to communicate between a client and a server. <br>
 The communication is bi-directional that is data can flow in both directions: from the client to the server and from the server to the client. Since WebSockets are always open, they allow for real-time data flow in an application, which makes way for real-time information flow back and forth.
-
+<br>
 ![](https://www.yelowsoft.com//wp-content/uploads/2018/05/websocket-main.jpg)
-
+<br>
 WebSockets are an advanced technology that makes it possible to open an interactive communication session between the user’s browser and a server. 
 WebSockets lets you send messages to a server and trigger event-driven responses. They are not required to poll the server all the time for replies.
 
@@ -28,8 +28,10 @@ The WebSockets were made a standard in 2011. This lets public to employ the WebS
 Modern logistics solutions are software-based and are generally hosted on the client’s server and almost all of them include real-time tracking of their fleet vehicles.
 
 ### Websocket layer :
-
+<br>
 ![](https://www.yelowsoft.com//wp-content/uploads/2018/05/websocket-layer.jpg)
+
+<br>
 If we look at the above example, these different clients are different people around the world in their browser or app. They either enter a URL in their web browser or download the app to access their part of taxi booking system. Of all the person trying to access the system, John requests a taxi with the app. He enters the destination, and clicks ‘Ride Now’. That request is going to instantly be updated in all the nearby drivers to John connected to the server. This is WebSockets in action.
 
 When John requested the taxi from the app and a driver accepted his request, he is opening up WebSocket between him and the driver. We have all of these different clients, browsers, and ecosystems with their own WebSocket connection to the server. Data can flow back and forth between it in real time because these are always open. When John requests a ride, he is actually sending that message down this WebSocket to the server.
