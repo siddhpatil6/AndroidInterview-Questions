@@ -48,12 +48,17 @@ WebSockets, on the other hand, will suspend notifications to its client whenever
 
 
 # how to send images in multipart?
+
+
 # What is ORM?
+
 As defined by Techopedia: “Object-relational mapping (ORM) is a programming technique in which a metadata descriptor is used to connect object code to a relational database. Object code is written in object-oriented programming (OOP) languages such as Java or C#. ORM converts data between type systems that are unable to coexist within relational databases and OOP languages.”
 
 ORMs make a developer's life easy. It allows them to avoid the struggle of developing queries by concatenating strings or handling the connections with database manually. Even typos aren’t a major threat to the queries. The security can be managed without worrying about the resistance to injecting attacks. This means a developer can focus on application functionalities while allowing the database to perform its job.
 
-However, there are many ORMs available out there. We have highlighted the most popular ones below
+However, there are many ORMs available out there. We have highlighted the most popular ones below.
+
+
 # Kotlin Idioms?
 ### Extension Functions
 ### Sealed Classes
