@@ -24,7 +24,7 @@ The WebSockets were made a standard in 2011. This lets public to employ the WebS
 Modern logistics solutions are software-based and are generally hosted on the client’s server and almost all of them include real-time tracking of their fleet vehicles.
 
 ### websocket layer
-
+![](https://www.yelowsoft.com//wp-content/uploads/2018/05/websocket-layer.jpg)
 If we look at the above example, these different clients are different people around the world in their browser or app. They either enter a URL in their web browser or download the app to access their part of taxi booking system. Of all the person trying to access the system, John requests a taxi with the app. He enters the destination, and clicks ‘Ride Now’. That request is going to instantly be updated in all the nearby drivers to John connected to the server. This is WebSockets in action.
 
 When John requested the taxi from the app and a driver accepted his request, he is opening up WebSocket between him and the driver. We have all of these different clients, browsers, and ecosystems with their own WebSocket connection to the server. Data can flow back and forth between it in real time because these are always open. When John requests a ride, he is actually sending that message down this WebSocket to the server.
