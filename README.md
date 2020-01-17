@@ -1,5 +1,11 @@
 
 # Android Interview-Questions
+# Can we create the instance for abstract classes
+No, you cannot create an instance of an abstract class because it does not have a complete implementation. The purpose of an abstract class is to function as a base for subclasses. It acts like a template, or an empty or partially empty structure, you should extend it and build on it before you can use it.
+
+
+
+
 # How WebSockets enable real-time tracking in modern taxi management systems?
 
 WebSockets are a way to communicate between a client and a server. <br>
