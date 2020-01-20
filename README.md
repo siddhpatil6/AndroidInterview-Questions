@@ -498,7 +498,70 @@ public class HelloWorld
 
 
 # how viewmodel holds data of view? 
+ The following code is the example of how an Activity uses the SDK in order to provide a ViewModel that is retained on configuration changes.
+ 
+### Get the instance of ViewModel
+```
+public class MainActivity extends Activity {
 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main);
+         
+         MyViewModel viewModel = ViewModelProviders.of(this).get(MyViewModel.class);
+         
+         viewModel.getUsers().observer(this, new Observer() {
+            @Override
+             public void onChanged(@Nullable User data) {
+                 // update the ui.
+             }
+         });
+        
+     }
+ }
+ ```
+ ### Writing your ViewModel class
+ 
+ ```
+ public class MyViewModel extends ViewModel {
+    
+    private MutableLiveData<List<User>> users;
+    
+    public LiveData<List<User>> getUsers() {
+        if (users == null) {
+            users = new MutableLiveData<List<User>>();
+            loadUsers();
+        }
+        return users;
+    }
+
+    private void loadUsers() {
+        // perform an asynchronous operation to fetch users.
+    }
+}
+ ```
+ 
+ViewModelProviders.of(this).get(MyViewModel.class);
+From the above snippet, we can infer that it’s retrieving a ViewModel of type MyViewModel.
+
+### Summary
+In this post, I explored the very basics of the new ViewModel class. The key takeaways are:
+
+* The ViewModel class is designed to hold and manage UI-related data in a life-cycle conscious way. This allows data to survive configuration changes such as screen rotations.
+
+* ViewModels separate UI implementation from your app’s data.
+
+*The lifecycle of a ViewModel extends since the time when associated UI controller is first created, till it is completely destroyed.
+
+* Never store a UI controller or Context directly or indirectly in a ViewModel. This includes storing a View in a ViewModel. Direct or indirect references to UI controllers defeat the purpose of separating the UI from the data and can lead to memory leaks.
+
+* A HolderFragment is a headless Fragment (without UI) that is added to the Fragment stack with setRetainInstance(true).
+If you feel like something was not clear, have any suggestions or something to add up, please drop your comments below. 
+ 
+ ### Writing your ViewModel class
+
+ 
 # How FCM Works?
 ![](https://github.com/siddhpatil6/AndroidInterview-Questions/blob/master/fcm.png)
 
