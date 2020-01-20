@@ -489,7 +489,124 @@ public class HelloWorld
 
 # Launching Modes in Brief?
 # Hasmap internal Working?
-# Hashset vs Set?
+
+# Hashset vs Set vs TreeSet ?
+
+### Set -
+A Set is a generic set of values with no duplicate elements. 
+
+### TreeSet -
+A TreeSet is a set where the elements are sorted.
+
+### HashSet -
+A HashSet is a set where the elements are not sorted or ordered. It is faster than a TreeSet. The HashSet is an implementation of a Set.
+
+
+Set is a parent interface of all set classes like TreeSet, HashSet, etc.
+
+```
+import java.util.*;
+public class Demo {
+   public static void main(String args[]) {
+      int a[] = {77, 23, 4, 66, 99, 112, 45, 56, 39, 89};
+      Set<Integer> s = new HashSet<Integer>();
+      try {
+         for(int i = 0; i < 5; i++) {
+            s.add(a[i]);
+         }
+         System.out.println(s);
+         TreeSet sorted = new TreeSet<Integer>(s);
+         System.out.println("Sorted list = ");
+         System.out.println(sorted);
+      } 
+      catch(Exception e) {}
+   }
+}
+```
+
+Output
+
+```
+[66, 99, 4, 23, 77]
+Sorted list =
+[4, 23, 66, 77, 99]
+```
+
+### Program of HashSet
+```
+// Java program to demonstrate working of 
+// HashSet 
+import java.util.HashSet; 
+class HashSetDemo { 
+    public static void main(String[] args) 
+    { 
+  
+        // Create a HashSet 
+        HashSet<String> hset = new HashSet<String>(); 
+  
+        // add elements to HashSet 
+        hset.add("geeks"); 
+        hset.add("for"); 
+        hset.add("practice"); 
+        hset.add("contribute"); 
+  
+        // Duplicate removed 
+        hset.add("geeks"); 
+  
+        // Displaying HashSet elements 
+        System.out.println("HashSet contains: "); 
+        for (String temp : hset) { 
+            System.out.println(temp); 
+        } 
+    } 
+} 
+```
+Output:
+```
+HashSet contains: 
+practice
+geeks
+for
+contribute
+```
+
+### Program of TreeSet :
+```
+// Java program to demonstrate working of 
+// TreeSet. 
+import java.util.TreeSet; 
+class TreeSetDemo { 
+  
+    public static void main(String[] args) 
+    { 
+        // Create a TreeSet 
+        TreeSet<String> tset = new TreeSet<String>(); 
+  
+        // add elements to HashSet 
+        tset.add("geeks"); 
+        tset.add("for"); 
+        tset.add("practice"); 
+        tset.add("contribute"); 
+  
+        // Duplicate removed 
+        tset.add("geeks"); 
+  
+        // Displaying TreeSet elements 
+        System.out.println("TreeSet contains: "); 
+        for (String temp : tset) { 
+            System.out.println(temp); 
+        } 
+    } 
+} 
+```
+### Output:
+```
+TreeSet contains: 
+contribute
+for
+geeks
+practice
+```
 # Difference between hashtable and hashmap
 # Hashset vs Hashtable?
 # List vs ArrayList?
