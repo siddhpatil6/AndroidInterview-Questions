@@ -1,5 +1,16 @@
 
 # Android Interview-Questions
+# Key Differences between Java List vs Array List
+1.The Differences Between Java List vs Array List are explained in the below-mentioned points:
+
+2. One of the major difference is between Java List vs Array List is that list is an interface and Array list is a standard collection class.
+
+3. Java List interface extends Collection and Array list extends Abstract List class and it can also implement List interface.
+
+4. List interface creates a collection of elements which are stored in sequence and can be accessed by its index number. Array list, on the contrary, creates an array of objects where the array can grow dynamically whenever required and reduce as well.
+
+5. Both Java List vs Array List provides different kinds of methods to access data from the list. These methods enable in getting elements from an array at the specified position and also remove and shrink the size of an array in case of the Array list.
+
 # Can we create the instance for abstract classes?
 No, you cannot create an instance of an abstract class because it does not have a complete implementation. The purpose of an abstract class is to function as a base for subclasses. It acts like a template, or an empty or partially empty structure, you should extend it and build on it before you can use it.
 
