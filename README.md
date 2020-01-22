@@ -29,7 +29,7 @@ Output:
 ```
 false
 true
-``
+```
 
 # How WebSockets enable real-time tracking in modern taxi management systems?
 
