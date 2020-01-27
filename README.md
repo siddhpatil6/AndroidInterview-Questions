@@ -661,6 +661,16 @@ practice
 
 # Hashset vs Hashtable?
 # List vs ArrayList?
+
+1. One of the most important differences between List and ArrayList is that list is an interface and ArrayList is a standard Collection class.
+
+2. List interface extends the Collection framework whereas, the ArrayList extends AbstractList Class and it implements List interfaces.
+
+3. The namespace for List interface is System.Collection.Generic whereas, the namespace for ArrayList is System.Collection.
+
+4.List interface creates a collection of elements that is stored in a sequence and are identified or accessed by their index number. On the other hand, ArrayList creates an array of objects where the array can dynamically grow when required.
+
+
 # Why Dependancy Injection?
 
 
