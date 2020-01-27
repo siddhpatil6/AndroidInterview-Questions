@@ -646,6 +646,19 @@ geeks
 practice
 ```
 # Difference between hashtable and hashmap
+1.The HashMap class is roughly equivalent to Hashtable, except that it is non-synchronized and permits nulls. (HashMap allows null values as key and value whereas Hashtable doesn't allow nulls).
+
+2. One of the major differences between HashMap and Hashtable is that HashMap is non-synchronized whereas Hashtable is synchronized, which means Hashtable is thread-safe and can be shared between multiple threads but HashMap can not be shared between multiple threads without proper synchronization. Java 5 introduces ConcurrentHashMap which is an alternative of Hashtable and provides better scalability than Hashtable in Java.
+
+3. Another significant difference between HashMap vs Hashtable is that Iterator in the HashMap is  a fail-fast iterator  while the enumerator for the Hashtable is not and throw ConcurrentModificationException if any other Thread modifies the map structurally  by adding or removing any element except Iterator's own remove() method. But this is not a guaranteed behavior and will be done by JVM on best effort. This is also an important difference between Enumeration and Iterator in Java.
+
+4. One more notable difference between Hashtable and HashMap is that because of thread-safety and synchronization Hashtable is much slower than HashMap if used in Single threaded environment. So if you don't need synchronization and HashMap are only used by one thread, it outperforms Hashtable in Java.
+
+5. HashMap does not guarantee that the order of the map will remain constant over time
+
+
+![](https://3.bp.blogspot.com/-iw2pMTU6pHo/VvP3HoW7XrI/AAAAAAAAFSQ/By53EkcfMGkoth857hnsc57XxYy8uwfAA/s1600/Difference%2Bbetween%2BHashMap%252C%2BTreeMap%252C%2BLinkedHashMap%2Band%2Bhashtable%2Bin%2BJava.png)
+
 # Hashset vs Hashtable?
 # List vs ArrayList?
 # Why Dependancy Injection?
