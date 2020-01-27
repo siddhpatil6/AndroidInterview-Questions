@@ -662,6 +662,8 @@ practice
 # Hashset vs Hashtable?
 # List vs ArrayList?
 
+![](https://techdifferences.com/wp-content/uploads/2016/08/List-Vs-ArrayList.jpg)
+
 1. One of the most important differences between List and ArrayList is that list is an interface and ArrayList is a standard Collection class.
 
 2. List interface extends the Collection framework whereas, the ArrayList extends AbstractList Class and it implements List interfaces.
