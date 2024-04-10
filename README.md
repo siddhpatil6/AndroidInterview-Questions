@@ -484,9 +484,6 @@ In this article, we've taken a quick look at the difference between manifest and
 Then, we looked at the difference between Kotlin's var, val, and const keywords.
 
 
-# What is Elvis Operator in kotlin?
-# What is flatmap and how to use it in kotlin?
-
 
 # How do I remove repeated elements from ArrayList?
 If you don't want duplicates in a Collection, you should consider why you're using a Collection that allows duplicates. The easiest way to remove repeated elements is to add the contents to a Set (which will not allow duplicates) and then add the Set back to the ArrayList:
@@ -516,7 +513,6 @@ public class HelloWorld
 } 
 ```
 
-# Launching Modes in Brief?
 # Hasmap internal Working?
 # HashMap -
 HashMap is a part of Java’s collection since Java 1.2. It provides the basic implementation of the Map interface of Java. It stores the data in (Key, Value) pairs. To access a value one must know its key. HashMap is known as HashMap because it uses a technique called Hashing. Hashing is a technique of converting a large String to small String that represents the same String. A shorter value helps in indexing and faster searches. HashSet also uses HashMap internally. It internally uses a link list to store key-value pairs already explained in HashSet in detail and further articles.
